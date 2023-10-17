@@ -136,67 +136,61 @@ Hier finden Sie Informationen zu allem, was Sie in diesem Plugin benötigen, ber
 
 ![FAQ](https://premium.wpmudev.org/wp-content/uploads/2012/08/7-FAQ.png)
 
-  Lassen Sie uns nun einen Rückzieher machen. Beginnen Sie mit der ersten Registerkarte:
+  Lasse uns nun einen Rückzieher machen. Beginne mit der ersten Registerkarte:
 
 ##### Allgemein
 
-Diese Einstellungen sind das Herz und die Seele Ihres Setups. Achten Sie besonders auf das Feld „Allgemeine Einstellungen“ oben auf der Seite. Besonders der Zeitbasiswert. _Time Base der wichtigste Parameter des Terminmanagers. Dies ist die Mindestzeit, die Sie für Ihre Termine auswählen können._ Alles, was mit der Zeit zu tun hat, wird von diesem Wert abhängen. In den verbleibenden Feldern können Sie Ihre Einstellungen vornehmen
+Diese Einstellungen sind das Herz und die Seele Deines Setups. Achte besonders auf das Feld „Allgemeine Einstellungen“ oben auf der Seite. Besonders der Zeitbasiswert. _Time Base der wichtigste Parameter des Terminmanagers. Dies ist die Mindestzeit, die Du für Deine Termine auswählen kannst._ Alles, was mit der Zeit zu tun hat, wird von diesem Wert abhängen. In den verbleibenden Feldern kannst Du Deine Einstellungen vornehmen
 
-* Anzeige: Erstellen Sie eine Terminseite, deren Anzeige, Kundeninformationsfelder und einen Ort zum Hinzufügen von benutzerdefiniertem CSS.
-* Kundenzugänglichkeit: Sie können wählen, ob vor der Planung eine Anmeldung erforderlich ist oder nicht
-* Zahlungseinstellungen: Wählen Sie aus, ob Sie Zahlungen akzeptieren möchten
+* Anzeige: Erstelle eine Terminseite, deren Anzeige, Kundeninformationsfelder und einen Ort zum Hinzufügen von benutzerdefiniertem CSS.
+* Kundenzugänglichkeit: Du kannst wählen, ob vor der Planung eine Anmeldung erforderlich ist oder nicht
+* Zahlungseinstellungen: Wähle aus, ob Du Zahlungen akzeptieren möchtest
 * Benachrichtigungseinstellungen: Option zum Einrichten von Bestätigungs- und Erinnerungs-E-Mails für Kunden und/oder Anbieter
 * Leistungseinstellungen: Caching-Optionen
-
-[
 
 ![Allgemeine Einstellungen](https://premium.wpmudev.org/wp-content/uploads/2012/08/8-General1.png)
 
 ##### Arbeitszeit
 
-Legen Sie Ihre Öffnungszeiten und Pausenzeiten fest. Denken Sie an Geschäftszeiten und „_Ausgehen zum Mittagessen_“. Sie können sogar unterschiedliche Öffnungszeiten für verschiedene Dienstanbieter festlegen. Macht es einfach, den Überblick über unterschiedliche Zeitpläne zu behalten!
+Lege Deine Öffnungszeiten und Pausenzeiten fest. Denke an Geschäftszeiten und „_Ausgehen zum Mittagessen_“. Du kannst sogar unterschiedliche Öffnungszeiten für verschiedene Dienstanbieter festlegen. Macht es einfach, den Überblick über unterschiedliche Zeitpläne zu behalten!
 
 ![Arbeitszeiten](https://premium.wpmudev.org/wp-content/uploads/2012/08/9-Working-Hours.png)
 
 ##### Ausnahmen
 
-Ruhetage, Feiertage, geplante Wartungsarbeiten usw. Sie können sie alle hier hinzufügen. Sie können auch Arbeitstage definieren, die normalerweise arbeitsfreie Tage sind (z. B. einen bestimmten Sonntag). Diese können auch pro Dienstanbieter eingestellt werden.
+Ruhetage, Feiertage, geplante Wartungsarbeiten usw. Du kannst sie alle hier hinzufügen. Du kannst auch Arbeitstage definieren, die normalerweise arbeitsfreie Tage sind (z. B. einen bestimmten Sonntag). Diese können auch pro Dienstanbieter eingestellt werden.
 
 ![Ausnahmen](https://premium.wpmudev.org/wp-content/uploads/2012/08/10-Exceptions.png)
 
 ##### Dienstleistungen
 
-Was machst du?! Was bieten Sie?! Hier legen Sie alles dar. Legen Sie eine Kapazität, einen Preis und sogar eine Beschreibungsseite fest.
+Was machst du?! Was bieten Sie?! Hier legst Du alles dar. Lege eine Kapazität, einen Preis und sogar eine Beschreibungsseite fest.
 
 ![Dienste](https://premium.wpmudev.org/wp-content/uploads/2012/08/11-Services.png)
 
 ##### Dienstleister
 
-Es ist nicht erforderlich, dass Sie mehr als eine Person zur Verfügung haben, die die zu erledigenden Aufgaben erledigt, aber wenn doch, behalten Sie hier den Überblick über alle. Sie können sogar zusätzliche Gebühren hinzufügen und einem Anbieter mehr als einen Dienst zuweisen. Hängen Sie sie sogar an eine Bio-Seite an. _Hinweis: Diese Registerkarte wird erst ausgefüllt, wenn **mindestens ein** Dienst auf der Registerkarte „Dienste“ aufgeführt ist._
+Es ist nicht erforderlich, dass Du mehr als eine Person zur Verfügung hast, die die zu erledigenden Aufgaben erledigt, aber wenn doch, behalte hier den Überblick über alle. Du kannst sogar zusätzliche Gebühren hinzufügen und einem Anbieter mehr als einen Dienst zuweisen. Hänge sie sogar an eine Bio-Seite an. _Hinweis: Diese Registerkarte wird erst ausgefüllt, wenn **mindestens ein** Dienst auf der Registerkarte „Dienste“ aufgeführt ist._
 
 ![Dienstanbieter](https://premium.wpmudev.org/wp-content/uploads/2012/08/12-Service-Providers.png)
 
- 
-
 ##### Protokolle
 
-Bleiben Sie auf dem Laufenden, indem Sie Ihre Protokolle überprüfen. Auf dieser praktischen Registerkarte finden Sie Aktualisierungen zu allem, was auf Ihrer Website passiert. Statusänderungen, Transaktionen und dergleichen.
+Bleibe auf dem Laufenden, indem Du Deine Protokolle überprüfst. Auf dieser praktischen Registerkarte findest Du Aktualisierungen zu allem, was auf Deiner Webseite passiert. Statusänderungen, Transaktionen und dergleichen.
 
 ![Protokolle](https://premium.wpmudev.org/wp-content/uploads/2012/08/14-Logs.png)
 
 ##### Shortcodes
 
-Jede Menge Shortcodes für Ihren Gebrauch. Fügen Sie anbieter- oder kundenspezifische Tabellen, ein Dropdown-Menü für Dienste, eine Tabelle für die Terminplanung, Monatsansichten, Social-Login-Paginierung, eine Liste aller anstehenden Termine, PayPal und einige Parameter dafür ein. Eine vollständige Dokumentation der Shortcodes finden Sie unten oder verwenden Sie den visuellen Shortcode-Generator.
+Jede Menge Shortcodes für Deinen Gebrauch. Füge anbieter- oder kundenspezifische Tabellen, ein Dropdown-Menü für Dienste, eine Tabelle für die Terminplanung, Monatsansichten, Social-Login-Paginierung, eine Liste aller anstehenden Termine, PayPal und einige Parameter dafür ein. Eine vollständige Dokumentation der Shortcodes findest Du unten oder verwende den visuellen Shortcode-Generator.
 
 ![Bild](https://premium.wpmudev.org/wp-content/uploads/2012/09/generate_image_preview.png)
 
-
-
 ## Terminmanager-Shortcode-Referenz
 
-Mit Terminmanager haben wir jetzt einen praktischen Shortcode-Generator hinzugefügt, der sich über dem ClassicPress-Texteditor im visuellen Modus befindet und es Ihnen ermöglicht, einfach Ihre Anforderungen für den Kalender auszuwählen, den Sie anzeigen möchten, und dann den genauen Shortcode zur Verwendung zu erhalten.
+Mit Terminmanager haben wir jetzt einen praktischen Shortcode-Generator hinzugefügt, der sich über dem ClassicPress-Texteditor im visuellen Modus befindet und es Dir ermöglicht, einfach Deine Anforderungen für den Kalender auszuwählen, den Du anzeigen möchtest, und dann den genauen Shortcode zur Verwendung zu erhalten.
 
-Einige von uns machen die Dinge jedoch immer noch gerne auf die altmodische Art und Weise und erstellen ihre Shortcodes von Hand. Deshalb haben wir alle aktuellen Shortcodes zu Ihrer Referenz und Ihrem Lesevergnügen in diesen praktischen Leitfaden aufgenommen.
+Einige von uns machen die Dinge jedoch immer noch gerne auf die altmodische Art und Weise und erstellen ihre Shortcodes von Hand. Deshalb haben wir alle aktuellen Shortcodes zu Deiner Referenz und Deinem Lesevergnügen in diesen praktischen Leitfaden aufgenommen.
 
 ## Monatskalender des Anbieters
 
@@ -208,7 +202,7 @@ Rendert einen Kalender mit Terminen, die einem Dienstanbieter zugewiesen sind.
 
 ### Argumente
 
-_Status_
+_status_
 
 * Termine mit diesem Status anzeigen (durch Kommas getrennte Liste)
 * Zulässige Werte: bezahlt, bestätigt, ausstehend, abgeschlossen
@@ -220,7 +214,7 @@ _
 * Terminkalender für Dienstleister mit dieser Benutzer-ID anzeigen
 * Beispiel: [app_worker_monthly_calendar  worker_id=“32″]
 
-_anfangen bei_
+_start_at_
 
 * Terminkalender für diesen Monat anzeigen. Standardmäßig wird der aktuelle Monat verwendet.
 * Beispiel: [app_worker_monthly_calendar start_at=“2013-07-01″]
@@ -235,73 +229,66 @@ Erstellt eine Wochentabelle, deren Zellen anklickbar sind, um sich für einen Te
 
 ### Argumente
 
-_
-Titel_
+_title_
 
 * Text, der als Zeitplantitel angezeigt wird. Die Platzhalter START und END werden automatisch durch ihre tatsächlichen Werte ersetzt.
 * Beispiel: [app_schedule title=“Unser Zeitplan von ANFANG bis ENDE“]
      Text, der nach dem Titel nur den angemeldeten Kunden angezeigt wird oder Sie keine Anmeldung benötigen.
 * Beispiel: [app_schedule log="Klicken Sie auf ein freies Zeitfenster, um sich für einen Termin zu bewerben."]
 
-_
-notlogged_
+_notlogged_
 
-* Text, der nach dem Titel nur den Kunden angezeigt wird, die nicht angemeldet sind und für die Sie eine Anmeldung benötigen. LOGIN_PAGE wird durch die Anmeldeseite Ihrer Website ersetzt, während REGISTRATION_PAGE durch die Registrierungsseite Ihrer Website ersetzt wird.
-     Beispiel: [app_schedule notlogged=“Sie müssen sich anmelden, um einen Termin zu vereinbaren. Bitte klicken Sie hier, um sich zu registrieren/anzumelden: LOGIN_PAGE“]
+* Text, der nach dem Titel nur den Kunden angezeigt wird, die nicht angemeldet sind und für die sie eine Anmeldung benötigen. LOGIN_PAGE wird durch die Anmeldeseite Deiner Webseite ersetzt, während REGISTRATION_PAGE durch die Registrierungsseite Deiner Webseite ersetzt wird.
+* Beispiel: [app_schedule notlogged=“Sie müssen sich anmelden, um einen Termin zu vereinbaren. Bitte klicken Sie hier, um sich zu registrieren/anzumelden: LOGIN_PAGE“]
 
-_
-Service_
+_service_
 
-* Geben Sie die Dienst-ID nur ein, wenn Sie erzwingen möchten, dass in der Tabelle der Dienst mit der eingegebenen ID angezeigt wird.
+* Gib die Dienst-ID nur ein, wenn Du erzwingen möchtest, dass in der Tabelle der Dienst mit der eingegebenen ID angezeigt wird.
 * Standard: „0“ (Dienst wird per Dropdown ausgewählt).
 * Hinweis: Mehrfachauswahlen sind nicht zulässig.
 * Beispiel: [app_schedule service=“12″]
 
-_
-Arbeiter_
+_worker_
 
-* Geben Sie die Dienstanbieter-ID nur ein, wenn Sie erzwingen möchten, dass in der Tabelle der Dienstanbieter mit der eingegebenen ID angezeigt wird.
+* Gib die Dienstanbieter-ID nur ein, wenn Du erzwingen möchtest, dass in der Tabelle der Dienstanbieter mit der eingegebenen ID angezeigt wird.
 * Standard: „0“ (Dienstanbieter wird per Dropdown ausgewählt).
 * Hinweis: Mehrfachauswahlen sind nicht zulässig.
 * Beispiel: [app_schedule worker=“15″]
 
-_lang_
+_long_
 
 * Bei Eingabe von 1 werden lange Wochentage in der Zeile der Zeitplantabelle angezeigt, z.B. „Samstag“ statt „Sa“.
 * Beispiel: [app_schedule long=“1″]
 
-_Klasse_
+_class_
 
 * Ein CSS-Klassenname für die Zeitplantabelle. Der Standardwert ist leer.
 * Beispiel: [app_schedule class=“my-class“]
 
-_
-hinzufügen_
+_add_
 
-* Anzahl der Wochen, die zum Zeitplan hinzugefügt werden sollen, um für die Zeitpläne der vorherigen Wochen verwendet zu werden. Geben Sie 1 für die nächste Woche, 2 für die andere Woche usw. ein. Standard: „0“ (Aktuelle Woche)
+* Anzahl der Wochen, die zum Zeitplan hinzugefügt werden sollen, um für die Zeitpläne der vorherigen Wochen verwendet zu werden. Gib 1 für die nächste Woche, 2 für die andere Woche usw. ein. Standard: „0“ (Aktuelle Woche)
 * Beispiel: [app_schedule add=“1″]
 
-_
-Datum_
+_date_
 
-* Normalerweise beginnt der Kalender mit der aktuellen Woche. Wenn Sie den Start ab einem bestimmten Datum erzwingen möchten, geben Sie dieses Datum hier ein. Die meisten Datumsformate werden unterstützt, empfohlen wird jedoch JJJJ-MM-TT.
+* Normalerweise beginnt der Kalender mit der aktuellen Woche. Wenn Du den Start ab einem bestimmten Datum erzwingen möchtest, gib dieses Datum hier ein. Die meisten Datumsformate werden unterstützt, empfohlen wird jedoch JJJJ-MM-TT.
 * Hinweise: 1) Dieser Wert wirkt sich auch auf andere nachfolgende Kalender auf derselben Seite aus. 2) Der Datumswert ändert sich am Anfangstag der Woche nicht. Es reicht aus, ein Datum innerhalb der Woche einzugeben. Standard: „0“ (Aktuelle Woche)
 * Beispiel: [app_schedule date=“2014-02-01″]
 
-_
-require_provider_
+_require_provider_
 
-* Wenn Sie dieses Argument auf „1“ setzen, wird kein Fahrplan gerendert, es sei denn, zuvor wurde ein Dienstanbieter ausgewählt.
+* Wenn Du dieses Argument auf „1“ setzt, wird kein Zeitplan gerendert, es sei denn, zuvor wurde ein Dienstanbieter ausgewählt.
 * Beispiel: [app_schedule require_provider=“1″]
 
-_erforderliche_Nachricht_
+_required_message_
 
 * Die Meldung, die angezeigt wird, wenn Dienstanbieter erforderlich sind.
 * Beispiel: [app_schedule require_message=“Bitte wählen Sie einen Dienst aus.“]
 
 _require_service_
 
-* Wenn Sie dieses Argument auf „1“ setzen, wird kein Fahrplan gerendert, es sei denn, zuvor wurde ein Dienst ausgewählt.
+* Wenn Du dieses Argument auf „1“ setzt, wird kein Zeitplan gerendert, es sei denn, zuvor wurde ein Dienst ausgewählt.
 * Beispiel: [app_schedule require_service=“1″]
 
 _required_service_message_
@@ -319,73 +306,73 @@ Erstellt einen Monatskalender sowie Zeitpläne, deren freie Zeitfenster anklickb
 
 ### Argumente
 
-_Titel_
+_title_
 
 * Text, der als Zeitplantitel angezeigt wird.
 * Die Platzhalter START, WORKER und SERVICE werden automatisch durch ihre tatsächlichen Werte ersetzt.
 * Beispiel: [app_monthly_schedule title=“Unser Zeitplan für START“]
 
-_protokolliert_
+_logged_
 
-* Text, der nach dem Titel nur den angemeldeten Kunden angezeigt wird oder Sie keine Anmeldung benötigen.
+* Text, der nach dem Titel nur den angemeldeten Kunden angezeigt wird oder sie keine Anmeldung benötigen.
 * Beispiel: [app_monthly_schedule log=“Klicken Sie auf einen freien Tag, um sich für einen Termin zu bewerben.“]
 
-_nicht protokolliert_
+_notlogged_
 
-* Text, der nach dem Titel nur den Kunden angezeigt wird, die nicht angemeldet sind und für die Sie eine Anmeldung benötigen.
-* LOGIN_PAGE wird durch die Anmeldeseite Ihrer Website ersetzt, während REGISTRATION_PAGE durch die Registrierungsseite Ihrer Website ersetzt wird.
+* Text, der nach dem Titel nur den Kunden angezeigt wird, die nicht angemeldet sind und für die sie eine Anmeldung benötigen.
+* LOGIN_PAGE wird durch die Anmeldeseite Ihrer Website ersetzt, während REGISTRATION_PAGE durch die Registrierungsseite Deiner Webseite ersetzt wird.
 * Beispiel: [app_monthly_schedule notlogged=“Sie müssen sich anmelden, um einen Termin zu vereinbaren. Bitte klicken Sie hier, um sich zu registrieren/anzumelden: LOGIN_PAGE“]
 
-_Service_
+_service_
 
-* Geben Sie die Dienst-ID nur ein, wenn Sie erzwingen möchten, dass in der Tabelle der Dienst mit der eingegebenen ID angezeigt wird.
+* Gib die Dienst-ID nur ein, wenn Du erzwingen möchtest, dass in der Tabelle der Dienst mit der eingegebenen ID angezeigt wird.
 * Standard: „0“ (Dienst wird per Dropdown ausgewählt).
 * Hinweis: Mehrfachauswahlen sind nicht zulässig.
 * Beispiel: [app_monthly_schedule service=“12″]
 
-_Arbeiter_
+_worker_
 
-* Geben Sie die Dienstanbieter-ID nur ein, wenn Sie erzwingen möchten, dass in der Tabelle der Dienstanbieter mit der eingegebenen ID angezeigt wird.
+* Gib die Dienstanbieter-ID nur ein, wenn Du erzwingen möchtest, dass in der Tabelle der Dienstanbieter mit der eingegebenen ID angezeigt wird.
 * Standard: „0“ (Dienstanbieter wird per Dropdown ausgewählt).
 * Hinweis: Mehrfachauswahlen sind nicht zulässig.
 * Beispiel: [app_monthly_schedule worker=“15″]
 
-_lang_
+_long_
 
 * Bei Eingabe von 1 werden lange Wochentage in der Zeile der Zeitplantabelle angezeigt, z.B. „Samstag“ statt „Sa“.
 * Beispiel: [app_monthly_schedule long=“1″]
 
-_Klasse_
+_class_
 
 * Ein CSS-Klassenname für die Zeitplantabelle. Der Standardwert ist leer.
 * Beispiel: [app_monthly_schedule class=“my-class“]
 
-_hinzufügen_
+_add_
 
-* Anzahl der Monate, die zum Zeitplan hinzugefügt werden sollen, um für die Zeitpläne der vorherigen Monate verwendet zu werden. Geben Sie 1 für den nächsten Monat, 2 für den anderen Monat usw. ein.
+* Anzahl der Monate, die zum Zeitplan hinzugefügt werden sollen, um für die Zeitpläne der vorherigen Monate verwendet zu werden. Gib 1 für den nächsten Monat, 2 für den anderen Monat usw. ein.
 * Standard: „0“ (aktueller Monat)
 * Beispiel: [app_monthly_schedule add=“1″]
 
-_Datum_
+_date_
 
-* Normalerweise beginnt der Kalender mit dem aktuellen Monat. Wenn Sie den Start ab einem bestimmten Datum erzwingen möchten, geben Sie dieses Datum hier ein.
+* Normalerweise beginnt der Kalender mit dem aktuellen Monat. Wenn Du den Start ab einem bestimmten Datum erzwingen möchtest, gib dieses Datum hier ein.
 * Die meisten Datumsformate werden unterstützt, aber JJJJ-MM-TT wird empfohlen.
 * Hinweise: 1) Dieser Wert wirkt sich auch auf andere nachfolgende Kalender auf derselben Seite aus. 2) Es reicht aus, ein Datum innerhalb des Monats einzugeben. Standard: „0“ (aktueller Monat)
 * Beispiel: [app_monthly_schedule date=“2014-02-01“]
 
 _require_provider_
 
-* Wenn Sie dieses Argument auf „1“ setzen, wird kein Fahrplan gerendert, es sei denn, zuvor wurde ein Dienstanbieter ausgewählt.
+* Wenn Du dieses Argument auf „1“ setzt, wird kein Zeitplan gerendert, es sei denn, zuvor wurde ein Dienstanbieter ausgewählt.
 * Beispiel: [app_monthly_schedule require_provider=“1″]
 
-_erforderliche_Nachricht_
+_required_message_
 
 * Die Meldung, die angezeigt wird, wenn Dienstanbieter erforderlich sind.
 * Beispiel: [app_monthly_schedule require_message=“Bitte wählen Sie einen Dienstanbieter aus.“]
 
 _require_service_
 
-* Wenn Sie dieses Argument auf „1“ setzen, wird kein Fahrplan gerendert, es sei denn, zuvor wurde ein Dienst ausgewählt.
+* Wenn Sie dieses Argument auf „1“ setzen, wird kein Zeitplan gerendert, es sei denn, zuvor wurde ein Dienst ausgewählt.
 * Beispiel: [app_monthly_schedule require_service=“1″]
 
 _required_service_message_
@@ -403,24 +390,24 @@ Fügt Paginierungscodes (Links zur vorherigen, nächsten Woche oder dem nächste
 
 ### Argumente
 
-_Schritt_
+_step_
 
-* Die Anzahl der Wochen oder Monate, in denen sich die ausgewählte Zeit mit jedem nächsten oder vorherigen Linkklick erhöht oder verringert. Sie können die Eingabe von 4 in Erwägung ziehen, wenn Sie 4 Zeitplantabellen auf der Seite haben.
+* Die Anzahl der Wochen oder Monate, in denen sich die ausgewählte Zeit mit jedem nächsten oder vorherigen Linkklick erhöht oder verringert. Du kannst die Eingabe von 4 in Erwägung ziehen, wenn Du 4 Zeitplantabellen auf der Seite hast.
 * Beispiel: [app_pagination step=“1″]
 
-_Monat_
+_month_
 
 * Wenn 1 eingegeben wird, bedeutet der Schrittparameter den Monat, andernfalls die Woche. Kurz gesagt, geben Sie 1 für den monatlichen Zeitplan ein.
 * Beispiel: [app_pagination Monat=“1″]
 
-_Datum_
+_date_
 
 * Dies ist nur erforderlich, wenn dieser Shortcode über einem der Zeitplan-Shortcodes liegt. Andernfalls werden die Datumseinstellungen der Zeitplan-Shortcodes befolgt.
 * Standard: „0“ (Aktuelle Woche oder Monat)
 
-_Anker_
+_anchors_
 
-* Wenn Sie dieses Argument auf 0 setzen, wird verhindert, dass Paginierungslinks Zeitplan-Hash-Anker hinzufügen.
+* Wenn Du dieses Argument auf 0 setzt, wird verhindert, dass Paginierungslinks Zeitplan-Hash-Anker hinzufügen.
 * Standard: „1“
 * Beispiel: [app_pagination Anchors=“1″]
 
@@ -434,18 +421,18 @@ Fügt eine Tabelle ein, die alle bevorstehenden Termine anzeigt.
 
 ### Argumente
 
-_Titel_
+_title_
 
 * Titeltext.
 * Beispiel: [app_all_appointments title=“Alle Termine“]
 
-_Status_
+_status_
 
 * Welche Status(se) werden berücksichtigt.
 * Mögliche Werte: bezahlt, bestätigt, abgeschlossen, ausstehend, entfernt, reserviert oder Kombinationen davon, getrennt durch Komma.
 * Beispiel: [app_all_appointments status=“paid,confirmed“]
 
-_Sortieren nach_
+_order_by_
 
 * Sortierreihenfolge der Termine.
 * Mögliche Werte: ID, Start. Optional kann DESC (absteigend) verwendet werden, z.B. „start DESC“ kehrt die Reihenfolge um.
