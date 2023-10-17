@@ -98,21 +98,21 @@ Sowohl Kunden als auch Dienstleister können auf Deiner Webseite vereinbarte Ter
 
 Sobald Du das Plugin aktivierst, wird in der Menüleiste ein Menü mit der Bezeichnung **Termine** angezeigt.
 
-![Terminmenü](https://premium.wpmudev.org/wp-content/uploads/2012/08/1-Appointmetns-Menu.png „Terminmenü“)
+![Terminmenü](https://premium.wpmudev.org/wp-content/uploads/2012/08/1-Appointmetns-Menu.png)
 
-  Wenn Du auf den Menüpunkt klickst, werden drei Untermenüs angezeigt. Wir werden jedes einzeln und der Reihe nach angehen. [
+  Wenn Du auf den Menüpunkt klickst, werden drei Untermenüs angezeigt. Wir werden jedes einzeln und der Reihe nach angehen.
 
-![Untermenü „Termine“](https://premium.wpmudev.org/wp-content/uploads/2012/08/2-Appointments-Submenu1.png „Untermenü „Termine“)
+![Untermenü „Termine“](https://premium.wpmudev.org/wp-content/uploads/2012/08/2-Appointments-Submenu1.png)
 
 ##### Termine
 
 Wenn Du auf **Termine** klickst, gelangst Du zum Zentrum Deiner Terminliste. Du wirst sehen, dass Deine Termine nach Status getrennt sind: Aktiv, Ausstehend, Abgeschlossen und Entfernt. Du kannst die einzelnen Seiten anzeigen, indem Du auf die entsprechenden Links klickst. Auf jeder Seite werden die grundlegenden Kunden- und Serviceinformationen wie folgt angezeigt. Oben auf der Seite siehst Du die Schaltfläche „Neu hinzufügen“, genau wie beim Erstellen einer neuen Seite oder eines neuen Beitrags. Klicke darauf und Du kannst Deinem Kalender manuell einen neuen Termin hinzufügen. [
 
-![Neuen Termin hinzufügen](https://premium.wpmudev.org/wp-content/uploads/2012/08/3-Add-New.png „Neuen Termin hinzufügen“)
+![Neuen Termin hinzufügen](https://premium.wpmudev.org/wp-content/uploads/2012/08/3-Add-New.png)
 
 Das Menü „Neuer Termin“ ist ziemlich selbsterklärend. Es gibt einen Platz für die Kundeninformationen, die Serviceinformationen (die später aus den Menüs ausgefüllt werden) und einen Platz für Notizen. Zu guter Letzt kannst Du den Status vor dem Speichern festlegen. _Es gibt auch ein integriertes Tutorial, das dies abdeckt. Ich zeige Dir, wo Du es findest, für den Fall, dass Du Fragen hast oder etwas vergessen hast._ 
 
-![Neues Meta hinzufügen](https://premium.wpmudev.org/wp-content/uploads/2012/08/4-Add-New-Meta.png „Neues Meta hinzufügen“)
+![Neues Meta hinzufügen](https://premium.wpmudev.org/wp-content/uploads/2012/08/4-Add-New-Meta.png)
 
   Next Up...
 
@@ -120,7 +120,7 @@ Das Menü „Neuer Termin“ ist ziemlich selbsterklärend. Es gibt einen Platz 
 
 Hier sehen Sie Ihre Transaktionen, wenn Sie Zahlungen oder Einzahlungen entgegennehmen. Diese sind auch gruppiert: „Aktuell“, „Ausstehend“ und „Zukünftig“. Sie können jeweils durch Klicken auf die entsprechenden Links darauf zugreifen. Sie können eine Transaktion nicht manuell hinzufügen, das Plugin zeichnet nur auf, was über PayPal erfasst wird. [
 
-![Transaktionen](https://premium.wpmudev.org/wp-content/uploads/2012/08/5-Transactions.png „Transaktionen“)
+![Transaktionen](https://premium.wpmudev.org/wp-content/uploads/2012/08/5-Transactions.png)
 
   Und nun das Fleisch dieser Bestie...
 
@@ -128,13 +128,13 @@ Hier sehen Sie Ihre Transaktionen, wenn Sie Zahlungen oder Einzahlungen entgegen
 
 Das Menü **Einstellungen** begrüßt Sie mit einer Anleitung. Darauf sollten Sie achten :) Hier erfahren Sie, was Sie über die Einrichtung des Plugins und die hier angezeigten Registerkarten wissen müssen. Die meisten sind ziemlich einfach zu verstehen und die Plugin-Optionen sind sehr gut kommentiert, sodass Sie keine Probleme haben sollten. Wir können sie hier einzeln durchsehen und zusammenfassen, aber ich werde Ihre Aufmerksamkeit zuerst auf die Registerkarte „FAQ“ lenken. [
 
-![Einstellungsmenü](https://premium.wpmudev.org/wp-content/uploads/2012/08/6-Settings-Menu.png „Einstellungsmenü“)
+![Einstellungsmenü](https://premium.wpmudev.org/wp-content/uploads/2012/08/6-Settings-Menu.png)
 
 ##### FAQ
 
 Hier finden Sie Informationen zu allem, was Sie in diesem Plugin benötigen, bereit zum sofortigen Zugriff! Die ZWEI wichtigsten Informationen auf dieser Seite für diejenigen, die das Plugin gerade erst installieren oder lernen, wie man es benutzt, sind die beiden Links oben. Dadurch werden die Tutorials zu den Menüoptionen „Einstellungen“ und „Termine eingeben und bearbeiten“ gestartet (oder neu gestartet). [
 
-![FAQ](https://premium.wpmudev.org/wp-content/uploads/2012/08/7-FAQ.png „FAQ“)
+![FAQ](https://premium.wpmudev.org/wp-content/uploads/2012/08/7-FAQ.png)
 
   Lassen Sie uns nun einen Rückzieher machen. Beginnen Sie mit der ersten Registerkarte:
 
@@ -150,39 +150,39 @@ Diese Einstellungen sind das Herz und die Seele Ihres Setups. Achten Sie besonde
 
 [
 
-![Allgemeine Einstellungen](https://premium.wpmudev.org/wp-content/uploads/2012/08/8-General1.png „Allgemeine Einstellungen“)
+![Allgemeine Einstellungen](https://premium.wpmudev.org/wp-content/uploads/2012/08/8-General1.png)
 
 ##### Arbeitszeit
 
-Legen Sie Ihre Öffnungszeiten und Pausenzeiten fest. Denken Sie an Geschäftszeiten und „_Ausgehen zum Mittagessen_“. Sie können sogar unterschiedliche Öffnungszeiten für verschiedene Dienstanbieter festlegen. Macht es einfach, den Überblick über unterschiedliche Zeitpläne zu behalten! [
+Legen Sie Ihre Öffnungszeiten und Pausenzeiten fest. Denken Sie an Geschäftszeiten und „_Ausgehen zum Mittagessen_“. Sie können sogar unterschiedliche Öffnungszeiten für verschiedene Dienstanbieter festlegen. Macht es einfach, den Überblick über unterschiedliche Zeitpläne zu behalten!
 
-![Arbeitszeiten](https://premium.wpmudev.org/wp-content/uploads/2012/08/9-Working-Hours.png „Arbeitszeiten“)
+![Arbeitszeiten](https://premium.wpmudev.org/wp-content/uploads/2012/08/9-Working-Hours.png)
 
 ##### Ausnahmen
 
-Ruhetage, Feiertage, geplante Wartungsarbeiten usw. Sie können sie alle hier hinzufügen. Sie können auch Arbeitstage definieren, die normalerweise arbeitsfreie Tage sind (z. B. einen bestimmten Sonntag). Diese können auch pro Dienstanbieter eingestellt werden. [
+Ruhetage, Feiertage, geplante Wartungsarbeiten usw. Sie können sie alle hier hinzufügen. Sie können auch Arbeitstage definieren, die normalerweise arbeitsfreie Tage sind (z. B. einen bestimmten Sonntag). Diese können auch pro Dienstanbieter eingestellt werden.
 
-![Ausnahmen](https://premium.wpmudev.org/wp-content/uploads/2012/08/10-Exceptions.png „Ausnahmen“)
+![Ausnahmen](https://premium.wpmudev.org/wp-content/uploads/2012/08/10-Exceptions.png)
 
 ##### Dienstleistungen
 
-Was machst du?! Was bieten Sie?! Hier legen Sie alles dar. Legen Sie eine Kapazität, einen Preis und sogar eine Beschreibungsseite fest. [
+Was machst du?! Was bieten Sie?! Hier legen Sie alles dar. Legen Sie eine Kapazität, einen Preis und sogar eine Beschreibungsseite fest.
 
-![Dienste](https://premium.wpmudev.org/wp-content/uploads/2012/08/11-Services.png „Dienste“)
+![Dienste](https://premium.wpmudev.org/wp-content/uploads/2012/08/11-Services.png)
 
 ##### Dienstleister
 
-Es ist nicht erforderlich, dass Sie mehr als eine Person zur Verfügung haben, die die zu erledigenden Aufgaben erledigt, aber wenn doch, behalten Sie hier den Überblick über alle. Sie können sogar zusätzliche Gebühren hinzufügen und einem Anbieter mehr als einen Dienst zuweisen. Hängen Sie sie sogar an eine Bio-Seite an. _Hinweis: Diese Registerkarte wird erst ausgefüllt, wenn **mindestens ein** Dienst auf der Registerkarte „Dienste“ aufgeführt ist._ [
+Es ist nicht erforderlich, dass Sie mehr als eine Person zur Verfügung haben, die die zu erledigenden Aufgaben erledigt, aber wenn doch, behalten Sie hier den Überblick über alle. Sie können sogar zusätzliche Gebühren hinzufügen und einem Anbieter mehr als einen Dienst zuweisen. Hängen Sie sie sogar an eine Bio-Seite an. _Hinweis: Diese Registerkarte wird erst ausgefüllt, wenn **mindestens ein** Dienst auf der Registerkarte „Dienste“ aufgeführt ist._
 
-![Dienstanbieter](https://premium.wpmudev.org/wp-content/uploads/2012/08/12-Service-Providers.png „Dienstanbieter“)
+![Dienstanbieter](https://premium.wpmudev.org/wp-content/uploads/2012/08/12-Service-Providers.png)
 
  
 
 ##### Protokolle
 
-Bleiben Sie auf dem Laufenden, indem Sie Ihre Protokolle überprüfen. Auf dieser praktischen Registerkarte finden Sie Aktualisierungen zu allem, was auf Ihrer Website passiert. Statusänderungen, Transaktionen und dergleichen. [
+Bleiben Sie auf dem Laufenden, indem Sie Ihre Protokolle überprüfen. Auf dieser praktischen Registerkarte finden Sie Aktualisierungen zu allem, was auf Ihrer Website passiert. Statusänderungen, Transaktionen und dergleichen.
 
-![Protokolle](https://premium.wpmudev.org/wp-content/uploads/2012/08/14-Logs.png „Protokolle“)
+![Protokolle](https://premium.wpmudev.org/wp-content/uploads/2012/08/14-Logs.png)
 
 ##### Shortcodes
 
