@@ -155,7 +155,7 @@ jQuery(document).ready(function($){
 		<p> <?php _e('Ja. Für jeden Dienstleister kannst Du individuell Arbeitszeiten, Pausenzeiten und Ausnahmen (Feiertage und zusätzliche Arbeitstage) festlegen. Verwende dazu die Registerkarten <i>Arbeitszeiten</i> und <i>Ausnahmen</i> und wähle den Dienstanbieter, den Du ändern möchtest, aus dem Dropdown-Menü Dienstanbieter aus, nimm die erforderlichen Änderungen vor und speichere sie. Bitte beachte, dass beim Hinzufügen eines Dienstanbieters sein Arbeitszeitplan auf den Geschäftsarbeitszeitplan festgelegt wird. Du musst also nur die Variationen seines Zeitplans bearbeiten.', 'appointments');?> </p>
 	</li>
 	<li class="faq-answer" id='q19'>
-		<p> <?php printf(__('PS Terminmanager folgt den Einstellungen für Datum und Uhrzeit von WordPress. Wenn Du sie auf der Seite %s änderst, werden sie vom Plugin automatisch angepasst.', 'appointments'), '<a href="'.admin_url('options-general.php').'" target="_blank">'.__('Allgemeine Einstellungen','appointments').'</a>');?> </p>
+		<p> <?php printf(__('PS Terminmanager folgt den Einstellungen für Datum und Uhrzeit von ClassicPress. Wenn Du sie auf der Seite %s änderst, werden sie vom Plugin automatisch angepasst.', 'appointments'), '<a href="'.admin_url('options-general.php').'" target="_blank">'.__('Allgemeine Einstellungen','appointments').'</a>');?> </p>
 	</li>
 	<li class="faq-answer" id='q20'>
 		<p> <?php _e('Dies ist die Kapazität eines Dienstes (z.B. aus technischen Gründen), unabhängig von der Anzahl der Dienstanbieter, die diesen Dienst anbieten. Stelle Dir eine Zahnklinik vor, in der drei Zahnärzte arbeiten, die jeweils ihre Untersuchungsräume haben, aber es gibt nur eine Röntgeneinheit. Dann hat der Röntgendienst die Kapazität 1 und der Prüfungsdienst die Kapazität 3. Bitte beachte, dass Du in diesem Fall nur die Kapazität des Röntgendienstes 1 definieren solltest. Die anderen Dienste, deren Kapazität als Null belassen wird, werden automatisch auf die Anzahl der Zahnärzte begrenzt, die diesen bestimmten Dienst anbieten. Denn für diese kommt die Einschränkung von den Dienstanbietern, nicht vom Dienst selbst. Das Kapazitätsfeld dient zur Begrenzung der Belegschaft und nicht zur Erhöhung der Belegschaft. In den häufig gestellten Fragen (FAQ) im Abschnitt "Erweitert" kannst Du Deine verfügbare Belegschaft und damit die Anzahl der verfügbaren Termine pro Zeitfenster erhöhen.', 'appointments');?> </p>
@@ -220,7 +220,7 @@ jQuery(document).ready(function($){
 	</li>
 
 	<li class="faq-answer" id='q33'>
-		<p> <?php _e('PHP V5.3 oder höher, PHP Extentions Curl, JSON, http_build_query sind erforderlich, um die Google Kalender-API zu verwenden. Außerdem benötigst Du einen FTP-Zugriff auf Deine Website, um die private Schlüsseldatei hochladen zu können. Diese Datei kann nicht mit der WordPress-Medien-Upload-Funktion hochgeladen werden.', 'appointments');?> </p>
+		<p> <?php _e('PHP V5.3 oder höher, PHP Extentions Curl, JSON, http_build_query sind erforderlich, um die Google Kalender-API zu verwenden. Außerdem benötigst Du einen FTP-Zugriff auf Deine Website, um die private Schlüsseldatei hochladen zu können. Diese Datei kann nicht mit der ClassicPress-Medien-Upload-Funktion hochgeladen werden.', 'appointments');?> </p>
 	</li>
 
 	<li class="faq-answer" id='q34'>
@@ -366,7 +366,7 @@ jQuery(document).ready(function($){
 
 			if ( answer === 39 ) {
 				advancedGroup = $( '<optgroup />' )
-					.attr( 'label', "<?php _e( 'Erweitert: Dieser Teil der FAQ erfordert einige Kenntnisse über HTML-, PHP- und/oder WordPress-Codierung.', 'appointments' ); ?>" );
+					.attr( 'label', "<?php _e( 'Erweitert: Dieser Teil der FAQ erfordert einige Kenntnisse über HTML-, PHP- und/oder ClassicPress-Codierung.', 'appointments' ); ?>" );
 
 				indexSelector.append( advancedGroup );
 			}

@@ -35,7 +35,7 @@ if ( ! class_exists( 'App_Shortcode_Login' ) ) {
 		}
 
 		public function get_usage_info () {
-			return __('Fügt Front-End-Anmeldeschaltflächen für Facebook, Twitter und WordPress ein.', 'appointments');
+			return __('Fügt Front-End-Anmeldeschaltflächen für Facebook, Twitter und ClassicPress ein.', 'appointments');
 		}
 
 		public function process_shortcode ($args=array(), $content='') {

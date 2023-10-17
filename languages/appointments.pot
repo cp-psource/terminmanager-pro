@@ -1,8 +1,8 @@
 # Copyright (C) 2019 WMS N@W
-# This file is distributed under the same license as the Appointments+ package.
+# This file is distributed under the same license as the Terminmanager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Appointments+ PLUGIN_VERSION\n"
+"Project-Id-Version: Terminmanager PLUGIN_VERSION\n"
 "Report-Msgid-Bugs-To: https://psource.org\n"
 "POT-Creation-Date: 2019-03-18 08:21:28+00:00\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgid "Is it necessary to use Services and Service Providers shortcodes?"
 msgstr ""
 
 #: admin/app-faq.php:11
-msgid "Does Appointments+ provide some widgets?"
+msgid "Does Terminmanager provide some widgets?"
 msgstr ""
 
 #: admin/app-faq.php:12
@@ -129,7 +129,7 @@ msgstr ""
 #: admin/app-faq.php:21
 msgid ""
 "I have several service providers (workers) and each of them has different "
-"working hours, break hours and holidays. Does Appointments+ support this?"
+"working hours, break hours and holidays. Does Terminmanager support this?"
 msgstr ""
 
 #: admin/app-faq.php:22
@@ -149,7 +149,7 @@ msgstr ""
 #: admin/app-faq.php:25
 msgid ""
 "I am giving a service only on certain days of the week, different than my "
-"normal working days. Is it possible to set this in Appointments+?"
+"normal working days. Is it possible to set this in Terminmanager?"
 msgstr ""
 
 #: admin/app-faq.php:26
@@ -168,7 +168,7 @@ msgstr ""
 
 #: admin/app-faq.php:29
 msgid ""
-"I have just installed Appointments+ and nothing happens as I click a free "
+"I have just installed Terminmanager and nothing happens as I click a free "
 "time slot on the Make an Appointment page. What can be the problem?"
 msgstr ""
 
@@ -287,7 +287,7 @@ msgstr ""
 
 #: admin/app-faq.php:96
 msgid ""
-"<i>Time Base</i> is the most important parameter of Appointments+. It is "
+"<i>Time Base</i> is the most important parameter of Terminmanager. It is "
 "the minimum time that you can select for your appointments. If you set it "
 "too high then you may not be possible to optimize your appointments. If you "
 "set it too low, your schedule will be too crowded and you may have "
@@ -339,7 +339,7 @@ msgstr ""
 
 #: admin/app-faq.php:114
 msgid ""
-"Yes. Appointments+ requires at least one service to be defined. Please note "
+"Yes. Terminmanager requires at least one service to be defined. Please note "
 "that a default service should have been already installed during "
 "installation. If you delete it, and no other service remains, then you will "
 "get a warning message. In this case plugin may not function properly."
@@ -349,14 +349,14 @@ msgstr ""
 msgid ""
 "No. You may as well be working by yourself, doing your own business. Plugin "
 "will work properly without any service provider, i.e worker, defined. In "
-"this case Appointments+ assumes that there is ONE service provider working, "
+"this case Terminmanager assumes that there is ONE service provider working, "
 "giving all the services."
 msgstr ""
 
 #: admin/app-faq.php:120
 msgid ""
 "No. If you do not use these shortcodes then your client will not be able to "
-"select a service and Appointments+ will pick the service with the smallest "
+"select a service and Terminmanager will pick the service with the smallest "
 "ID or the one selected with \"service\" parameter of the schedule "
 "shortcode. We have already noted that a service provider definition is only "
 "optional."
@@ -364,7 +364,7 @@ msgstr ""
 
 #: admin/app-faq.php:123
 msgid ""
-"Yes. Appointments+ has Services and Service Providers widgets which "
+"Yes. Terminmanager has Services and Service Providers widgets which "
 "provides a list of service or service providers with links to their "
 "description/bio pages and a Monthly Calendar widget that redirects user to "
 "the selected appointment page when a free day is clicked. Note: Service and "
@@ -471,7 +471,7 @@ msgstr ""
 
 #: admin/app-faq.php:158
 msgid ""
-"Appointments+ follows WordPress date and time settings. If you change them "
+"Terminmanager follows ClassicPress date and time settings. If you change them "
 "from %s page, plugin will automatically adapt them."
 msgstr ""
 
@@ -517,7 +517,7 @@ msgstr ""
 
 #: admin/app-faq.php:176
 msgid ""
-"Appointments+ checks the availability of the appointment twice: First when "
+"Terminmanager checks the availability of the appointment twice: First when "
 "client clicks a free box and then when he clicks the confirmation button. "
 "If that time slot is taken by another client during these checks, he will "
 "be acknowledged that that time frame is not avaliable any more. All these "
@@ -527,7 +527,7 @@ msgstr ""
 
 #: admin/app-faq.php:180
 msgid ""
-"Appointments+ comes with a built-in specific cache. It functions only on "
+"Terminmanager comes with a built-in specific cache. It functions only on "
 "appointment pages and caches the content part of the page only. It is "
 "recommended to enable it especially if you have a high traffic appointment "
 "page. You can continue to use other general purpose caching plugins, namely "
@@ -546,7 +546,7 @@ msgid ""
 "or errors, then switch to the default theme to locate the issue. If errors "
 "disappear, then you need to check and correct your theme files. If they "
 "don't disappear, then deactivate all your plugins and re-activate them one "
-"by one, starting from Appointments+ and check each time as you activate a "
+"by one, starting from Terminmanager and check each time as you activate a "
 "plugin."
 msgstr ""
 
@@ -554,7 +554,7 @@ msgstr ""
 msgid ""
 "Membership member levels can be let exempt from advance payments/deposits. "
 "Also you can apply discounts for the selected membership levels. There are "
-"no special considerations: Appointments+ will be managing them "
+"no special considerations: Terminmanager will be managing them "
 "automatically."
 msgstr ""
 
@@ -562,7 +562,7 @@ msgstr ""
 msgid ""
 "If you select <i>Integrate with PSeCommerce</i> which is visible after "
 "<i>Payment Required</i> is set as Yes, any PSeCommerce product page having "
-"Appointments+ shortcodes will be regarded as an \"Appointment Product "
+"Terminmanager shortcodes will be regarded as an \"Appointment Product "
 "Page\". Those pages are automatically modified and you are not supposed to "
 "be doing anything special. For your information, here is how the "
 "integration works:"
@@ -602,7 +602,7 @@ msgstr ""
 #: admin/app-faq.php:198
 msgid ""
 "\"Add to Cart\" and \"Buy Now\" buttons are only possible for a full "
-"appointment product page, therefore on products list page, an Appointments+ "
+"appointment product page, therefore on products list page, an Terminmanager "
 "product will always have a \"Choose Option\" button. No price will be "
 "shown. For the same reason, please use Single Product shortcode with only "
 "content=\"full\" setting."
@@ -610,7 +610,7 @@ msgstr ""
 
 #: admin/app-faq.php:199
 msgid ""
-"Paypal button of Appointments+ is invisible and thus its own Paypal "
+"Paypal button of Terminmanager is invisible and thus its own Paypal "
 "Standard Payments option is disabled. Client will use the payment gateways "
 "PSeCommerce is providing. You can use all PSeCommerce payment gateways."
 msgstr ""
@@ -648,7 +648,7 @@ msgstr ""
 
 #: admin/app-faq.php:205
 msgid ""
-"On the admin product management page if it is an Appointments+ Product, "
+"On the admin product management page if it is an Terminmanager Product, "
 "variations, SKU, price column fields will display \"-\"."
 msgstr ""
 
@@ -697,7 +697,7 @@ msgid ""
 "PHP V5.3 or above, php extentions curl, JSON, http_build_query are required "
 "to use Google Calendar API. Also you need to have FTP access to your "
 "website in order to upload the private key file. This file cannot be "
-"uploaded using WordPress media upload function."
+"uploaded using ClassicPress media upload function."
 msgstr ""
 
 #: admin/app-faq.php:227
@@ -776,7 +776,7 @@ msgstr ""
 
 #: admin/app-faq.php:258
 msgid ""
-"Yes. Using <pre>do_shortcode</pre> function and loading Appointments+ css "
+"Yes. Using <pre>do_shortcode</pre> function and loading Terminmanager css "
 "and javascript files, you can do this. See sample-appointments-page.php "
 "file in /includes directory for a sample."
 msgstr ""
@@ -807,7 +807,7 @@ msgstr ""
 
 #: admin/app-faq.php:281
 msgid ""
-"Please note that Appointments+ is designed for one-to-one appointments, "
+"Please note that Terminmanager is designed for one-to-one appointments, "
 "that is, one service provider serving a single client at a time and to "
 "manage available workforce. Capacity field is for limiting the workforce, "
 "not for increasing it. You have two alternatives to achieve this: a) Use "
@@ -825,7 +825,7 @@ msgstr ""
 
 #: admin/app-faq.php:296
 msgid ""
-"Appointments+ uses wp_mail function and HTML is disabled as default. To "
+"Terminmanager uses wp_mail function and HTML is disabled as default. To "
 "enable HTML in emails, add these codes inside functions.php:"
 msgstr ""
 
@@ -842,7 +842,7 @@ msgstr ""
 #: admin/app-faq.php:369
 msgid ""
 "Advanced: This part of FAQ requires some knowledge about HTML, PHP and/or "
-"WordPress coding."
+"ClassicPress coding."
 msgstr ""
 
 #: admin/app-faq.php:393
@@ -850,7 +850,7 @@ msgid "Select a question"
 msgstr ""
 
 #: admin/class-app-addons-admin-list-table.php:29
-msgid "Upgrade to Appointments+ to activate"
+msgid "Upgrade to Terminmanager to activate"
 msgstr ""
 
 #: admin/class-app-addons-admin-list-table.php:35
@@ -972,7 +972,7 @@ msgstr ""
 #: admin/class-app-admin.php:301
 msgid ""
 "<b>[Terminmanager]</b> One of your services has a duration greater than 24 "
-"hours. Appointments+ does not support services exceeding 1440 minutes (24 "
+"hours. Terminmanager does not support services exceeding 1440 minutes (24 "
 "hours). "
 msgstr ""
 
@@ -990,7 +990,7 @@ msgstr ""
 
 #: admin/class-app-admin.php:322
 msgid ""
-"<b>[Terminmanager]</b> Appointments+ database tables need to be updated. "
+"<b>[Terminmanager]</b> Terminmanager database tables need to be updated. "
 "Please deactivate and reactivate the plugin (DO NOT DELETE the plugin). You "
 "will not lose any saved information."
 msgstr ""
@@ -1238,7 +1238,7 @@ msgstr ""
 msgid ""
 "<b>Reserved by GCal:</b> If you import appointments from Google Calender "
 "using Google Calendar API, that is, synchronize your calendar with "
-"Appointments+, events in your Google Calendar will be regarded as "
+"Terminmanager, events in your Google Calendar will be regarded as "
 "appointments and they will be shown here. These records cannot be edited "
 "here. Use your Google Calendar instead. They will be automatically updated "
 "in A+ too."
@@ -1859,7 +1859,7 @@ msgstr ""
 #: admin/views/page-settings-tab-main-section-accesibility.php:108
 msgid ""
 "Enables login to website from front end using Facebook, Twitter, Google+ or "
-"WordPress."
+"ClassicPress."
 msgstr ""
 
 #: admin/views/page-settings-tab-main-section-accesibility.php:114
@@ -2065,8 +2065,8 @@ msgstr ""
 
 #: admin/views/page-settings-tab-main-section-gdpr.php:7
 msgid ""
-"GDPR settings are not available for WordPress version lower than 4.9.6. "
-"Please update your WordPress first."
+"GDPR settings are not available for ClassicPress version lower than 4.9.6. "
+"Please update your ClassicPress first."
 msgstr ""
 
 #: admin/views/page-settings-tab-main-section-gdpr.php:14
@@ -2708,7 +2708,7 @@ msgid "Login with Google+"
 msgstr ""
 
 #: appointments.php:1845
-msgid "Login with WordPress"
+msgid "Login with ClassicPress"
 msgstr ""
 
 #: appointments.php:1846 includes/gcal/views/settings-gcal-step-1.php:70
@@ -2983,7 +2983,7 @@ msgstr ""
 
 #: includes/class-app-gdpr.php:424
 msgid ""
-"When visitors book an appointment on your site using Appointments+ the data "
+"When visitors book an appointment on your site using Terminmanager the data "
 "is stored. If you use the Additional Fields add-on make sure to update your "
 "privacy policy to reflect any additional information you have requested "
 "from your clients."
@@ -3001,13 +3001,13 @@ msgid ""
 msgstr ""
 
 #: includes/class-app-gdpr.php:430
-msgid "How long Appointments+ retains your data"
+msgid "How long Terminmanager retains your data"
 msgstr ""
 
 #: includes/class-app-gdpr.php:432
 msgid ""
 "Manually remove user information on an erasure request or use he "
-"Appointments+ GDPR settings to automatically delete information after an "
+"Terminmanager GDPR settings to automatically delete information after an "
 "allotted time."
 msgstr ""
 
@@ -3020,7 +3020,7 @@ msgid "Third Parties"
 msgstr ""
 
 #: includes/class-app-gdpr.php:440
-msgid "If you choose to, you can sync Appointments+ with your Google Calendar."
+msgid "If you choose to, you can sync Terminmanager with your Google Calendar."
 msgstr ""
 
 #: includes/class-app-gdpr.php:444
@@ -3032,16 +3032,16 @@ msgstr ""
 #: includes/class-app-service.php:56
 msgid ""
 "You have reached the limit for the free version. <a href=\"%s\">Upgrade to "
-"Appointments+ for unlimited services</a>"
+"Terminmanager for unlimited services</a>"
 msgstr ""
 
 #: includes/class-app-tutorial.php:44
-msgid "Appointments+ Tutorial"
+msgid "Terminmanager Tutorial"
 msgstr ""
 
 #: includes/class-app-tutorial.php:45
 msgid ""
-"Welcome to Appointments+ plugin. This tutorial will hopefully help you to "
+"Welcome to Terminmanager plugin. This tutorial will hopefully help you to "
 "make a quick start by adjusting the most important settings to your needs. "
 "You can restart this tutorial any time clicking the link on the FAQ page."
 msgstr ""
@@ -3052,7 +3052,7 @@ msgstr ""
 
 #: includes/class-app-tutorial.php:50
 msgid ""
-"Time Base is the most important parameter of Appointments+. It is the "
+"Time Base is the most important parameter of Terminmanager. It is the "
 "minimum time that you can select for your appointments. If you set it too "
 "high then you may not be possible to optimize your appointments. If you set "
 "it too low, your schedule will be too crowded and you may have difficulty "
@@ -3310,7 +3310,7 @@ msgstr ""
 #: includes/class-app-tutorial.php:226
 msgid ""
 "It is always possible to Cancel. Please note that these records are NOT "
-"saved until you click the Save button. Thanks for using Appointments+"
+"saved until you click the Save button. Thanks for using Terminmanager"
 msgstr ""
 
 #: includes/class-app-worker.php:151
@@ -3659,7 +3659,7 @@ msgstr ""
 msgid ""
 "Select method of integration. A+ -> GCal setting sends appointments to your "
 "selected Google calendar, but events in your Google Calendar account are "
-"not imported to Appointments+ and thus they do not reserve your available "
+"not imported to Terminmanager and thus they do not reserve your available "
 "working times. A+ <-> GCal setting works in both directions."
 msgstr ""
 
@@ -3797,7 +3797,7 @@ msgstr ""
 #: includes/gcal/views/settings-gcal-step-1.php:28
 msgid ""
 "... and then \"OAuth consent screen\" tab. Choose a product name shown to "
-"users, i.e. \"Appointments+\""
+"users, i.e. \"Terminmanager\""
 msgstr ""
 
 #: includes/gcal/views/settings-gcal-step-1.php:32
@@ -4468,7 +4468,7 @@ msgid "This is the post type that will be used as descriptions for your services
 msgstr ""
 
 #: includes/pro/includes/addons/app-post_types-worker_names.php:102
-msgid "As set in Appointments+ settings in profile (default)"
+msgid "As set in Terminmanager settings in profile (default)"
 msgstr ""
 
 #: includes/pro/includes/addons/app-post_types-worker_names.php:103
@@ -4780,7 +4780,7 @@ msgid "Google"
 msgstr ""
 
 #: includes/pro/includes/addons/app-users-limit_services_login.php:107
-msgid "WordPress"
+msgid "ClassicPress"
 msgstr ""
 
 #: includes/pro/includes/addons/lib/app_service_locations_shortcode.php:9
@@ -5259,7 +5259,7 @@ msgid ""
 msgstr ""
 
 #: includes/shortcodes/class-app-shortcode-login.php:38
-msgid "Inserts front end login buttons for Facebook, Twitter and WordPress."
+msgid "Inserts front end login buttons for Facebook, Twitter and ClassicPress."
 msgstr ""
 
 #: includes/shortcodes/class-app-shortcode-monthly-schedule.php:18
@@ -5922,7 +5922,7 @@ msgid "Creates a dropdown menu of available services."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Appointments+"
+msgid "Terminmanager"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -5956,7 +5956,7 @@ msgid "List of services and links to their description pages"
 msgstr ""
 
 #: includes/widgets.php:56
-msgid "Appointments+ Services"
+msgid "Terminmanager Services"
 msgstr ""
 
 #: includes/widgets.php:85
@@ -5968,7 +5968,7 @@ msgid "List of service providers and links to their bio pages"
 msgstr ""
 
 #: includes/widgets.php:112
-msgid "Appointments+ Service Providers"
+msgid "Terminmanager Service Providers"
 msgstr ""
 
 #: includes/widgets.php:152
@@ -5988,7 +5988,7 @@ msgid ""
 msgstr ""
 
 #: includes/widgets.php:187
-msgid "Appointments+ Monthly Calendar"
+msgid "Terminmanager Monthly Calendar"
 msgstr ""
 
 #: includes/widgets.php:250
@@ -6069,7 +6069,7 @@ msgstr ""
 
 #: includes/class-app-gdpr.php:234
 msgctxt "Pro plugin name in personal data exporter."
-msgid "Appointments+ Plugin"
+msgid "Terminmanager Plugin"
 msgstr ""
 
 #: includes/class-app-notifications-manager.php:46

@@ -114,7 +114,6 @@ if ( ! class_exists( 'App_Shortcode_Pagination' ) ) {
 
 				<?php
 				// Do not let clicking box inside legend area
-				//$appointments->add2footer( '$("table.appointments-legend-table td.free").click(false);' );
 				$appointments->add2footer( '$("table.appointments-legend-table td.free").on("click", false);' );
 			}
 

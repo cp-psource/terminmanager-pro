@@ -35,18 +35,17 @@ $MyUpdateChecker = PucFactory::buildUpdateChecker(
 	'terminmanager-pro' 
 );
 
-if ( ! class_exists( 'Appointments' ) ) {
+if (!class_exists('Appointments')) {
 
 	class Appointments {
 
 		public $version = '1.1.0';
 		public $db_version;
-
+	
 		public $timetables = array();
-
+	
 		public $local_time;
-		/** @var bool|Appointments_Appointments_Google_Calendar  */
-		public $gcal_api = false;
+		public $gcal_api;
 		public $locale_error;
 		public $time_format;
 		public $datetime_format;
@@ -57,181 +56,194 @@ if ( ! class_exists( 'Appointments' ) ) {
 		public $service;
 		public $openid;
 		public $plugin_url;
-		/** @var Appointments_Admin  */
 		public $admin;
-
-		/** @var  Appointments_Addons_Loader */
+		public $options;
+		public $start_of_week;
+		public $date_format;
+		public $pages_to_be_cached;
+		public $had_filter;
+		public $services_table;
+		public $transaction_table;
+		public $cache_table;
+		public $uploads_dir;
+		public $error_url;
+		public $db;
+		public $uri;
+		public $script;
+		public $gcal_image;
+	
 		public $addons_loader;
-
-		/** @var Appointments_Notifications_Manager */
+	
 		public $notifications;
-
-		/**
-		 * @var Appointments_GDPR
-		 *
-		 * @since 2.3.0
-		 */
+	
 		public $gdpr;
-
+	
 		public $pro = false;
-
+	
 		public $shortcodes = array();
 
+        function __construct()
+        {
 
-		function __construct() {
+            include_once('includes/helpers.php');
+            include_once('includes/helpers-settings.php');
+            include_once('includes/helpers-timetables.php');
+            include_once('includes/deprecated-hooks.php');
+            include_once('includes/class-app-notifications-manager.php');
+            include_once('includes/class-app-api-logins.php');
+            include_once('includes/class-app-sessions.php');
+            include_once('includes/class-app-gdpr.php');
 
-			include_once( 'includes/helpers.php' );
-			include_once( 'includes/helpers-settings.php' );
-			include_once( 'includes/helpers-timetables.php' );
-			include_once( 'includes/deprecated-hooks.php' );
-			include_once( 'includes/class-app-notifications-manager.php' );
-			include_once( 'includes/class-app-api-logins.php' );
-			include_once( 'includes/class-app-sessions.php' );
-			include_once( 'includes/class-app-gdpr.php' );
+            // Load premium features
+            if (_appointments_is_pro()) {
+                include_once(appointments_plugin_dir() . 'includes/pro/class-app-pro.php');
+                $this->pro = new Appointments_Pro();
+            }
 
-			// Load premium features
-			if ( _appointments_is_pro() ) {
-				include_once( appointments_plugin_dir() . 'includes/pro/class-app-pro.php' );
-				$this->pro = new Appointments_Pro();
-			}
+            $this->timetables = get_transient('app_timetables');
+            if (!$this->timetables || !is_array($this->timetables)) {
+                $this->timetables = array();
+            }
 
-			$this->timetables = get_transient( 'app_timetables' );
-			if ( ! $this->timetables || ! is_array( $this->timetables ) ) {
-				$this->timetables = array();
-			}
+            $this->plugin_url = plugins_url(basename(dirname(__FILE__)));
 
-			$this->plugin_url = plugins_url( basename( dirname( __FILE__ ) ) );
+            // Read all options at once
+            $this->options = appointments_get_options();
 
-			// Read all options at once
-			$this->options = appointments_get_options();
+            // To follow WP Start of week, time, date settings
+            $this->local_time = current_time('timestamp');
+            $this->start_of_week = appointments_week_start() - 1;
 
-			// To follow WP Start of week, time, date settings
-			$this->local_time = current_time( 'timestamp' );
-			$this->start_of_week = appointments_week_start() - 1;
+            $this->time_format = appointments_get_date_format('time');
+            $this->date_format = appointments_get_date_format('date');
+            $this->datetime_format = appointments_get_date_format('full');
 
-			$this->time_format = appointments_get_date_format( 'time' );
-			$this->date_format = appointments_get_date_format( 'date' );
-			$this->datetime_format = appointments_get_date_format( 'full' );
+            add_action('delete_user', 'appointments_delete_worker'); // Modify database in case a user is deleted
+            add_action('wpmu_delete_user', 'appointments_delete_worker'); // Same as above
+            add_action('remove_user_from_blog', array($this, 'remove_user_from_blog'), 10, 2); // Remove his records only for that blog
 
-			add_action( 'delete_user', 'appointments_delete_worker' );		// Modify database in case a user is deleted
-			add_action( 'wpmu_delete_user', 'appointments_delete_worker' );	// Same as above
-			add_action( 'remove_user_from_blog', array( &$this, 'remove_user_from_blog' ), 10, 2 );	// Remove his records only for that blog
+            add_action('plugins_loaded', array($this, 'localization')); // Localize the plugin
+            add_action('init', array($this, 'init'), 20); // Initial stuff
+            add_filter('the_posts', array($this, 'load_styles')); // Determine if we use shortcodes on the page
 
-			add_action( 'plugins_loaded', array( &$this, 'localization' ) );		// Localize the plugin
-			add_action( 'init', array( &$this, 'init' ), 20 ); 						// Initial stuff
-			add_filter( 'the_posts', array( &$this, 'load_styles' ) );			// Determine if we use shortcodes on the page
+            add_action('admin_init', array($this, 'maybe_upgrade'));
 
-			add_action( 'admin_init', array( $this, 'maybe_upgrade' ) );
+            include_once('includes/class-app-service.php');
+            include_once('includes/class-app-worker.php');
+            include_once('includes/class-app-appointment.php');
+            include_once('includes/class-app-transaction.php');
 
-			include_once( 'includes/class-app-service.php' );
-			include_once( 'includes/class-app-worker.php' );
-			include_once( 'includes/class-app-appointment.php' );
-			include_once( 'includes/class-app-transaction.php' );
+            if (is_admin()) {
+                $this->load_admin();
+            }
 
-			if ( is_admin() ) {
-				$this->load_admin();
-			}
+            if (defined('DOING_AJAX') && DOING_AJAX) {
+                include_once('includes/class-app-ajax.php');
+                new Appointments_AJAX();
+            }
 
-			if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
-				include_once( 'includes/class-app-ajax.php' );
-				new Appointments_AJAX();
-			}
+            // Check for cookies
+            if (!empty($this->options['login_required']) && 'yes' === $this->options['login_required']) {
+                // If we require a login and we had a user logged in,
+                // we don't need cookies after they log out
+                add_action('wp_logout', array($this, 'drop_cookies_on_logout'));
+            }
 
-			// Check for cookies
-			if ( ! empty( $this->options['login_required'] ) && 'yes' === $this->options['login_required'] ) {
-				// If we require a login and we had an user logged in,
-				// we don't need cookies after they log out
-				add_action( 'wp_logout', array( $this, 'drop_cookies_on_logout' ) );
-			}
+            // Widgets
+            require_once(appointments_plugin_dir() . 'includes/widgets.php');
+            add_action('widgets_init', array($this, 'widgets_init'));
 
-			// Widgets
-			require_once( appointments_plugin_dir() . 'includes/widgets.php' );
-			add_action( 'widgets_init', array( &$this, 'widgets_init' ) );
+            // Integration with other plugins/Themes
+            include_once(appointments_plugin_dir() . 'includes/integration/integration.php');
 
-			// Integration with other plugins/Themes
-			include_once( appointments_plugin_dir() . 'includes/integration/integration.php' );
+            $this->pages_to_be_cached = array();
+            $this->had_filter = false; // There can be a wpautop filter. We will check this later on.
 
-			$this->pages_to_be_cached = array();
-			$this->had_filter = false; // There can be a wpautop filter. We will check this later on.
+            add_action('init', array($this, 'get_gcal_api'), 10);
 
-			add_action( 'init', array( $this, 'get_gcal_api' ), 10 );
+            // Database variables
+            global $wpdb;
+            $this->db = &$wpdb;
+            $this->services_table = $wpdb->prefix . 'app_services';
+            $this->transaction_table = $wpdb->prefix . 'app_transactions';
+            $this->cache_table = $wpdb->prefix . 'app_cache';
+            // DB version
+            $this->db_version = get_option('app_db_version');
 
-			// Database variables
-			global $wpdb;
-			$this->db 					= &$wpdb;
-			$this->services_table 		= $wpdb->prefix . 'app_services';
-			$this->transaction_table 	= $wpdb->prefix . 'app_transactions';
-			$this->cache_table 			= $wpdb->prefix . 'app_cache';
-			// DB version
-			$this->db_version 			= get_option( 'app_db_version' );
+            // Set meta tables
+            $wpdb->app_appointmentmeta = appointments_get_table('appmeta');
 
-			// Set meta tables
-			$wpdb->app_appointmentmeta = appointments_get_table( 'appmeta' );
+            // Set log file location
+            $uploads = wp_upload_dir();
+            if (isset($uploads['basedir'])) {
+                $this->uploads_dir = $uploads['basedir'] . '/';
+            } else {
+                $this->uploads_dir = WP_CONTENT_DIR . '/uploads/';
+            }
+            $this->log_file = $this->uploads_dir . 'appointments-log.txt';
 
-			// Set log file location
-			$uploads = wp_upload_dir();
-			if ( isset( $uploads['basedir'] ) ) {
-				$this->uploads_dir 	= $uploads['basedir'] . '/'; } else { 			$this->uploads_dir 	= WP_CONTENT_DIR . '/uploads/'; }
-			$this->log_file 		= $this->uploads_dir . 'appointments-log.txt';
+            // Other default settings
+            $this->script = $this->uri = $this->error_url = '';
+            $this->location = $this->service = $this->worker = 0;
+            $this->gcal_image = '<img src="' . $this->plugin_url . '/images/gc_button1.gif" />';
+            $this->locale_error = false;
 
-			// Other default settings
-			$this->script = $this->uri = $this->error_url = '';
-			$this->location = $this->service = $this->worker = 0;
-			$this->gcal_image = '<img src="' . $this->plugin_url . '/images/gc_button1.gif" />';
-			$this->locale_errlocale_error = false;
+            // Create a salt, if it doesn't exist from the previous installation
+            if (!$salt = get_option('appointments_salt')) {
+                $salt = mt_rand();
+                add_option('appointments_salt', $salt); // Save it to be used until it is cleared manually
+            }
+            $this->salt = $salt;
 
-			// Create a salt, if it doesn't exist from the previous installation
-			if ( ! $salt = get_option( 'appointments_salt' ) ) {
-				$salt = mt_rand();
-				add_option( 'appointments_salt', $salt ); // Save it to be used until it is cleared manually
-			}
-			$this->salt = $salt;
+            // Deal with zero-priced appointments auto-confirm
+            if (isset($this->options['payment_required']) && 'yes' == $this->options['payment_required'] && !empty($this->options['allow_free_autoconfirm'])) {
+                if (!defined('APP_CONFIRMATION_ALLOW_FREE_AUTOCONFIRM')) {
+                    define('APP_CONFIRMATION_ALLOW_FREE_AUTOCONFIRM', true);
+                }
+            }
 
-			// Deal with zero-priced appointments auto-confirm
-			if ( isset( $this->options['payment_required'] ) && 'yes' == $this->options['payment_required'] && ! empty( $this->options['allow_free_autoconfirm'] ) ) {
-				if ( ! defined( 'APP_CONFIRMATION_ALLOW_FREE_AUTOCONFIRM' ) ) { define( 'APP_CONFIRMATION_ALLOW_FREE_AUTOCONFIRM', true ); }
-			}
+            $this->notifications = new Appointments_Notifications_Manager();
+            $this->gdpr = new Appointments_GDPR;
+        }
 
-			$this->notifications = new Appointments_Notifications_Manager();
-			$this->gdpr = new Appointments_GDPR;
-		}
+        public function load_admin()
+        {
+            include_once('admin/class-app-admin.php');
+            $this->admin = new Appointments_Admin();
+        }
 
-		public function load_admin() {
-			include_once( 'admin/class-app-admin.php' );
-			$this->admin = new Appointments_Admin();
-		}
+        function maybe_upgrade()
+        {
+            if (isset($_GET['app-clear']) && current_user_can('manage_options')) {
+                appointments_clear_cache();
+            }
 
-		function maybe_upgrade() {
-			if ( isset( $_GET['app-clear'] ) && current_user_can( 'manage_options' ) ) {
-				appointments_clear_cache();
-			}
+            $db_version = get_option('app_db_version');
 
-			$db_version = get_option( 'app_db_version' );
+            if ($db_version == $this->version) {
+                return;
+            }
 
-			if ( $db_version == $this->version ) {
-				return;
-			}
+            if (false === $db_version) {
+                appointments_activate();
+            }
 
-			if ( false === $db_version ) {
-				appointments_activate();
-			}
+            appointments_clear_cache();
 
-			appointments_clear_cache();
+            include_once('includes/class-app-upgrader.php');
 
-			include_once( 'includes/class-app-upgrader.php' );
+            $upgrader = new Appointments_Upgrader($this->version);
+            $upgrader->upgrade($db_version, $this->version);
+        }
 
-			$upgrader = new Appointments_Upgrader( $this->version );
-			$upgrader->upgrade( $db_version, $this->version );
-		}
-
-
-		function get_gcal_api() {
-			if ( false === $this->gcal_api && ! defined( 'APP_GCAL_DISABLE' ) ) {
-				require_once appointments_plugin_dir() . 'includes/class-app-gcal.php';
-				$this->gcal_api = new Appointments_Appointments_Google_Calendar();
-			}
-			return $this->gcal_api;
-		}
+        function get_gcal_api()
+        {
+            if (false === $this->gcal_api && !defined('APP_GCAL_DISABLE')) {
+                require_once(appointments_plugin_dir() . 'includes/class-app-gcal.php');
+                $this->gcal_api = new Appointments_Appointments_Google_Calendar();
+            }
+            return $this->gcal_api;
+        }
 
 
 
@@ -796,9 +808,9 @@ if ( ! class_exists( 'Appointments' ) ) {
 		}
 
 		/**
-	 * Fetch content from the selected service/worker page.
-	 * Applies custom filter set instead of the default one.
-	 */
+	 	* Fetch content from the selected service/worker page.
+	 	* Applies custom filter set instead of the default one.
+	 	*/
 		function get_content( $page_id, $thumb_size, $thumb_class, $worker_id = 0, $show_thumb_holder = false ) {
 			$content = '';
 			if ( ! $page_id ) {
@@ -820,9 +832,9 @@ if ( ! class_exists( 'Appointments' ) ) {
 		}
 
 		/**
-	 * Clear app shortcodes
-	 * @since 1.1.9
-	 */
+	 	* Clear app shortcodes
+		* @since 1.1.9
+	 	*/
 		function strip_app_shortcodes( $content ) {
 			// Don't even try to touch a non string, just in case
 			if ( ! is_string( $content ) ) {
@@ -830,8 +842,8 @@ if ( ! class_exists( 'Appointments' ) ) {
 		}
 
 		/**
-	 * Get html code for thumbnail or avatar
-	 */
+	 	* Get html code for thumbnail or avatar
+	 	*/
 		function get_thumbnail( $page_id, $thumb_size, $thumb_class, $worker_id ) {
 
 			if ( $thumb_size && 'none' != $thumb_size ) {
@@ -857,61 +869,62 @@ if ( ! class_exists( 'Appointments' ) ) {
 			return apply_filters( 'app_thumbnail', $thumb, $page_id, $worker_id );
 		}
 
-
-
-
-
 		/**
-	 * Build GCal url for GCal Button. It requires UTC time.
-	 * @param start: Timestamp of the start of the app
-	 * @param end: Timestamp of the end of the app
-	 * @param php: If this is called for php. If false, called for js
-	 * @param address: Address of the appointment
-	 * @param city: City of the appointment
-	 * @return string
-	 */
-		function gcal( $service, $start, $end, $php = false, $address, $city ) {
-			// Find time difference from Greenwich as GCal asks UTC
+		 * Build GCal URL for GCal Button. It requires UTC time.
+		 *
+		 * @param service: The service name
+		 * @param start: Timestamp of the start of the appointment
+		 * @param end: Timestamp of the end of the appointment
+		 * @param address: Address of the appointment
+		 * @param city: City of the appointment
+		 * @param php: If this is called for PHP (optional, default is false)
+		 *
+		 * @return string
+		 */
+		function gcal($service, $start, $end, $address, $city, $php = false) {
+			// Find time difference from Greenwich as GCal asks for UTC
 
-			$text = sprintf( __( '%s Terminbuchung', 'appointments' ), $this->get_service_name( $service ) );
+			$text = sprintf(__('Buchung für %s', 'appointments'), $this->get_service_name($service));
 
-			if ( ! $php ) { $text = esc_js( $text ); }
+			if (!$php) {
+				$text = esc_js($text);
+			}
 
-			$gmt_start = get_gmt_from_date( date( 'Y-m-d H:i:s', $start ), 'Ymd\THis\Z' );
-			$gmt_end = get_gmt_from_date( date( 'Y-m-d H:i:s', $end ), 'Ymd\THis\Z' );
+			$gmt_start = get_gmt_from_date(date('Y-m-d H:i:s', $start), 'Ymd\THis\Z');
+			$gmt_end = get_gmt_from_date(date('Y-m-d H:i:s', $end), 'Ymd\THis\Z');
 
-			$location = isset( $this->options['gcal_location'] ) && '' != trim( $this->options['gcal_location'] )
-			? esc_js( str_replace( array( 'ADDRESS', 'CITY' ), array( $address, $city ), $this->options['gcal_location'] ) )
-			: esc_js( get_bloginfo( 'description' ) );
+			$location = isset($this->options['gcal_location']) && '' != trim($this->options['gcal_location'])
+				? esc_js(str_replace(array('ADDRESS', 'CITY'), array($address, $city), $this->options['gcal_location']))
+				: esc_js(get_bloginfo('description'));
 
 			$param = array(
-			'action' => 'TEMPLATE',
-			'text' => $text,
-			'dates' => $gmt_start . '/' . $gmt_end,
-			'sprop' => 'website:' . home_url(),
-			'location' => rawurlencode( $location ),
+				'action' => 'TEMPLATE',
+				'text' => $text,
+				'dates' => $gmt_start . '/' . $gmt_end,
+				'sprop' => 'website:' . home_url(),
+				'location' => rawurlencode($location),
 			);
 
 			return add_query_arg(
-				apply_filters( 'app_gcal_variables', $param, $service, $start, $end ),
+				apply_filters('app_gcal_variables', $param, $service, $start, $end),
 				'http://www.google.com/calendar/event'
 			);
 		}
 
 		/**
-	 * Die showing which field has a problem
-	 *
-	 * @param string $field_name
-	 */
+	 	* Die showing which field has a problem
+	 	*
+	 	* @param string $field_name
+	 	*/
 		function json_die( $field_name ) {
 			die( json_encode( array( 'error' => sprintf( __( 'Irgendwas stimmt nicht mit der eingereichten %s', 'appointments' ), $this->get_field_name( $field_name ) ) ) ) );
 		}
 
 		/**
-	 * Check for too frequent back to back apps
-	 * return true means no spam
-	 * @return bool
-	 */
+	 	* Check for too frequent back to back apps
+	 	* return true means no spam
+	 	* @return bool
+	 	*/
 		function check_spam() {
 			$options = appointments_get_options();
 			if (
@@ -954,12 +967,12 @@ if ( ! class_exists( 'Appointments' ) ) {
 
 
 		/**
-	 * Find timestamp of first day of month for a given time
-	 * @param time: input whose first day will be found
-	 * @param add: how many months to add
-	 * @return integer (timestamp)
-	 * @since 1.0.4
-	 */
+	 	* Find timestamp of first day of month for a given time
+	 	* @param time: input whose first day will be found
+	 	* @param add: how many months to add
+	 	* @return integer (timestamp)
+	 	* @since 1.0.4
+	 	*/
 		function first_of_month( $time, $add ) {
 			$year = date( 'Y', $time );
 			$month = date( 'n',  $time ); // Notice "n"
@@ -968,31 +981,31 @@ if ( ! class_exists( 'Appointments' ) ) {
 		}
 
 		/**
-	 * Helper function to create a monthly schedule
-	 *
-	 * @deprecated 2.0.6
-	 */
-		function get_monthly_calendar( $timestamp = false, $class = '', $long, $widget ) {
-			_deprecated_function( __FUNCTION__, '2.1', 'appointments_monthly_calendar' );
+		 * Helper function to create a monthly schedule
+		 *
+		 * @deprecated 2.0.6
+		 */
+		function get_monthly_calendar($long, $widget, $timestamp = false, $class = '') {
+			_deprecated_function(__FUNCTION__, '2.1', 'appointments_monthly_calendar');
 			$this->get_lsw();
 			$args = array(
-			'service_id' => $this->service,
-			'worker_id' => $this->worker,
-			'location_id' => $this->location,
-			'class' => $class,
-			'long' => $long,
-			'echo' => false,
-			'widget' => $widget,
+				'service_id' => $this->service,
+				'worker_id' => $this->worker,
+				'location_id' => $this->location,
+				'class' => $class,
+				'long' => $long,
+				'echo' => false,
+				'widget' => $widget,
 			);
-			return appointments_monthly_calendar( $timestamp, $args );
+			return appointments_monthly_calendar($timestamp, $args);
 		}
 
 		/**
-	 * Helper function to create a time table for monthly schedule
-	 *
-	 * @since 2.2.1 Added `hide_today` argument.
-	 * @since 2.3.2 Added `worker_id` argument.
-	 */
+	 	* Helper function to create a time table for monthly schedule
+	 	*
+	 	* @since 2.2.1 Added `hide_today` argument.
+	 	* @since 2.3.2 Added `worker_id` argument.
+	 	*/
 		function get_timetable( $day_start, $capacity, $schedule_key = false, $hide_today = false, $worker_id = 0 ) {
 			$local_time = current_time( 'timestamp' );
 			$data = $this->_get_timetable_slots( $day_start, $capacity, $schedule_key, $worker_id );
@@ -1847,7 +1860,7 @@ if ( ! class_exists( 'Appointments' ) ) {
 					'facebook' => __( 'Login mit Facebook', 'appointments' ),
 					'twitter' => __( 'Login mit Twitter', 'appointments' ),
 					'google' => __( 'Login mit Google+', 'appointments' ),
-					'wordpress' => __( 'Login mit WordPress', 'appointments' ),
+					'wordpress' => __( 'Login mit ClassicPress', 'appointments' ),
 					'submit' => __( 'Übermitteln', 'appointments' ),
 					'cancel' => _x( 'Abbrechen', 'Aktuelle Aktion löschen', 'appointments' ),
 					'please_wait' => __( 'Bitte, warte einen Moment...', 'appointments' ),
@@ -1925,8 +1938,8 @@ if ( ! class_exists( 'Appointments' ) ) {
 	 * Localize the plugin
 	 */
 		function localization() {
-			// Load up the localization file if we're using WordPress in a different language
-			// Place it in Appointments+'s "languages" folder and name it "appointments-[value in wp-config].mo"
+			// Load up the localization file if we're using ClassicPress in a different language
+			// Place it in Terminmanager's "languages" folder and name it "appointments-[value in wp-config].mo"
 			load_plugin_textdomain( 'appointments', false, '/appointments/languages/' );
 		}
 

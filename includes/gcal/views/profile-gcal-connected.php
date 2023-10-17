@@ -40,7 +40,7 @@
 				</option>
 			</select>
 			<br />
-			<span class="description"><?php _e( 'Select method of integration. A+ -> GCal setting sends appointments to your selected Google calendar, but events in your Google Calendar account are not imported to Appointments+ and thus they do not reserve your available working times. A+ <-> GCal setting works in both directions.', 'appointments' ) ?></span>
+			<span class="description"><?php _e( 'Select method of integration. A+ -> GCal setting sends appointments to your selected Google calendar, but events in your Google Calendar account are not imported to Terminmanager and thus they do not reserve your available working times. A+ <-> GCal setting works in both directions.', 'appointments' ) ?></span>
 		</td>
 	</tr>
 	<tr>

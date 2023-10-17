@@ -105,7 +105,7 @@
 				for="accept_api_logins"><?php _e( 'Akzeptiere die Anmeldung im Frontend', 'appointments' ) ?></label></th>
 		<td>
             <?php _appointments_html_chceckbox( $options, 'accept_api_logins' ); ?>
-			<p class="description"><?php _e( 'Ermöglicht die Anmeldung auf der Website vom Frontend über Facebook, Twitter, Google oder WordPress.', 'appointments' ) ?></p>
+			<p class="description"><?php _e( 'Ermöglicht die Anmeldung auf der Website vom Frontend über Facebook, Twitter, Google oder ClassicPress.', 'appointments' ) ?></p>
 		</td>
 	</tr>
 

@@ -185,7 +185,7 @@ class Appointments_API_Logins {
 	}
 
 	/**
-	 * Login from front end by WordPress
+	 * Login from front end by ClassicPress
 	 */
 	function ajax_login( ) {
 

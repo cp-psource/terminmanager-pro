@@ -2,6 +2,9 @@
 
 class App_Tutorial {
 
+	public $set_textdomain;
+    public $set_capability;
+
 	private function __construct() {}
 
 	public static function serve() {

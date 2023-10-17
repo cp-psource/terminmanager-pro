@@ -448,7 +448,7 @@ class Appointments_GDPR {
 		$content = ob_get_clean();
 
 		wp_add_privacy_policy_content(
-			'Appointments+',
+			'Terminmanager',
 			wp_kses_post( wpautop( $content, false ) )
 		);
 	}

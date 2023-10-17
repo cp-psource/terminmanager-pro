@@ -59,7 +59,7 @@ class App_Schedule_Durations {
 
 
 	/**
-	 * Add default options to Appointments+ options
+	 * Add default options to Terminmanager options
 	 *
 	 * @param array $defaults
 	 *

@@ -104,7 +104,7 @@ class App_Users_LimitServicesLogin {
 			'facebook' => __( 'Facebook', 'appointments' ),
 			'twitter' => __( 'Twitter', 'appointments' ),
 			'google' => __( 'Google', 'appointments' ),
-			'wordpress' => __( 'WordPress', 'appointments' ),
+			'wordpress' => __( 'ClassicPress', 'appointments' ),
 		);
 	}
 }

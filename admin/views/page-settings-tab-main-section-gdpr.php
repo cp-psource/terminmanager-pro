@@ -4,7 +4,7 @@ global $wp_version;
 $is_less_496 = version_compare( $wp_version, '4.9.6', '<' );
 if ( $is_less_496 ) {
 	echo '<div class="notice notice-error inline notice-app-wp-version">';
-	echo wpautop( __( 'Datenschutz-Einstellungen sind für WordPress-Versionen unter 4.9.6 nicht verfügbar. Bitte aktualisiere zuerst Dein WordPress.', 'appointments' ) );
+	echo wpautop( __( 'Datenschutz-Einstellungen sind für ClassicPress-Versionen unter 4.9.6 nicht verfügbar. Bitte aktualisiere zuerst Dein ClassicPress.', 'appointments' ) );
 	echo '</div>';
 	return;
 }

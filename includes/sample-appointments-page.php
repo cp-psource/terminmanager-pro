@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Sample Appointments+ Page
+Template Name: Sample Terminmanager Page
 */
 
 /*

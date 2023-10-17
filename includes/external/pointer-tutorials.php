@@ -89,10 +89,6 @@ if ( !class_exists( 'Pointer_Tutorial' ) ) {
 	/*
 	* class Pointer_Tutorial
 	*
-	* @author Aaron Edwards (Incsub)
-	* @version 1.0
-	* @requires WP 3.3
-	*
 	*	@param string $tutorial_name Required: The name of this tutorial. Used for user settings and css classes.
 	*	@param bool $redirect_first_load Optional: Set to true to redirect and show first step for those who have not completed the tutorial. Default true
 	*	@param bool $force_completion Optional: Set to true to redirect and show the current step for those who have not completed the tutorial. Basically forces the tutorial to be completed or dismissed. Default false.
@@ -112,6 +108,7 @@ if ( !class_exists( 'Pointer_Tutorial' ) ) {
 		public $force_completion = false;
 		public $hide_dismiss = false; //hides the dismiss tutorial link
 		public $hide_step = false; //hides the current step label
+		public $set_textdomain;
 		
 		/*
 		 * function __construct

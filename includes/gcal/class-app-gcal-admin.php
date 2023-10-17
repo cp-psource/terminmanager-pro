@@ -2,11 +2,13 @@
 
 class Appointments_Appointments_Google_Calendar_Admin {
 
+	private $gcal_api;
+
 	/**
 	 * Appointments_Appointments_Google_Calendar_Admin constructor.
 	 *
 	 * @param Appointments_Appointments_Google_Calendar $gcal_api
-	 */
+	*/
 	public function __construct( $gcal_api ) {
 		$this->gcal_api = $gcal_api;
 
@@ -30,7 +32,7 @@ class Appointments_Appointments_Google_Calendar_Admin {
 	 * @param array $tabs
 	 *
 	 * @return array
-	 */
+	*/
 	public function add_setting_tab( $tabs ) {
 		// Set the tab in second place
 		$_tabs_1 = array_slice( $tabs, 0, 1 );
@@ -45,7 +47,7 @@ class Appointments_Appointments_Google_Calendar_Admin {
 	 * @param string|bool $file
 	 *
 	 * @return string
-	 */
+	*/
 	public function setting_tab_view( $file ) {
 		return appointments_plugin_dir() . 'includes/gcal/views/page-settings-tab-gcal.php';
 	}
