@@ -191,7 +191,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 			}
 
 			$pluginInfo = $this->requestInfo();
-			$this->fixSupportedClassicpressVersion($pluginInfo);
+			$this->fixSupportedClassicPressVersion($pluginInfo);
 
 			$pluginInfo = apply_filters($this->getUniqueName('pre_inject_info'), $pluginInfo);
 			if ( $pluginInfo ) {

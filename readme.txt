@@ -4,7 +4,7 @@ Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free
 Tags: termine, buchung, appointments
 Requires at least: 4.9
 Tested up to: 5.6
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -45,12 +45,18 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
-= 1.0.5 DerN3rd =
+= 1.1.1 =
+
+* Fix: PhP8 Anpassungen
+* Fix: Veraltetes jQuery
+* Update: PSOURCE Updater
+
+= 1.0.5 =
 
 *Fixed: Konflikte mit anderen Google-Plugins behoben
 *Fixed: Kleinere Fehler
 
-= 1.0.4 DerN3rd =
+= 1.0.4 =
 
 * Fixed: CSS Anpassung Kalender 100%Width.
 * Fixed PSeCommerce prüft auf vorhandene Seite
@@ -59,7 +65,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * PSeCommerce Integration hinzugefügt
 * PS Mitgliedschaften Integration hinzugefügt
 
-= 1.0.3 DerN3rd =
+= 1.0.3 =
 
 * Fixed: CSS Kalenderview Frontend
 * Übersetzungsstatus: Deutsch 70%

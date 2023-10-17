@@ -343,7 +343,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 			//Let plugins/themes modify the update.
 			$update = apply_filters($this->getUniqueName('request_update_result'), $update, $httpResult);
 
-			$this->fixSupportedClassicpressVersion($update);
+			$this->fixSupportedClassicPressVersion($update);
 
 			if ( isset($update, $update->translations) ) {
 				//Keep only those translation updates that apply to this site.
@@ -358,11 +358,11 @@ if ( !class_exists(UpdateChecker::class, false) ):
 		 * while ClassicPress core's list_plugin_updates() expects the $update->tested field to be an exact
 		 * version, e.g. "major.minor.patch", to say it's compatible. In other case it shows
 		 * "Compatibility: Unknown".
-		 * The function mimics how classicpress.org API crafts the "tested" field out of "Tested up to".
+		 * The function mimics how wordpress.org API crafts the "tested" field out of "Tested up to".
 		 *
 		 * @param Metadata|null $update
 		 */
-		protected function fixSupportedClassicpressVersion(Metadata $update = null) {
+		protected function fixSupportedClassicPressVersion(Metadata $update = null) {
 			if ( !isset($update->tested) || !preg_match('/^\d++\.\d++$/', $update->tested) ) {
 				return;
 			}
@@ -576,7 +576,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 
 		/**
 		 * See this post for more information:
-		 * @link https://make.classicpress.org/core/2020/07/30/recommended-usage-of-the-updates-api-to-support-the-auto-updates-ui-for-plugins-and-themes-in-classicpress-5-5/
+		 * @link https://make.wordpress.org/core/2020/07/30/recommended-usage-of-the-updates-api-to-support-the-auto-updates-ui-for-plugins-and-themes-in-wordpress-5-5/
 		 *
 		 * @param \stdClass|null $updates
 		 * @return \stdClass
@@ -802,7 +802,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 				$updates->translations = array();
 			}
 
-			//In case there's a name collision with a plugin or theme hosted on classicpress.org,
+			//In case there's a name collision with a plugin or theme hosted on wordpress.org,
 			//remove any preexisting updates that match our thing.
 			$updates->translations = array_values(array_filter(
 				$updates->translations,

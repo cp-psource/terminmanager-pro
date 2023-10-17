@@ -118,7 +118,7 @@ Das Menü „Neuer Termin“ ist ziemlich selbsterklärend. Es gibt einen Platz 
 
 ##### Transaktionen
 
-Hier sehen Sie Ihre Transaktionen, wenn Sie Zahlungen oder Einzahlungen entgegennehmen. Diese sind auch gruppiert: „Aktuell“, „Ausstehend“ und „Zukünftig“. Sie können jeweils durch Klicken auf die entsprechenden Links darauf zugreifen. Sie können eine Transaktion nicht manuell hinzufügen, das Plugin zeichnet nur auf, was über PayPal erfasst wird. [
+Hier siehst Du Deine Transaktionen, wenn Du Zahlungen oder Einzahlungen entgegennimmst. Diese sind auch gruppiert: „Aktuell“, „Ausstehend“ und „Zukünftig“. Du kannst jeweils durch Klicken auf die entsprechenden Links darauf zugreifen. Du kannst eine Transaktion nicht manuell hinzufügen, das Plugin zeichnet nur auf, was über PayPal erfasst wird.
 
 ![Transaktionen](https://premium.wpmudev.org/wp-content/uploads/2012/08/5-Transactions.png)
 
@@ -126,13 +126,13 @@ Hier sehen Sie Ihre Transaktionen, wenn Sie Zahlungen oder Einzahlungen entgegen
 
 ##### Einstellungen
 
-Das Menü **Einstellungen** begrüßt Sie mit einer Anleitung. Darauf sollten Sie achten :) Hier erfahren Sie, was Sie über die Einrichtung des Plugins und die hier angezeigten Registerkarten wissen müssen. Die meisten sind ziemlich einfach zu verstehen und die Plugin-Optionen sind sehr gut kommentiert, sodass Sie keine Probleme haben sollten. Wir können sie hier einzeln durchsehen und zusammenfassen, aber ich werde Ihre Aufmerksamkeit zuerst auf die Registerkarte „FAQ“ lenken. [
+Das Menü **Einstellungen** begrüßt Dich mit einer Anleitung. Darauf solltest Du achten :) Hier erfährst Du, was Du über die Einrichtung des Plugins und die hier angezeigten Registerkarten wissen musst. Die meisten sind ziemlich einfach zu verstehen und die Plugin-Optionen sind sehr gut kommentiert, sodass Du keine Probleme haben solltest. Wir können sie hier einzeln durchsehen und zusammenfassen, aber ich werde Deine Aufmerksamkeit zuerst auf die Registerkarte „FAQ“ lenken. [
 
 ![Einstellungsmenü](https://premium.wpmudev.org/wp-content/uploads/2012/08/6-Settings-Menu.png)
 
 ##### FAQ
 
-Hier finden Sie Informationen zu allem, was Sie in diesem Plugin benötigen, bereit zum sofortigen Zugriff! Die ZWEI wichtigsten Informationen auf dieser Seite für diejenigen, die das Plugin gerade erst installieren oder lernen, wie man es benutzt, sind die beiden Links oben. Dadurch werden die Tutorials zu den Menüoptionen „Einstellungen“ und „Termine eingeben und bearbeiten“ gestartet (oder neu gestartet). [
+Hier findest Du Informationen zu allem, was Du in diesem Plugin benötigst, bereit zum sofortigen Zugriff! Die ZWEI wichtigsten Informationen auf dieser Seite für diejenigen, die das Plugin gerade erst installieren oder lernen, wie man es benutzt, sind die beiden Links oben. Dadurch werden die Tutorials zu den Menüoptionen „Einstellungen“ und „Termine eingeben und bearbeiten“ gestartet (oder neu gestartet).
 
 ![FAQ](https://premium.wpmudev.org/wp-content/uploads/2012/08/7-FAQ.png)
 

@@ -3,7 +3,7 @@
 Plugin Name: Terminmanager
 Description: Ermöglicht das Akzeptieren von Terminen vom Frontend und das Verwalten oder Erstellen von Terminen vom Administrator aus.
 Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
-Version: 1.1.0
+Version: 1.1.1
 Author: WMS N@W
 Author URI: https://n3rds.work
 Textdomain: appointments
@@ -28,8 +28,7 @@ Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
 require 'psource/psource-plugin-update/psource-plugin-updater.php';
-use Psource\PluginUpdateChecker\v5\PucFactory;
-$MyUpdateChecker = PucFactory::buildUpdateChecker(
+$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=terminmanager-pro', 
 	__FILE__, 
 	'terminmanager-pro' 
@@ -39,7 +38,7 @@ if (!class_exists('Appointments')) {
 
 	class Appointments {
 
-		public $version = '1.1.0';
+		public $version = '1.1.1';
 		public $db_version;
 	
 		public $timetables = array();

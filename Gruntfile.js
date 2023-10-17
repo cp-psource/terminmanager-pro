@@ -216,7 +216,7 @@ module.exports = function(grunt) {
             pluginName: {
                 options: {
                     patterns: [
-                        { match: /Plugin Name\: Appointments\+/g, replacement: 'Plugin Name: Appointments' },
+                        { match: /Plugin Name\: Appointments\+/g, replacement: 'Plugin Name: Terminmanager' },
                         { match: /PLUGIN_VERSION/g, replace: '<%= pkg.version %>' },
                     ]
                 },
