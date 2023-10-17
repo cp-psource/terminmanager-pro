@@ -96,21 +96,21 @@ Sowohl Kunden als auch Dienstleister können auf Deiner Webseite vereinbarte Ter
 
 #### Termine + Video-Tutorials
 
-Sobald Sie das Plugin aktivieren, wird in der Menüleiste ein Menü mit der Bezeichnung **Termine** angezeigt. [
+Sobald Du das Plugin aktivierst, wird in der Menüleiste ein Menü mit der Bezeichnung **Termine** angezeigt.
 
 ![Terminmenü](https://premium.wpmudev.org/wp-content/uploads/2012/08/1-Appointmetns-Menu.png „Terminmenü“)
 
-  Wenn Sie auf den Menüpunkt klicken, werden drei Untermenüs angezeigt. Wir werden jedes einzeln und der Reihe nach angehen. [
+  Wenn Du auf den Menüpunkt klickst, werden drei Untermenüs angezeigt. Wir werden jedes einzeln und der Reihe nach angehen. [
 
 ![Untermenü „Termine“](https://premium.wpmudev.org/wp-content/uploads/2012/08/2-Appointments-Submenu1.png „Untermenü „Termine“)
 
 ##### Termine
 
-Wenn Sie auf **Termine** klicken, gelangen Sie zum Zentrum Ihrer Terminliste. Sie werden sehen, dass Ihre Termine nach Status getrennt sind: Aktiv, Ausstehend, Abgeschlossen und Entfernt. Sie können die einzelnen Seiten anzeigen, indem Sie auf die entsprechenden Links klicken. Auf jeder Seite werden die grundlegenden Kunden- und Serviceinformationen wie folgt angezeigt. Oben auf der Seite sehen Sie die Schaltfläche „Neu hinzufügen“, genau wie beim Erstellen einer neuen Seite oder eines neuen Beitrags. Klicken Sie darauf und Sie können Ihrem Kalender manuell einen neuen Termin hinzufügen. [
+Wenn Du auf **Termine** klickst, gelangst Du zum Zentrum Deiner Terminliste. Du wirst sehen, dass Deine Termine nach Status getrennt sind: Aktiv, Ausstehend, Abgeschlossen und Entfernt. Du kannst die einzelnen Seiten anzeigen, indem Du auf die entsprechenden Links klickst. Auf jeder Seite werden die grundlegenden Kunden- und Serviceinformationen wie folgt angezeigt. Oben auf der Seite siehst Du die Schaltfläche „Neu hinzufügen“, genau wie beim Erstellen einer neuen Seite oder eines neuen Beitrags. Klicke darauf und Du kannst Deinem Kalender manuell einen neuen Termin hinzufügen. [
 
 ![Neuen Termin hinzufügen](https://premium.wpmudev.org/wp-content/uploads/2012/08/3-Add-New.png „Neuen Termin hinzufügen“)
 
-Das Menü „Neuer Termin“ ist ziemlich selbsterklärend. Es gibt einen Platz für die Kundeninformationen, die Serviceinformationen (die später aus den Menüs ausgefüllt werden) und einen Platz für Notizen. Zu guter Letzt können Sie den Status vor dem Speichern festlegen. _Es gibt auch ein integriertes Tutorial, das dies abdeckt. Ich zeige Ihnen, wo Sie es finden, für den Fall, dass Sie Fragen haben oder etwas vergessen._ [
+Das Menü „Neuer Termin“ ist ziemlich selbsterklärend. Es gibt einen Platz für die Kundeninformationen, die Serviceinformationen (die später aus den Menüs ausgefüllt werden) und einen Platz für Notizen. Zu guter Letzt kannst Du den Status vor dem Speichern festlegen. _Es gibt auch ein integriertes Tutorial, das dies abdeckt. Ich zeige Dir, wo Du es findest, für den Fall, dass Du Fragen hast oder etwas vergessen hast._ 
 
 ![Neues Meta hinzufügen](https://premium.wpmudev.org/wp-content/uploads/2012/08/4-Add-New-Meta.png „Neues Meta hinzufügen“)
 
