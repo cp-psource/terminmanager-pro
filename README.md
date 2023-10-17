@@ -463,24 +463,24 @@ Fügt eine Tabelle ein, in der der Kunde oder Dienstleister seine bevorstehenden
 
 ### Argumente
 
-_Anbieter_
+_provider_
 
-* Geben Sie 1 ein, wenn diese Terminliste zu einem Dienstleister gehört.
+* Gib 1 ein, wenn diese Terminliste zu einem Dienstleister gehört.
 * Standard: „0“ (Client)
 * Beispiel: [app_my_appointments anbieter=“1″]
 
 _provider_id_
 
-* Geben Sie die Benutzer-ID des Anbieters ein, dessen Liste angezeigt werden soll. Wenn keine Angabe erfolgt, wird der aktuelle Dienstanbieter angezeigt.
+* Gib die Benutzer-ID des Anbieters ein, dessen Liste angezeigt werden soll. Wenn keine Angabe erfolgt, wird der aktuelle Dienstanbieter angezeigt.
 * Standard: „0“ (aktueller Dienstanbieter)
 * Beispiel: [app_my_appointmentsProvider_id=“12″]
 
-_Titel_
+_title_
 
 * Titeltext.
 * Beispiel: [app_my_appointments title=“Meine Termine“]
 
-_Status_
+_status_
 
 * Welche Status(se) werden berücksichtigt. Mögliche Werte: bezahlt, bestätigt, abgeschlossen, ausstehend, entfernt, reserviert oder Kombinationen davon, getrennt durch Komma.
 * Zulässige Werte: bezahlt, bestätigt, ausstehend, abgeschlossen, entfernt, reserviert
@@ -491,13 +491,13 @@ _gcal_
 * Geben Sie 0 ein, um die Google Kalender-Schaltfläche zu deaktivieren, mit der Kunden Termine zu ihrem Google Kalender hinzufügen können, nachdem sie den Termin gebucht haben.
 * Standard: „1“ (aktiviert – vorausgesetzt, dass die Einstellung „Google Kalender-Schaltfläche hinzufügen“ auf „Ja“ gesetzt ist)
 
-_Sortieren nach_
+_order_by_
 
 * Sortierreihenfolge der Termine.
 * Mögliche Werte: ID, Start.
 * Beispiel: [app_my_appointments order_by=“ID“]
 
-_Befehl_
+_order_
 
 * Sortierreihenfolge der Termine.
 * Mögliche Werte: asc (aufsteigende Reihenfolge), desc (absteigende Reihenfolge).
@@ -505,13 +505,13 @@ _Befehl_
 
 _allow_cancel_
 
-* Geben Sie 1 ein, wenn Sie die Stornierung von Terminen durch den Kunden über diese Tabelle zulassen möchten. Die Einstellung „Kunden erlauben, eigene Termine zu stornieren“ muss ebenfalls auf „Ja“ gesetzt sein.
+* Gib 1 ein, wenn Du die Stornierung von Terminen durch den Kunden über diese Tabelle zulassen möchtest. Die Einstellung „Kunden erlauben, eigene Termine zu stornieren“ muss ebenfalls auf „Ja“ gesetzt sein.
 * Standard: „0“ (Stornierung ist nicht zulässig).
 * Beispiel: [app_my_appointmentsallow_cancel=“1″]
 
 _strikt_
 
-* Stellen Sie bei der Suche nach anzuzeigenden Terminen eine strikte Übereinstimmung sicher. Der Shortcode verwendet standardmäßig die größtmögliche Übereinstimmung.
+* Stellt bei der Suche nach anzuzeigenden Terminen eine strikte Übereinstimmung sicher. Der Shortcode verwendet standardmäßig die größtmögliche Übereinstimmung.
 * Beispiel: [app_my_appointments strict=“1″]
 
 ## Verfügbare Dienste
@@ -524,24 +524,24 @@ Erstellt ein Dropdown-Menü der verfügbaren Dienste.
 
 ### Argumente
 
-_wählen_
+_select_
 
 * Text über dem Auswahlmenü. Standard: „Bitte wählen Sie einen Dienst aus“
 * Beispiel: [app_services select=“Bitte wählen Sie einen Dienst aus:“]
 
-_zeigen_
+_show_
 
 * Schaltflächentext, um die Ergebnisse für die ausgewählten anzuzeigen. Standard: „Verfügbare Zeiten anzeigen“
 * Beispiel: [app_services show=“Verfügbare Zeiten anzeigen“]
 
-_Beschreibung_
+_description_
 
 * Wählt aus, welcher Teil der Beschreibungsseite im Dropdown-Menü angezeigt wird, wenn ein Dienst ausgewählt wird.
 * Standard: „Auszug“
 * Zulässige Werte: keine, Auszug, Inhalt
 * Beispiel: [app_services description=“content“]
 
-_Daumengröße_
+_autorefresh_
 
 * Fügt die Miniaturansicht des Beitrags ein, wenn die Seite ein vorgestelltes Bild enthält.
 * Wählbare Werte sind „keine“, „Miniaturansicht“, „mittel“, „voll“ oder zwei durch Komma getrennte Zahlen, die Breite und Höhe in Pixel darstellen, z. B. 32,32.
@@ -554,29 +554,29 @@ _thumb_class_
 * Standard: „alignleft“
 * Beispiel: [app_services thumb_class=“my-class“]
 
-_automatische Aktualisierung_
+_autorefresh_
 
 * Bei Einstellung auf 1 wird die Schaltfläche „Anzeigen“ nicht angezeigt und die Seite wird automatisch aktualisiert, wenn der Kunde seine Auswahl ändert.
 * Hinweis: Der Client kann die Auswahl nicht durchsuchen und somit die Beschreibungen nicht im Handumdrehen überprüfen (ohne dass die Seite aktualisiert wird).
 * Standard: „0“ (deaktiviert). Empfohlen für Websites mit einer großen Anzahl von Diensten.
 * Beispiel: [app_services autorefresh=“1″]
 
-_Sortieren nach_
+_order_by_
 
 * Sortierreihenfolge der Dienste. Mögliche Werte: ID, Name, Dauer, Preis. Optional kann DESC (absteigend) verwendet werden, z.B. „name DESC“ kehrt die Reihenfolge um.
 * Standard: „ID“
 * Beispiel: [app_services order_by=“ID“]
 
-_Arbeiter_
+_worker_
 
-* In manchen Fällen möchten Sie möglicherweise Dienste anzeigen, die nur von einem bestimmten Anbieter angeboten werden. Geben Sie in diesem Fall hier die Provider-ID ein.
+* In manchen Fällen möchtest Du möglicherweise Dienste anzeigen, die nur von einem bestimmten Anbieter angeboten werden. Gib in diesem Fall hier die Provider-ID ein.
 * Standard: „0“ (alle definierten Dienste).
 * Hinweis: Mehrfachauswahlen sind nicht zulässig.
 * Beispiel: [app_services worker=“12″]
 
 _ajax_
 
-* Bei der Einstellung 1 werden Miniaturansichten und Beschreibungen der Dienste von AJAX geladen. Empfohlen für Websites mit vielen Diensten
+* Bei der Einstellung 1 werden Miniaturansichten und Beschreibungen der Dienste von AJAX geladen. Empfohlen für Webseiten mit vielen Diensten
 * Beispiel: [app_services ajax=“1″]
 
 ## Verfügbare Anbieter
@@ -589,7 +589,7 @@ Erstellt ein Dropdown-Menü der verfügbaren Dienstanbieter.
 
 ### Argumente
 
-_wählen_
+_select_
 
 * Text über dem Auswahlmenü.
 * Standard: „Bitte wählen Sie einen Dienst aus“
@@ -600,20 +600,20 @@ _empty_option_
 * Leere Optionsbezeichnung für die Auswahl
 * Beispiel: [app_service_providers empty_option=“Bitte auswählen“]
 
-_zeigen_
+_show_
 
 * Schaltflächentext, um die Ergebnisse für die ausgewählten anzuzeigen.
 * Standard: „Verfügbare Zeiten anzeigen“
 * Beispiel: [app_service_providers show=“Verfügbare Zeiten anzeigen“]
 
-_Beschreibung_
+_description_
 
 * Wählt aus, welcher Teil der Biografieseite im Dropdown-Menü angezeigt wird, wenn ein Dienstanbieter ausgewählt wird.
 * Standard: „Auszug“
 * Zulässige Werte: keine, Auszug, Inhalt
 * Beispiel: [app_service_providers description=“content“]
 
-_Daumengröße_
+_thumb_size_
 
 * Fügt die Miniaturansicht des Beitrags ein, wenn die Seite ein vorgestelltes Bild enthält.
 * Wählbare Werte sind „keine“, „Miniaturansicht“, „mittel“, „voll“ oder zwei durch Komma getrennte Zahlen, die Breite und Höhe in Pixel darstellen, z. B. 32,32.
@@ -626,23 +626,23 @@ _thumb_class_
 * Standard: „alignleft“
 * Beispiel: [app_service_providers thumb_class=“my-class“]
 
-_automatische Aktualisierung_
+_autorefresh_
 
 * Bei Einstellung auf 1 wird die Schaltfläche „Anzeigen“ nicht angezeigt und die Seite wird automatisch aktualisiert, wenn der Kunde seine Auswahl ändert.
 * Hinweis: Der Client kann die Auswahl nicht durchsuchen und somit die Beschreibungen nicht im Handumdrehen überprüfen (ohne dass die Seite aktualisiert wird).
 * Standard: „0“ (deaktiviert)
 * Beispiel: [app_service_providers autorefresh=“1″]
 
-_Sortieren nach_
+_order_by_
 
 * Sortierreihenfolge der Dienstleister.
 * Mögliche Werte: ID, Name. Optional kann DESC (absteigend) verwendet werden, z.B. „name DESC“ kehrt die Reihenfolge um.
 * Standard: „ID“
 * Beispiel: [app_service_providers order_by=“ID“]
 
-_Service_
+_service_
 
-* In manchen Fällen möchten Sie möglicherweise die Anzeige von Anbietern erzwingen, die nur einen bestimmten Dienst anbieten. Geben Sie in diesem Fall hier die Service-ID ein.
+* In manchen Fällen möchtest Du möglicherweise die Anzeige von Anbietern erzwingen, die nur einen bestimmten Dienst anbieten. Gib in diesem Fall hier die Service-ID ein.
 * Standard: „0“ (Liste wird durch das Dienste-Dropdown bestimmt).
 * Hinweis: Mehrfachauswahlen sind nicht zulässig.
 * Beispiel: [app_service_providers service=“12″]
@@ -684,13 +684,13 @@ Für die Shortcode-Parameter können Sie die Platzhalter SERVICE, PRICE und CURR
 
 ### Argumente
 
-_Artikelname_
+_item_name_
 
 * Artikelname, der auf Paypal sichtbar ist.
 * Standard: „Zahlung für DIENSTLEISTUNGEN“, wenn keine Anzahlung verlangt wird, „Anzahlung für DIENSTLEISTUNGEN“, wenn eine Anzahlung verlangt wird
 * Beispiel: [app_paypal item_name=“Zahlung für SERVICE“]
 
-_Schaltflächentext_
+_button_text_
 
 * Text, der auf der Paypal-Schaltfläche angezeigt wird.
 * Standard: „Bitte bestätigen Sie die Zahlung in PREISWÄHRUNG für den SERVICE.“
@@ -707,13 +707,13 @@ Dieser Shortcode wird immer benötigt, um einen Termin abzuschließen.
 
 ### Argumente
 
-_Titel_
+_title_
 
 * Text über den Feldern.
 * Standard: „Bitte überprüfen Sie die Termindetails unten und bestätigen Sie:“
 * Beispiel: [app_confirmation title=“Bitte überprüfen Sie die Termindetails unten und bestätigen Sie:“]
 
-_Schaltflächentext_
+_button_text_
 
 * Text der Schaltfläche, die den Kunden auffordert, den Termin zu bestätigen.
 * Standard: „Bitte klicken Sie hier, um diesen Termin zu bestätigen“
@@ -731,32 +731,32 @@ _warning_text_
 * Standard: „Bitte füllen Sie das angeforderte Feld aus“
 * Beispiel: [app_confirmation warning_text=“Bitte füllen Sie das angeforderte Feld aus“]
 
-_Name_
+_name_
 
 * Beschreibender Titel des Feldes.
 * Beispiel: [app_confirmation name=“Ihr Name:“]
 
-_Email_
+_email_
 
 * Beschreibender Titel des Feldes.
 * Beispiel: [app_confirmation email=“Ihre E-Mail:“]
 
-_Telefon_
+_phone_
 
 * Beschreibender Titel des Feldes.
 * Beispiel: [app_confirmation phone=“Ihr Telefon:“]
 
-_Adresse_
+_address_
 
 * Beschreibender Titel des Feldes.
 * Beispiel: [app_confirmation address=“Ihre Adresse:“]
 
-_Stadt_
+_city_
 
 * Beschreibender Titel des Feldes.
 * Beispiel: [app_confirmation city=“City:“]
 
-_Notiz_
+_note_
 
 * Beschreibender Titel des Feldes.
 * Beispiel: [app_confirmation note=“Ihre Notizen:“]
