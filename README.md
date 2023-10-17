@@ -2,73 +2,69 @@
 
 Ermöglicht das Akzeptieren von Terminen vom Frontend und das Verwalten oder Erstellen von Terminen vom Administrator aus.
 
-## Übernehmen Sie mit Appointments + die Kontrolle über die Terminplanung und Kalenderverwaltung für Ihr Unternehmen.
+## Übernehme mit Terminmanager die Kontrolle über die Terminplanung und Kalenderverwaltung für Dein Unternehmen.
 
-Lassen Sie Ihre Kunden auf Ihrer Website die Verfügbarkeit prüfen, einen Standort auswählen, einen Dienstleister auswählen, einen Termin buchen und eine Anzahlung tätigen.
+Lasse Deine Kunden auf Deiner Webseite die Verfügbarkeit prüfen, einen Standort auswählen, einen Dienstleister auswählen, einen Termin buchen und eine Anzahlung tätigen.
 
 ![provider-735x470](https://premium.wpmudev.org/wp-content/uploads/2012/09/provider-735x470.jpg)
 
-  Sorgen Sie dafür, dass sich Benutzer mit Ihrem Team vertraut machen, bevor sie einen Termin vereinbaren.
+  Sorge dafür, dass sich Benutzer mit Deinem Team vertraut machen, bevor sie einen Termin vereinbaren.
 
 ### Mehr Kontrolle
 
-Terminmanager ist einfach einzurichten, aber unter der Haube steckt mehr, als Sie vielleicht denken! Fügen Sie eine unbegrenzte Anzahl von Mitarbeitern, Partnern und Auftragnehmern als Anbieter hinzu. Geben Sie ihnen Biografieseiten und zeigen Sie ihren Zeitplan an, damit Kunden einen Anbieter auswählen können, der ihren Bedürfnissen entspricht.
+Terminmanager ist einfach einzurichten, aber unter der Haube steckt mehr, als Du vielleicht denkst! Füge eine unbegrenzte Anzahl von Mitarbeitern, Partnern und Auftragnehmern als Anbieter hinzu. Gib ihnen Biografieseiten und zeige ihren Zeitplan an, damit Kunden einen Anbieter auswählen können, der ihren Bedürfnissen entspricht.
 
-  Machen Sie Dienste und Anbieter standortspezifisch, damit Kunden die Verfügbarkeit nach Dienst, Zeit, Ort und Anbieter sortieren können.
+  Mache Dienste und Anbieter standortspezifisch, damit Kunden die Verfügbarkeit nach Dienst, Zeit, Ort und Anbieter sortieren können.
 
-### Optimieren Sie die Planung
+### Optimiere die Planung
 
-Unser einfacher 3-Klick-Prozess ist so konfiguriert, dass Besucher einen Termin vereinbaren können, ohne Besucher dazu zu zwingen, einen Benutzer zu erstellen. Ihre Zeit ist wertvoll. Sammeln Sie Zahlungen oder nehmen Sie Einzahlungen über PayPal entgegen, ohne dass zusätzlicher Code oder Plugins erforderlich sind.
+Unser einfacher 3-Klick-Prozess ist so konfiguriert, dass Besucher einen Termin vereinbaren können, ohne Besucher dazu zu zwingen, einen Benutzer zu erstellen. Ihre Zeit ist wertvoll. Sammel Zahlungen oder nimm Einzahlungen über PayPal entgegen, ohne dass zusätzlicher Code oder Plugins erforderlich sind.
 
 ![appointments-deposit-1470x940](https://premium.wpmudev.org/wp-content/uploads/2012/09/appointments-deposit-1470x940-800x511.jpg)
 
-  Machen Sie es sich einfach, bei der Bestätigung eine Anzahlung vorzunehmen.
-
- 
+  Mache es Dir einfach, bei der Bestätigung eine Anzahlung vorzunehmen.
 
 ![calendar-735x470](https://premium.wpmudev.org/wp-content/uploads/2012/09/calendar-735x470.jpg)
 
-  Teilen Sie verfügbare Zeitfenster und lassen Sie Besucher Termine buchen.
+  Teile verfügbare Zeitfenster und lasse Besucher Termine buchen.
 
 ### Einfache Integration, hochgradig anpassbar
 
-Appointments + verfügt über eine super übersichtliche Front-End-Oberfläche, die mit fast jedem Thema gut funktioniert. Verwenden Sie eine Farbvoreinstellung oder passen Sie Ihre Marke mit dem Farbwähler perfekt an. Darüber hinaus können Sie über das enthaltene Feld für zusätzliche CSS-Regeln schnell Designänderungen hinzufügen.
-
- 
+Terminmanager verfügt über eine super übersichtliche Front-End-Oberfläche, die mit fast jedem Thema gut funktioniert. Verwende eine Farbvoreinstellung oder passe Deine Marke mit dem Farbwähler perfekt an. Darüber hinaus kannst Du über das enthaltene Feld für zusätzliche CSS-Regeln schnell Designänderungen hinzufügen.
 
 ### Shortcodes, Widgets und über 20 Add-ons
 
-Verwenden Sie Shortcodes und integrierte Widgets, um Dienste, Anbieter und Kalender schnell dort aufzulisten, wo Sie sie benötigen. Außerdem erhalten Sie **über 20 kostenlose Add-ons, die die Funktionalität erweitern.**
+Verwende Shortcodes und integrierte Widgets, um Dienste, Anbieter und Kalender schnell dort aufzulisten, wo Du sie benötigst. Außerdem erhätst Du **über 20 kostenlose Add-ons, die die Funktionalität erweitern.**
 
 ![aplus-admin](https://premium.wpmudev.org/wp-content/uploads/2012/09/aplus-admin.png)
 
 **Administratorberechtigungen**
 
-Konfigurieren Sie, welche Benutzerrollen Termine verwalten und darauf zugreifen können.
+Konfiguriere, welche Benutzerrollen Termine verwalten und darauf zugreifen können.
 
 ![aplus-export](https://premium.wpmudev.org/wp-content/uploads/2012/09/aplus-export.png)
 
 **Datumsbereich exportieren**
 
-Wählen Sie, ob Sie eine Liste von Terminen innerhalb eines bestimmten Datumsbereichs exportieren möchten.
+Wähle, ob Du eine Liste von Terminen innerhalb eines bestimmten Datumsbereichs exportieren möchtest.
 
 ![aplus-html](https://premium.wpmudev.org/wp-content/uploads/2012/09/aplus-html.png)
 
 **HTML-E-Mails**
 
-Verwenden Sie standardmäßige Nur-Text-E-Mails oder ein Standardlayout und senden Sie E-Mails mit HTML-Anpassung.
+Verwende standardmäßige Nur-Text-E-Mails oder ein Standardlayout und sende E-Mails mit HTML-Anpassung.
 
 ![aplus-locations](https://premium.wpmudev.org/wp-content/uploads/2012/09/aplus-locations.png)
 
 **4 Standort-Add-ons**
 
-Erstellen Sie Terminorte, integrieren Sie Google Maps und binden Sie Dienste und Anbieter an bestimmte Standorte.
+Erstelle Terminorte, integriere Google Maps und binde Dienste und Anbieter an bestimmte Standorte.
 
 ![aplus-cart](https://premium.wpmudev.org/wp-content/uploads/2012/09/aplus-cart.png)
 
-**MarketPress-Integration**
+**PSeCommerce-Integration**
 
-Verwenden Sie eines der MarketPress-Zahlungsgateways, um Zahlungen für Dienstleistungen zu akzeptieren.
+Verwende eines der PSeCommerce-Zahlungsgateways, um Zahlungen für Dienstleistungen zu akzeptieren.
 
 ![aplus-tetris](https://premium.wpmudev.org/wp-content/uploads/2012/09/aplus-tetris.png)
 
@@ -86,19 +82,17 @@ Erweiterte Kontrolle der Servicedauer und Hinzufügen von Auffüllzeiten rund um
 
 **Benutzerdefinierte Beitragstypen festlegen**
 
-Verwenden Sie benutzerdefinierte Beitragstypen für Anbieterbiografien und Servicebeschreibungen.
+Verwende benutzerdefinierte Beitragstypen für Anbieterbiografien und Servicebeschreibungen.
 
 ### Soziales Login
 
-Erfassen Sie Kundeninformationen, indem Sie Benutzer auffordern, sich anzumelden, um einen Termin zu vereinbaren. Machen Sie es sich einfach mit Social-Media-Zugangsdaten – ermöglichen Sie Benutzern die Anmeldung mit ihrem Facebook-, Twitter-, Google+- oder ClassicPress-Konto.
+Erfasse Kundeninformationen, indem Du Benutzer aufforderst, sich anzumelden, um einen Termin zu vereinbaren. Mache es Dir einfach mit Social-Media-Zugangsdaten – ermögliche Benutzern die Anmeldung mit ihrem Facebook-, Twitter-, Google+- oder ClassicPress-Konto.
 
 ### Mit Google Kalender synchronisieren
 
-Sowohl Kunden als auch Dienstleister können auf Ihrer Website vereinbarte Termine mit einem Klick direkt in Google Kalender speichern – keine Einrichtung erforderlich. Wir haben auch die Google Kalender-API integriert. Konfigurieren Sie Appointments + ganz einfach, um Änderungen an Terminen automatisch zwischen Google Kalender und Ihrer Website zu synchronisieren.
+Sowohl Kunden als auch Dienstleister können auf Deiner Webseite vereinbarte Termine mit einem Klick direkt in Google Kalender speichern – keine Einrichtung erforderlich. Wir haben auch die Google Kalender-API integriert. Konfiguriere Terminmanager ganz einfach, um Änderungen an Terminen automatisch zwischen Google Kalender und Deiner Webseite zu synchronisieren.
 
 ## Verwendung
-
-Hilfe und Informationen zur Installation von Plugins finden Sie in unserem [Handbuch zur Installation von ClassicPress-Plugins](https://premium.wpmudev.org/manuals/wpmu-manual-2/installing-regular-plugins-on-wpmu/). Schauen Sie sich dieses [umfangreiche Tutorial zum Erstellen Ihrer ersten auf Terminen basierenden Website] an (https://premium.wpmudev.org/blog/build-an-amazing-appointments-website/). Oder schauen Sie sich unsere Video-Tutorial-Reihe an:
 
 #### Termine + Video-Tutorials
 

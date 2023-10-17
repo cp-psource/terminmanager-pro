@@ -51,7 +51,7 @@ class Appointments_Appointments_Google_Calendar_API_Manager {
 	public function get_client() {
 		if ( ! $this->client ) {
 			$this->client = new Appointments_Google_Client();
-			$this->client->setApplicationName( "Appointments +" );
+			$this->client->setApplicationName( "Terminmanager " );
 			$this->client->setScopes( 'https://www.googleapis.com/auth/calendar' );
 			$this->client->setAccessType( 'offline' );
 			$this->client->setRedirectUri( 'urn:ietf:wg:oauth:2.0:oob' );

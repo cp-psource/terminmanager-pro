@@ -34,7 +34,7 @@ With Appointments:
 
 = Book an Appointment in Just Three Clicks =
 
-Use Paypal to collect payments and deposits right out of the box with Appointments. No button creation or coding necessary. Or integrate with <a href="https://premium.wpmudev.org/project/e-commerce/">MarketPress</a> to support a wide variety of gateways.
+Use Paypal to collect payments and deposits right out of the box with Appointments. No button creation or coding necessary. Or integrate with <a href="https://premium.wpmudev.org/project/e-commerce/">PSeCommerce</a> to support a wide variety of gateways.
 
 You can even integrate the plugin with Membership by WPMU DEV to offer discounts and payment vouchers to existing members of your site.
 
@@ -66,7 +66,7 @@ Appointments has features that rival the most sophisticated  – and much more e
 * Form autofill for repeat clients
 * Login with Facebook, Twitter, Google+ or WordPress
 * Integrates with WPMU DEV Membership plugin, thus ability to offer discount to certain membership levels
-* Integrates with WPMU DEV MarketPress plugin, thus uses its additional payment gateways (PayPal is already included), and also allows for multiple bookings.
+* Integrates with WPMU DEV PSeCommerce plugin, thus uses its additional payment gateways (PayPal is already included), and also allows for multiple bookings.
 * Option to require payments or deposits in advance
 * Deposits can be selected as percentage or as fixed amounts
 * Synchronizes with your Google Calendar account and automatically updates it
@@ -92,7 +92,7 @@ Appointments has features that rival the most sophisticated  – and much more e
 * Locations on Google Maps - Allows you to bind locations to your services.
 * Service Locations - Allows you to bind locations to your services.
 * Worker Locations - Allows you to bind locations to your Service Providers.
-* Appointments in product cart - Control how your appointments show in the MarketPress product cart.
+* Appointments in product cart - Control how your appointments show in the PSeCommerce product cart.
 * Biography post type - Allows you to select a post type for your service providers biographies (available under Settings > General > Advanced Settings)
 * Service Description post type - Allows you to select a post type for your service descriptions (available under Settings > General > Advanced Settings)
 * Service provider names - Allows you to select how a service provider will be introduced to your customers.
@@ -130,7 +130,7 @@ What else could I get in the premium version?
 * Locations on Google Maps - Allows you to bind locations to your services.
 * Service Locations - Allows you to bind locations to your services.
 * Worker Locations - Allows you to bind locations to your Service Providers.
-* Appointments in product cart - Control how your appointments show in the MarketPress product cart.
+* Appointments in product cart - Control how your appointments show in the PSeCommerce product cart.
 * Biography post type - Allows you to select a post type for your service providers biographies (available under Settings > General > Advanced Settings)
 * Service Description post type - Allows you to select a post type for your service descriptions (available under Settings > General > Advanced Settings)
 * Service provider names - Allows you to select how a service provider will be introduced to your customers.
@@ -151,7 +151,7 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 
 1. Style and display a calendar on your site where clients can select and make appointments.
 2. You can create profiles for each of your staff members listing their qualifications, experience or any other details about what they offer.
-3. Clients can click any service your company offers and Appointments + will display all your available team members for that service.
+3. Clients can click any service your company offers and Terminmanager  will display all your available team members for that service.
 4. Payment settings page
 5. Google Calendar integration
 
@@ -209,7 +209,7 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 * GDPR: Added checkbox with the agreement to process personal data.
 * GDPR: Added plugin information to default "Private Policy" page during auto-creation of this page.
 * Improved "Working Hours" and "Exceptions" tabs content on mobile devices.
-* Improved UX on "Payments" tab for MarketPress integration.
+* Improved UX on "Payments" tab for PSeCommerce integration.
 * Improved few translation strings.
 * Improved the "app_my_appointments" shortcode and added a message when we have no appointments.
 * Refactored "Service Providers" screen and use WP_List_Table class for the list.
@@ -221,7 +221,7 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 * Changed default appointments sorting to "Appointment Date".
 * Fixed an export problem for additional fields with HTML entities in a name.
 * Fixed an export problem for the date range.
-* Fixed an integration problem with MarketPress plugin.
+* Fixed an integration problem with PSeCommerce plugin.
 * Fixed a problem with booking, when the site is on HTTP but admin force HTTPS usage.
 
 = 2.2.6 =
@@ -273,7 +273,7 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 * Fixed missing JavaScript scripts.
 
 = 2.2.2 =
-* Allow Service Description Page featured imaged to be used as Product variation thumbnail (MarketPress integration).
+* Allow Service Description Page featured imaged to be used as Product variation thumbnail (PSeCommerce integration).
 * Fixed a problem with the abandoned orders in admin.
 * Fixed issue with comma as thousand separators when using PayPal.
 * Fixed problem with duplicated page description.
@@ -287,7 +287,7 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 * Added timetables helpers tests.
 * Allow currency option to be visible even if payments are disabled.
 * appointments_is_available_time was not always returning a value.
-* Appointments don't get active after Stripe payment from MarketPress.
+* Appointments don't get active after Stripe payment from PSeCommerce.
 * Fixed appointments_is_worker_holiday parameters.
 * Fixed auto reload of appointment status totals when status is changed.
 * Fixed client cancellation not synced to Google Calendar.
@@ -336,7 +336,7 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 * Fixed: Correct provider is not selected with autorefresh attribute in shortcodes.
 * Fixed: Google Calendar sync fixes
 * Fixed: All services display largest time slot when service duration addon was activated
-* Fixed: MarketPress integration fixes
+* Fixed: PSeCommerce integration fixes
 * Some other minor fixes
 
 = 2.0.5 =
@@ -391,7 +391,7 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 * Fixed Shared Resources Addon: Shared resources were not working properly in some cases
 * Fixed: Notification emails were not being sent to admin/service provider
 * Fixed: When Saturday was set to start of the week, weekly calendar was starting on Sunday
-* Fixed MarketPress integration: Appointment showing even if it's free
+* Fixed PSeCommerce integration: Appointment showing even if it's free
 * Fixed: Timeslot available when providers aren't available and "No preference" provider option is selected
 * New: Added new Shortcodes UI in WP Editor
 * New: new hooks for  abetter extensibility

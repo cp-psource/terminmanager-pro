@@ -1,4 +1,4 @@
-# Appointments +
+# Terminmanager 
 
 ## Install
 You need nodejs + npm installed
