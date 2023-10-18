@@ -119,7 +119,7 @@ class Appointments_Appointments_Google_Login {
 		<script>
 			jQuery( document ).ready( function( $ ) {
 				var loginSettings = $('#google-login');
-				$('select[name="login_required"]').change(function () {
+				$('select[name="login_required"]').on('change', function () {
 					if ($(this).val() == 'yes') {
 						loginSettings.removeClass( 'hidden' );
 					}
@@ -267,7 +267,7 @@ class Appointments_Appointments_Google_Login {
 		// Google+ login
 		if ( ! class_exists( 'LightOpenID' ) ) {
 			if ( function_exists( 'curl_init' ) || in_array( 'https', stream_get_wrappers() ) ) {
-				include_once( appointments_plugin_dir() . '/includes/pro/external/lightopenid/openid.php' );
+				include_once( appointments_plugin_dir() . 'includes/external/lightopenid/openid.php' );
 				$this->openid = new LightOpenID;
 			}
 		} else {

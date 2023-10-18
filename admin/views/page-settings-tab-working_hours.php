@@ -21,7 +21,7 @@ if ( $workers ) {
 <br /><br />
 <script type="text/javascript">
 jQuery(document).ready(function($){
-	$('#app_provider_id').change(function(){
+	$('#app_provider_id').on('change', function(){
 		var app_provider_id = $('#app_provider_id option:selected').val();
 		window.location.href = "<?php echo admin_url( 'admin.php?page=app_settings&tab=working_hours' )?>" + "&app_provider_id=" + app_provider_id;
 	});

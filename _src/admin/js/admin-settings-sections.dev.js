@@ -21,7 +21,7 @@ jQuery(document).ready( function( $ ) {
             $el: $el,
             $section: $('#app-settings-' + sectionStub )
         };
-        $el.click( function( e ) {
+        $el.on('click', function( e ) {
             activateSection( sectionStub );
         });
     });

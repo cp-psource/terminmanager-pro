@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
                 self.reload( selected_service );
             });
 
-            this.$servicesSelector.change(function(){
+            this.$servicesSelector.on('change', function(){
                 var selected_service = $(this).val();
 
                 if ( self.strings.autorefresh == '1' ) {

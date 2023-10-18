@@ -184,7 +184,7 @@ class App_Shortcode_ServiceProviders extends App_Shortcode {
 		if ( $autorefresh ) {
 			$script .= "$('.app_workers_button').hide();";
 		}
-		$script .= "$('.app_select_workers').change(function(){";
+		$script .= "$('.app_select_workers').on('change', function(){";
 		$script .= "var selected_worker=$('.app_select_workers option:selected').val();";
 		$script .= "if (typeof selected_worker=='undefined' || selected_worker==null){";
 		$script .= "selected_worker=0;";

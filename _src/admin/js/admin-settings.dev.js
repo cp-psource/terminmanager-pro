@@ -4,7 +4,7 @@ jQuery( document ).ready( function( $ ) {
     var presetSamples = $(".preset_samples");
     var _class, k, i;
 
-    $('select[name="color_set"]').change(function () {
+    $('select[name="color_set"]').on('change', function () {
         var n = $(this).val();
         if (n == 0) {
             customColorRow.show();

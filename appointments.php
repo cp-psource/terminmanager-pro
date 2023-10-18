@@ -93,7 +93,7 @@ if (!class_exists('Appointments')) {
             include_once('includes/class-app-sessions.php');
             include_once('includes/class-app-gdpr.php');
 
-            // Load premium features
+            // Load extra features
             if (_appointments_is_pro()) {
                 include_once(appointments_plugin_dir() . 'includes/pro/class-app-pro.php');
                 $this->pro = new Appointments_Pro();
