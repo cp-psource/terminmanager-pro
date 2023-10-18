@@ -2,20 +2,28 @@
 
 class App_Tutorial {
 
-	public $set_textdomain;
+    public $set_textdomain;
     public $set_capability;
 
-	private function __construct() {}
+    private function __construct() {}
 
-	public static function serve() {
-		$me = new App_Tutorial;
-		$me->_add_hooks();
-	}
+    public static function serve() {
+        $me = new App_Tutorial;
+        $me->_add_hooks();
+    }
 
-	private function _add_hooks() {
-		add_action( 'admin_init', array( $this, 'tutorial1' ) );							// Add tutorial 1
-		add_action( 'admin_init', array( $this, 'tutorial2' ) );							// Add tutorial 2
-	}
+    private function _add_hooks() {
+        add_action( 'admin_init', array( $this, 'tutorial1' ) ); // Add tutorial 1
+        add_action( 'admin_init', array( $this, 'tutorial2' ) ); // Add tutorial 2
+    }
+
+    public function set_textdomain($value) {
+        $this->set_textdomain = $value;
+    }
+
+    public function set_capability($value) {
+        $this->set_capability = $value;
+    }
 
 	function tutorial1() {
 		global $appointments;
@@ -34,10 +42,10 @@ class App_Tutorial {
 			$tutorial->restart();
 		}
 		//add our textdomain that matches the current plugin
-		$tutorial->set_textdomain = 'appointments';
+		//$tutorial->set_textdomain = 'appointments';
 
 		//add the capability a user must have to view the tutorial
-		$tutorial->set_capability = App_Roles::get_capability( 'manage_options', App_Roles::CTX_TUTORIAL );
+		//$tutorial->set_capability = App_Roles::get_capability( 'manage_options', App_Roles::CTX_TUTORIAL );
 
 		$tutorial->add_icon( $appointments->plugin_url . '/images/large-greyscale.png' );
 
@@ -177,10 +185,10 @@ class App_Tutorial {
 		$tutorial = new Pointer_Tutorial( 'app_tutorial2', true, false );
 
 		//add our textdomain that matches the current plugin
-		$tutorial->set_textdomain = 'appointments';
+		//$tutorial->set_textdomain = 'appointments';
 
 		//add the capability a user must have to view the tutorial
-		$tutorial->set_capability = App_Roles::get_capability( 'manage_options', App_Roles::CTX_TUTORIAL );
+		//$tutorial->set_capability = App_Roles::get_capability( 'manage_options', App_Roles::CTX_TUTORIAL );
 
 		$tutorial->add_icon( $appointments->plugin_url . '/images/large-greyscale.png' );
 		$appointments_page = admin_url( 'admin.php?page=appointments' );

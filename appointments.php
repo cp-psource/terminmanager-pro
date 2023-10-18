@@ -70,6 +70,7 @@ if (!class_exists('Appointments')) {
 		public $uri;
 		public $script;
 		public $gcal_image;
+		public $shortcode_found;
 	
 		public $addons_loader;
 	
