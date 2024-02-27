@@ -104,6 +104,7 @@ Konfiguriere Terminmanager ganz einfach, um Änderungen an Terminen automatisch 
 * Textopimierungen
 * MEINE TERMINE Dashboardwidget als Erweiterung
 * Fix: get_page_by_title 
+* Fix: Creation of dynamic property
 
 = 1.1.1 =
 

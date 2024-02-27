@@ -34,10 +34,10 @@ class App_Tutorial {
 			$tutorial->restart();
 		}
 		//add our textdomain that matches the current plugin
-		$tutorial->set_textdomain = 'appointments';
+		$tutorial->set_textdomain('appointments');
 
 		//add the capability a user must have to view the tutorial
-		$tutorial->set_capability = App_Roles::get_capability( 'manage_options', App_Roles::CTX_TUTORIAL );
+		$tutorial->set_capability(App_Roles::get_capability('manage_options', App_Roles::CTX_TUTORIAL));
 
 		$tutorial->add_icon( $appointments->plugin_url . '/images/large-greyscale.png' );
 
@@ -177,10 +177,10 @@ class App_Tutorial {
 		$tutorial = new Pointer_Tutorial( 'app_tutorial2', true, false );
 
 		//add our textdomain that matches the current plugin
-		$tutorial->set_textdomain = 'appointments';
+		$tutorial->set_textdomain('appointments');
 
 		//add the capability a user must have to view the tutorial
-		$tutorial->set_capability = App_Roles::get_capability( 'manage_options', App_Roles::CTX_TUTORIAL );
+		$tutorial->set_capability(App_Roles::get_capability('manage_options', App_Roles::CTX_TUTORIAL));
 
 		$tutorial->add_icon( $appointments->plugin_url . '/images/large-greyscale.png' );
 		$appointments_page = admin_url( 'admin.php?page=appointments' );

@@ -99,7 +99,7 @@ class Appointments_Integrations_PSeCommerce {
 		<script>
 			(function ($) {
 				var payment_required = $('#payment_required');
-				payment_required.change( function() {
+				payment_required.on('change', function() {
 					var value = $(this).val();
 					if ( 'no' === value ) {
 						$('.mp-integration').hide();

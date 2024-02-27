@@ -6,6 +6,8 @@
  * Class Appointments_Admin_Import_Export_Settings_Page
  */
 class Appointments_Admin_Import_Export_Settings_Page {
+	public $page_id;
+	
 	public function __construct() {
 		$this->page_id = add_submenu_page(
 			'',

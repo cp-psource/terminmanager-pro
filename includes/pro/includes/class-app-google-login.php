@@ -119,7 +119,7 @@ class Appointments_Appointments_Google_Login {
 		<script>
 			jQuery( document ).ready( function( $ ) {
 				var loginSettings = $('#google-login');
-				$('select[name="login_required"]').change(function () {
+				$('select[name="login_required"]').on('change', function () {
 					if ($(this).val() == 'yes') {
 						loginSettings.removeClass( 'hidden' );
 					}

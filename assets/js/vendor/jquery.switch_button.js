@@ -256,7 +256,7 @@
             if (this.options.checked) {
                 // Update the underlying checkbox state
                 this.element.prop("checked", true);
-                this.element.change();
+                this.element.trigger('change');
 
                 var dLeft = this.options.width - this.options.button_width;
                 newLeft = "+=" + dLeft;
@@ -279,7 +279,7 @@
             else {
                 // Update the underlying checkbox state
                 this.element.prop("checked", false);
-                this.element.change();
+                this.element.trigger('change');
                 newLeft = "-1px";
 
                 // Update labels states
