@@ -3,7 +3,7 @@ Contributors: DerN3rd (PSOURCE)
 Tags: termine, buchung, appointments
 Requires at least: 4.9
 Tested up to: 5.6
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -95,6 +95,11 @@ Konfiguriere Terminmanager ganz einfach, um Änderungen an Terminen automatisch 
 
 == ChangeLog ==
 
+= 1.1.3 =
+
+* Fix: get_page_by_title 
+* Fix: Creation of dynamic property
+
 = 1.1.2 =
 
 * Ehemalige Pro Funktionen sind nun regulär
@@ -103,8 +108,6 @@ Konfiguriere Terminmanager ganz einfach, um Änderungen an Terminen automatisch 
 * JQuery Fixes
 * Textopimierungen
 * MEINE TERMINE Dashboardwidget als Erweiterung
-* Fix: get_page_by_title 
-* Fix: Creation of dynamic property
 
 = 1.1.1 =
 
