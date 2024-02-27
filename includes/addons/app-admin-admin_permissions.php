@@ -5,7 +5,7 @@ Description: Hier kannst Du auswählen, wer was in Deinem Admin-Backend tun darf
 Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
 Version: 1.2
 AddonType: Users
-Author: WMS N@W
+Author: PSOURCE
 */
 
 class App_Users_AdminPermissions {

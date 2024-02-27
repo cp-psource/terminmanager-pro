@@ -6,7 +6,7 @@ Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
 Version: 1.1
 AddonType: Locations
 Requires: Standorte
-Author: WMS N@W
+Author: PSOURCE
 */
 
 class App_Locations_WorkerLocations {

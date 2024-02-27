@@ -5,7 +5,7 @@ Description: Zeigt meine Termine im Dashboard-Widget an
 Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
 Version: 1.0
 AddonType: Dashboard Widget
-Author: WMS N@W
+Author: PSOURCE
 */
 
 class App_my_appointments_dashboard_widget {

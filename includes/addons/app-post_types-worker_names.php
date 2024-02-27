@@ -5,7 +5,7 @@ Description: Hier kannst Du auswählen, wie ein Dienstanbieter Deinen Clienten v
 Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
 Version: 1.1
 AddonType: Post Types
-Author: WMS N@W
+Author: PSOURCE
 */
 
 class App_PostTypes_ServiceProviderNames {

@@ -5,7 +5,7 @@ Description: Fügt Deinem Menüpunkt Termine eine visuelle Benachrichtigung hinz
 Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
 Version: 1.1
 AddonType: Admin
-Author: WMS N@W
+Author: PSOURCE
 */
 
 class App_Admin_PendingCount {

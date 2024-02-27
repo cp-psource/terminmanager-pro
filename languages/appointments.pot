@@ -1,4 +1,4 @@
-# Copyright (C) 2019 WMS N@W
+# Copyright (C) 2019 PSOURCE
 # This file is distributed under the same license as the Terminmanager package.
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: WMS N@W <support@psource.org>\n"
+"Language-Team: PSOURCE <support@psource.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 
 #: admin/admin-helpers.php:20
@@ -6004,7 +6004,7 @@ msgid "https://n3rds.work/piestingtal-source-project/ps-terminmanager/"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "WMS N@W"
+msgid "PSOURCE"
 msgstr ""
 
 #. Author URI of the plugin/theme

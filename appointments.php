@@ -4,14 +4,14 @@ Plugin Name: Terminmanager
 Description: Ermöglicht das Akzeptieren von Terminen vom Frontend und das Verwalten oder Erstellen von Terminen vom Administrator aus.
 Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
 Version: 1.1.2
-Author: WMS N@W
-Author URI: https://n3rds.work
+Author: PSOURCE
+Author URI: https://github.com/cp-psource
 Textdomain: appointments
 
 */
 
 /*
-Copyright 2020-2023 WMS N@W (https://n3rds.work)
+Copyright 2020-2024 PSOURCE (https://github.com/cp-psource)
 Author - DerN3rd
 
 This program is free software; you can redistribute it and/or modify it under
@@ -27,12 +27,18 @@ this program; if not, write to the Free Software Foundation, Inc., 59 Temple
 Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-require 'psource/psource-plugin-update/psource-plugin-updater.php';
-$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=terminmanager-pro', 
-	__FILE__, 
-	'terminmanager-pro' 
+require 'psource/psource-plugin-update/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+ 
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/cp-psource/terminmanager-pro',
+	__FILE__,
+	'terminmanager-pro'
 );
+ 
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
 
 if (!class_exists('Appointments')) {
 
