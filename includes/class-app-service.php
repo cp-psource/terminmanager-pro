@@ -53,7 +53,7 @@ function appointments_insert_service( $args = array() ) {
 	 */
 	$insert = apply_filters( 'appointments_before_insert_service', $count >= 2 ? false : true, $args );
 	if ( ! $insert ) {
-		return new WP_Error( 'reached-limit', sprintf( __( 'Du hast das Limit für die kostenlose Version erreicht. <a href="%s">Upgrade auf Terminmanager PRO für unbegrenzte Services</a>', 'appointments' ), 'https://n3rds.work/piestingtal-source-project/ps-terminmanager/' ) );
+		return new WP_Error( 'reached-limit', sprintf( __( 'Du hast das Limit für die kostenlose Version erreicht. <a href="%s">Upgrade auf Terminmanager PRO für unbegrenzte Services</a>', 'appointments' ), 'https://cp-psource.github.io/terminmanager-pro/' ) );
 	}
 	$insert = array();
 	$insert_wildcards = array();

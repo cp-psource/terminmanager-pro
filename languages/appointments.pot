@@ -6000,7 +6000,7 @@ msgid "Months to add to current month:"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://n3rds.work/piestingtal-source-project/ps-terminmanager/"
+msgid "https://cp-psource.github.io/terminmanager-pro/"
 msgstr ""
 
 #. Author of the plugin/theme

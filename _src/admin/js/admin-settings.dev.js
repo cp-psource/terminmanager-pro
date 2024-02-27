@@ -42,11 +42,11 @@ jQuery( document ).ready( function( $ ) {
                     element.parent().find('a.pickcolor').css('background-color', '#' + hex);
                 }
             })
-            .bind('keyup', function () {
+            .on('keyup', function () {
                 $(this).ColorPickerSetColor(this.value);
             });
     });
-    colorpicker.keyup(function () {
+    colorpicker.on('keyup',function () {
         var a = $(this).val();
         a = a.replace(/[^a-fA-F0-9]/, '');
         if (a.length === 3 || a.length === 6)

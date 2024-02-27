@@ -2,7 +2,7 @@
 /*
 Plugin Name: Dashboard-Widget Meine Termine.
 Description: Zeigt meine Termine im Dashboard-Widget an
-Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
+Plugin URI: https://cp-psource.github.io/terminmanager-pro/
 Version: 1.0
 AddonType: Dashboard Widget
 Author: PSOURCE

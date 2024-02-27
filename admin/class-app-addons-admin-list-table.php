@@ -26,7 +26,7 @@ class Appointments_Addons_Admin_List_Table extends WP_List_Table {
 	function column_name( $item ) {
 		$actions = array();
 		if ( strtolower( $item->Free ) === 'true' ) {
-			$actions['activate'] = '<a href="https://n3rds.work/piestingtal-source-project/ps-terminmanager/">' . __( 'Upgrade auf Terminmanager PRO zum Aktivieren', 'appointments' ) . '</a>';
+			$actions['activate'] = '<a href="https://cp-psource.github.io/terminmanager-pro/">' . __( 'Upgrade auf Terminmanager PRO zum Aktivieren', 'appointments' ) . '</a>';
 		}
 		else {
 			if ( ! $item->active ) {

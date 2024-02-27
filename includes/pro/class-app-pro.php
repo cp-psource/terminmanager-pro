@@ -42,7 +42,7 @@ class Appointments_Pro {
 	}
 
 	private function includes() {
-		include_once( appointments_plugin_dir() . 'includes/class-app-google-login.php' );
+		include_once( appointments_plugin_dir() . 'includes/pro/includes/class-app-google-login.php' );
 	}
 
 	public function load_integrations() {
@@ -50,14 +50,14 @@ class Appointments_Pro {
 	}
 
 	/**
-	 * Loads extra addons from includes/addons
+	 * Loads extra addons from includes/pro/includes/addons
 	 *
 	 * @param $addons
 	 *
 	 * @return array
 	 */
 	public function load_extra_addons( $addons ) {
-		$all = glob( appointments_plugin_dir() . 'includes/addons/*.php' );
+		$all = glob( appointments_plugin_dir() . 'includes/pro/includes/addons/*.php' );
 		foreach ( $all as $addon_file ) {
 			$addon = new Appointments_Addon( $addon_file );
 			if ( ! $addon->error ) {

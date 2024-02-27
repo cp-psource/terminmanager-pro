@@ -54,42 +54,48 @@ class Appointments_Integrations_PSeCommerce {
 
 	public function show_settings() {
 		$options = appointments_get_options();
-		$product_page = get_page_by_title( 'Terminbuchung', OBJECT, 'product' );
-?>
-<div class="payment_row">
-		<h3 class="mp-integration"><?php _e( 'PSeCommerce aktivieren', 'appointments' ); ?></h3>
-		<table class="form-table mp-integration">
-			<tr>
-				<th scope="row"><label for="use_mp"><?php _e( 'Integration aktivieren', 'appointments' ); ?></label></th>
-				<td>
-                    <?php _appointments_html_chceckbox( $options, 'use_mp', 'payment_use_mp' ) ?>
-					<p class="description"><?php _e( 'Termine können als Produkte festgelegt werden. Jeder einer Produktseite hinzugefügte Termin-Shortcode macht diese Seite zu einer "Termin-Produktseite". Einzelheiten findest Du in den FAQ.', 'appointments' ) ?></p>
-				</td>
-			</tr>
-			<?php do_action( 'app-settings-payment_settings-psecommerce' ); ?>
-			<tr class="payment_use_mp">
-				<th scope="row"><label for="make_an_appointment_product"><?php _e( 'Produktseite erstellen', 'appointments' ); ?></label></th>
-				<td class="appointment-create-page">
-					<?php _e( 'mit', 'appointments' ) ?>
-					<label for="app_page_type_mp" class="screen-reader-text"><?php _e( 'Wähle Produktseitentyp', 'appointments' ); ?></label>
-					<select>
-						<option value="one_month"><?php _e( 'Zeitplan des aktuellen Monats', 'appointments' ) ?></option>
-						<option value="two_months" <?php selected( $options['app_page_type_mp'], 'two_months' ); ?>><?php _e( 'aktuelle und nächste Monatspläne', 'appointments' ) ?></option>
-						<option value="one_week" <?php selected( $options['app_page_type_mp'], 'one_week' ); ?>><?php _e( 'Zeitplan der aktuellen Woche', 'appointments' ) ?></option>
-						<option value="two_weeks" <?php selected( $options['app_page_type_mp'], 'two_weeks' ); ?>><?php _e( 'aktuelle und nächste Woche', 'appointments' ) ?></option>
-					</select>
-                    <a href="#" data-action="make_an_appointment_mp_page" class="button" data-nonce="<?php echo wp_create_nonce( 'appointment-create-page' ); ?>"><?php esc_html_e( 'SEITE ERSTELLEN!', 'appointments' ); ?></a>
-					<p class="description"><?php _e( 'Wie oben unter "Terminseite erstellen", jedoch werden diesmal Termin-Shortcodes in eine neue Produktseite eingefügt und der Seitentitel lautet "Terminbuchung". Dies ist auch der Produktname.', 'appointments' ) ?></p>
-					<?php if ( $product_page ) :  ?>
-						<p class="description"><?php _e( '<b>Hinweis:</b> Du hast bereits eine solche Seite. Wenn Du dieses Auswahl aktivierst, wird eine weitere Seite mit demselben Titel erstellt. ', 'appointments' ) ?>
-							<a href="<?php echo admin_url( 'post.php?post=' . $product_page->ID . '&action=edit' ) ?>" target="_blank"><?php _e( 'SEITE BEARBEITEN', 'appointments' ) ?></a> |
-							<a href="<?php echo get_permalink( $product_page->ID ) ?>" target="_blank"><?php _e( 'SEITE ANSEHEN', 'appointments' ) ?></a>
-						</p>
-					<?php endif; ?>
-				</td>
-			</tr>
-        </table>
-</div>
+		$product_page_query = new WP_Query( array(
+			'post_type'      => 'product',
+			'post_title'     => 'Terminbuchung',
+			'posts_per_page' => 1,
+		) );
+		$product_page = $product_page_query->posts ? $product_page_query->posts[0] : null;
+		wp_reset_postdata(); // Zurücksetzen der globalen $post Variable
+		?>
+		<div class="payment_row">
+			<h3 class="mp-integration"><?php _e( 'PSeCommerce aktivieren', 'appointments' ); ?></h3>
+			<table class="form-table mp-integration">
+				<tr>
+					<th scope="row"><label for="use_mp"><?php _e( 'Integration aktivieren', 'appointments' ); ?></label></th>
+					<td>
+						<?php _appointments_html_chceckbox( $options, 'use_mp', 'payment_use_mp' ) ?>
+						<p class="description"><?php _e( 'Termine können als Produkte festgelegt werden. Jeder einer Produktseite hinzugefügte Termin-Shortcode macht diese Seite zu einer "Termin-Produktseite". Einzelheiten findest Du in den FAQ.', 'appointments' ) ?></p>
+					</td>
+				</tr>
+				<?php do_action( 'app-settings-payment_settings-psecommerce' ); ?>
+				<tr class="payment_use_mp">
+					<th scope="row"><label for="make_an_appointment_product"><?php _e( 'Produktseite erstellen', 'appointments' ); ?></label></th>
+					<td class="appointment-create-page">
+						<?php _e( 'mit', 'appointments' ) ?>
+						<label for="app_page_type_mp" class="screen-reader-text"><?php _e( 'Wähle Produktseitentyp', 'appointments' ); ?></label>
+						<select>
+							<option value="one_month"><?php _e( 'Zeitplan des aktuellen Monats', 'appointments' ) ?></option>
+							<option value="two_months" <?php selected( $options['app_page_type_mp'], 'two_months' ); ?>><?php _e( 'aktuelle und nächste Monatspläne', 'appointments' ) ?></option>
+							<option value="one_week" <?php selected( $options['app_page_type_mp'], 'one_week' ); ?>><?php _e( 'Zeitplan der aktuellen Woche', 'appointments' ) ?></option>
+							<option value="two_weeks" <?php selected( $options['app_page_type_mp'], 'two_weeks' ); ?>><?php _e( 'aktuelle und nächste Woche', 'appointments' ) ?></option>
+						</select>
+						<a href="#" data-action="make_an_appointment_mp_page" class="button" data-nonce="<?php echo wp_create_nonce( 'appointment-create-page' ); ?>"><?php esc_html_e( 'SEITE ERSTELLEN!', 'appointments' ); ?></a>
+						<p class="description"><?php _e( 'Wie oben unter "Terminseite erstellen", jedoch werden diesmal Termin-Shortcodes in eine neue Produktseite eingefügt und der Seitentitel lautet "Terminbuchung". Dies ist auch der Produktname.', 'appointments' ) ?></p>
+						<?php if ( $product_page ) :  ?>
+							<p class="description"><?php _e( '<b>Hinweis:</b> Du hast bereits eine solche Seite. Wenn Du dieses Auswahl aktivierst, wird eine weitere Seite mit demselben Titel erstellt. ', 'appointments' ) ?>
+								<a href="<?php echo admin_url( 'post.php?post=' . $product_page->ID . '&action=edit' ) ?>" target="_blank"><?php _e( 'SEITE BEARBEITEN', 'appointments' ) ?></a> |
+								<a href="<?php echo get_permalink( $product_page->ID ) ?>" target="_blank"><?php _e( 'SEITE ANSEHEN', 'appointments' ) ?></a>
+							</p>
+						<?php endif; ?>
+					</td>
+				</tr>
+			</table>
+		</div>
 		<script>
 			(function ($) {
 				var payment_required = $('#payment_required');

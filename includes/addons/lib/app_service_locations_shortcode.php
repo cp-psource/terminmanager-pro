@@ -126,7 +126,7 @@ function app_service_locations_redirect () {
 $(".app_service_locations_button").on("click", app_service_locations_redirect);
 EO_SELECTION_JAVASCRIPT;
 		if (!empty($args['autorefresh'])) {
-			$script .= '$(".app_service_locations_dropdown_select select").change(app_service_locations_redirect);';
+			$script .= '$(".app_service_locations_dropdown_select select").on('change', app_service_locations_redirect);';
 		}
 		$appointments->add2footer($script);
 		

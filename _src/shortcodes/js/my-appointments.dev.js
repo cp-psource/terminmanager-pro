@@ -11,7 +11,7 @@ Appointments = window.Appointments || {};
      * @constructor
      */
     function MyAppointments( options ) {
-        $(".app-my-appointments-cancel").change( function(e) {
+        $(".app-my-appointments-cancel").on('change',  function(e) {
             var $target = $( e.target );
             var cancelAppointment = this.cancelAppointment;
             if ( $target.is( ':checked' ) ) {

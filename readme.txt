@@ -89,7 +89,7 @@ Konfiguriere Terminmanager ganz einfach, um Änderungen an Terminen automatisch 
 
 [POWERED BY PSOURCE](https://github.com/cp-psource)
 
-[Projektseite](https://n3rds.work/piestingtal_source/terminmanager-pro/)
+[Projektseite](https://cp-psource.github.io/terminmanager-pro/)
 [GitHub](https://github.com/piestingtal-source/terminmanager-pro)
 
 
@@ -102,7 +102,8 @@ Konfiguriere Terminmanager ganz einfach, um Änderungen an Terminen automatisch 
 * Optimierte .js Files
 * JQuery Fixes
 * Textopimierungen
-* MEINE TERMINE Dashboardwidget als Erweiterung 
+* MEINE TERMINE Dashboardwidget als Erweiterung
+* Fix: get_page_by_title 
 
 = 1.1.1 =
 

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Terminmanager
 Description: Ermöglicht das Akzeptieren von Terminen vom Frontend und das Verwalten oder Erstellen von Terminen vom Administrator aus.
-Plugin URI: https://n3rds.work/piestingtal-source-project/ps-terminmanager/
+Plugin URI: https://cp-psource.github.io/terminmanager-pro/
 Version: 1.1.2
 Author: PSOURCE
 Author URI: https://github.com/cp-psource

@@ -35,9 +35,9 @@ class App_AdminHelp {
 			$this->_sidebar .= '<p>' . __('Ermöglicht das Akzeptieren von Terminen vom Frontend und das Verwalten oder Erstellen von Terminen vom Administrator aus.', 'appointments') . '</p>';
 		} else {
 				$this->_sidebar .= '<ul>' .
-					'<li><a href="https://n3rds.work/piestingtal-source-project/ps-terminmanager/" target="_blank">' . __('Project page', 'appointments') . '</a></li>' .
-					'<li><a href="https://n3rds.work/piestingtal-source-project/ps-terminmanager/" target="_blank">' . __('Installation and instructions page', 'appointments') . '</a></li>' .
-					'<li><a href="https://n3rds.work/piestingtal-source-project/ps-terminmanager/" target="_blank">' . __('Support forum', 'appointments') . '</a></li>' .
+					'<li><a href="https://cp-psource.github.io/terminmanager-pro/" target="_blank">' . __('Project page', 'appointments') . '</a></li>' .
+					'<li><a href="https://cp-psource.github.io/terminmanager-pro/" target="_blank">' . __('Installation and instructions page', 'appointments') . '</a></li>' .
+					'<li><a href="https://cp-psource.github.io/terminmanager-pro/" target="_blank">' . __('Support forum', 'appointments') . '</a></li>' .
 				'</ul>' . 
 			'';
 		}

@@ -1,7 +1,7 @@
 <?php
 /**
- * @author: WMS NW
- * @version: 1.1
+ * @author: PSOURCE, Ignacio Cruz (igmoweb)
+ * @version:
  */
 
 
@@ -10,10 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'Appointments_Admin_Transactions_Page' ) ) {
-
 	class Appointments_Admin_Transactions_Page {
-
-		private $page_id;
 
 		public function __construct() {
 			$this->page_id = add_submenu_page(
