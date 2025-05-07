@@ -20,6 +20,7 @@ class Appointments_Appointment {
 	public $note = '';
 	public $gcal_ID = '';
 	public $gcal_updated = '';
+	public $location = ''; // Declare the 'location' property to avoid dynamic property creation
 
 	public function __construct( $appointment ) {
 		if ( is_array( $appointment ) ) {

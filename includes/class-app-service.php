@@ -8,6 +8,8 @@ class Appointments_Service {
 	public $duration = 0;
 	public $price = '';
 	public $page = 0;
+	public $shared_resources; // Explicitly declare the property to avoid dynamic property creation
+	public $service_padding; // Explicitly declare the property to avoid dynamic property creation
 
 	public function __construct( $service ) {
 		foreach ( get_object_vars( $service ) as $key => $value ) {

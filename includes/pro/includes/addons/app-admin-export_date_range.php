@@ -79,7 +79,7 @@ class App_Export_DateRange {
 	}
 	function init () {
 		$root = $("#app-export-date_range");
-		$("#app-export-date_range-toggle").change(function () {
+		$("#app-export-date_range-toggle").on('change', function () {
 			if ($(this).is(":checked")) show();
 			else hide();
 		});

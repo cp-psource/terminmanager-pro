@@ -17,7 +17,7 @@ class App_my_appointments_dashboard_widget {
 	}
 
 	public static function serve () {
-		$me = new App_appointments_dashboard_widget;
+		$me = new App_my_appointments_dashboard_widget; // Korrektur: Richtige Klasse verwenden
 		$me->_add_hooks();
 	}
 

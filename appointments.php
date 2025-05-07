@@ -1944,9 +1944,11 @@ if (!class_exists('Appointments')) {
 	 * Localize the plugin
 	 */
 		function localization() {
-			// Load up the localization file if we're using ClassicPress in a different language
-			// Place it in Terminmanager's "languages" folder and name it "appointments-[value in wp-config].mo"
-			load_plugin_textdomain( 'appointments', false, '/appointments/languages/' );
+			add_action('init', function() {
+				// Load up the localization file if we're using ClassicPress in a different language
+				// Place it in Terminmanager's "languages" folder and name it "appointments-[value in wp-config].mo"
+				load_plugin_textdomain( 'appointments', false, dirname(plugin_basename(__FILE__)) . '/languages/' );
+			});
 		}
 
 		/**
