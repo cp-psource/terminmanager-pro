@@ -2,7 +2,7 @@
 Contributors: DerN3rd (PSOURCE)
 Tags: termine, buchung, appointments
 Requires at least: 4.9
-Tested up to: 5.6
+Tested up to: 6.8.1
 Stable tag: 1.1.3
 Requires PHP: 7.2
 License: GPLv2 or later

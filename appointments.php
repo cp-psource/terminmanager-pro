@@ -11,7 +11,7 @@ Textdomain: appointments
 */
 
 /*
-Copyright 2020-2024 PSOURCE (https://github.com/cp-psource)
+Copyright 2020-2025 PSOURCE (https://github.com/cp-psource)
 Author - DerN3rd
 
 This program is free software; you can redistribute it and/or modify it under
