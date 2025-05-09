@@ -34,7 +34,13 @@ class App_Tutorial {
 			$tutorial->restart();
 		}
 		//add our textdomain that matches the current plugin
-		$tutorial->set_textdomain('appointments');
+		// Ensure the Pointer_Tutorial class has a set_textdomain method or remove this line if unnecessary.
+		if (method_exists($tutorial, 'set_textdomain')) {
+			// Ensure the Pointer_Tutorial class has a set_textdomain method or remove this line if unnecessary.
+			if (method_exists($tutorial, 'set_textdomain')) {
+				$tutorial->set_textdomain('appointments');
+			}
+		}
 
 		//add the capability a user must have to view the tutorial
 		$tutorial->set_capability(App_Roles::get_capability('manage_options', App_Roles::CTX_TUTORIAL));
@@ -174,10 +180,12 @@ class App_Tutorial {
 		}
 
 		//create our tutorial, with default redirect prefs
-		$tutorial = new Pointer_Tutorial( 'app_tutorial2', true, false );
+		$tutorial = $this->get_pointer_tutorial( 'app_tutorial2' );
 
 		//add our textdomain that matches the current plugin
-		$tutorial->set_textdomain('appointments');
+		if ( method_exists( $tutorial, 'set_textdomain' ) ) {
+			$tutorial->set_textdomain( 'appointments' );
+		}
 
 		//add the capability a user must have to view the tutorial
 		$tutorial->set_capability(App_Roles::get_capability('manage_options', App_Roles::CTX_TUTORIAL));
@@ -234,5 +242,12 @@ class App_Tutorial {
 		$tutorial->initialize();
 
 		return $tutorial;
+	}
+
+	private function get_pointer_tutorial( $id ) {
+		if ( ! class_exists( 'Pointer_Tutorial' ) ) {
+			require_once( appointments_plugin_dir() . 'includes/external/pointer-tutorials.php' );
+		}
+		return new Pointer_Tutorial( $id, true, false );
 	}
 }
