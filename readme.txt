@@ -3,7 +3,7 @@ Contributors: DerN3rd (PSOURCE)
 Tags: termine, buchung, appointments
 Requires at least: 4.9
 Tested up to: 6.8.1
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -94,6 +94,11 @@ Konfiguriere Terminmanager ganz einfach, um Änderungen an Terminen automatisch 
 
 
 == ChangeLog ==
+
+= 1.1.5 =
+
+* Fix Namespaceconflict with Events+
+* Fix some deprecated js
 
 = 1.1.4 =
 
