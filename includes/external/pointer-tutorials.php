@@ -46,11 +46,11 @@ It is best to call this in the admin_init action hook. Here is an example:
 		$tutorial->add_icon( plugins_url( 'includes/images/my-logo-white.png' , __FILE__ ) );
 		
 		//start registering steps. Note the 'content' argument is very important, and should be escaped with esc_js() as it will go in JSON
-		$tutorial->add_step(admin_url('index.php'), 'index.php', '#psource_widget', __('Step Number One', 'mytextdomain'), array(
+		$tutorial->add_step(admin_url('index.php'), 'index.php', '#wpmudev_widget', __('Step Number One', 'mytextdomain'), array(
 				'content'  => '<p>' . esc_js( __('On each category page, plugins and themes are listed in an easy to read grid format.', 'mytextdomain') ) . '</p>',
 				'position' => array( 'edge' => 'bottom', 'align' => 'left' ),
 			));
-		$tutorial->add_step(admin_url('index.php'), 'index.php', '#toplevel_page_psource', __('Step Number Two', 'mytextdomain'), array(
+		$tutorial->add_step(admin_url('index.php'), 'index.php', '#toplevel_page_wpmudev', __('Step Number Two', 'mytextdomain'), array(
 				'content'  => '<p>' . esc_js( __('On each category page, plugins and themes are listed in an easy to read grid format.', 'mytextdomain') ) . '</p>',
 				'position' => array( 'edge' => 'top', 'align' => 'right' ),
 			));
@@ -60,15 +60,15 @@ It is best to call this in the admin_init action hook. Here is an example:
 			));
 		
 		//second page steps
-		$tutorial->add_step(admin_url('admin.php?page=my-plugin'), 'toplevel_page_psource', '.nav-tab-wrapper', __('Step Number Four', 'mytextdomain'), array(
+		$tutorial->add_step(admin_url('admin.php?page=my-plugin'), 'toplevel_page_wpmudev', '.nav-tab-wrapper', __('Step Number Four', 'mytextdomain'), array(
 				'content'  => '<p>' . esc_js( __('On each category page, plugins and themes are listed in an easy to read grid format.', 'mytextdomain') ) . '</p>',
 				'position' => array( 'edge' => 'top', 'align' => 'center' ),
 			));
-		$tutorial->add_step(admin_url('admin.php?page=my-plugin'), 'toplevel_page_psource', '.wdv-grid-wrap .themepost:not(.installed):first', __('Step Number Five', 'mytextdomain'), array(
+		$tutorial->add_step(admin_url('admin.php?page=my-plugin'), 'toplevel_page_wpmudev', '.wdv-grid-wrap .themepost:not(.installed):first', __('Step Number Five', 'mytextdomain'), array(
 				'content'  => '<p>' . esc_js( __('On each category page, plugins and themes are listed in an easy to read grid format.', 'mytextdomain') ) . '</p>',
 				'position' => array( 'edge' => 'left', 'align' => 'center' ),
 			));
-		$tutorial->add_step(admin_url('admin.php?page=my-plugin'), 'toplevel_page_psource', '.wdv-grid-wrap .themepost:not(.installed):first .themescreens .metainfo a', __('Step Number Six', 'mytextdomain'), array(
+		$tutorial->add_step(admin_url('admin.php?page=my-plugin'), 'toplevel_page_wpmudev', '.wdv-grid-wrap .themepost:not(.installed):first .themescreens .metainfo a', __('Step Number Six', 'mytextdomain'), array(
 				'content'  => '<p>' . esc_js( __('On each category page, plugins and themes are listed in an easy to read grid format.', 'mytextdomain') ) . '</p>',
 				'position' => array( 'edge' => 'top', 'align' => 'left' ),
 			));
@@ -85,30 +85,269 @@ Have fun!
 */
 
 if ( !class_exists( 'Pointer_Tutorial' ) ) {
+	
 	/*
 	* class Pointer_Tutorial
+	*
+	* @author Aaron Edwards (Incsub)
+	* @version 1.0
+	* @requires WP 3.3
 	*
 	*	@param string $tutorial_name Required: The name of this tutorial. Used for user settings and css classes.
 	*	@param bool $redirect_first_load Optional: Set to true to redirect and show first step for those who have not completed the tutorial. Default true
 	*	@param bool $force_completion Optional: Set to true to redirect and show the current step for those who have not completed the tutorial. Basically forces the tutorial to be completed or dismissed. Default false.
 	*/
 	class Pointer_Tutorial {
-		// Existing code...
+		
+		private $registered_pointers = array();
+		private $page_pointers = array();
+		private $tutorial_name = '';
+		private $tutorial_key = '';
+		private $admin_css = '';
+		private $textdomain = 'pointers';
+		private $capability = 'manage_options';
+		
+		//these are public in case you need to change them directly after registering the tutorial
+		public $redirect_first_load = true;
+		public $force_completion = false;
+		public $hide_dismiss = false; //hides the dismiss tutorial link
+		public $hide_step = false; //hides the current step label
+		
+		/*
+		 * function __construct
+		 *
+		 *	Create your tutorial using this method. 
+		 * 
+		 *	@param string $tutorial_key Required: The key of this tutorial. Used for user settings and css classes. Should not be changed.
+		 *	@param string $tutorial_name Required: The nice name of this tutorial. Should be i18n.
+		 *	@param bool $redirect_first_load Optional: Set to true to redirect and show first step for those who have not completed the tutorial. Default true
+		 *	@param bool $force_completion Optional: Set to true to redirect and show the current step for those who have not completed the tutorial. Basically forces the tutorial to be completed or dismissed. Default false.
+		 */
+		function __construct( $tutorial_key, $tutorial_name = '', $redirect_first_load = true, $force_completion = false ) {
+			global $wp_version;
+			
+			//requires WP 3.3
+			if ( version_compare($wp_version, '3.3-beta4', '<') )
+				return false;
+			
+			$this->tutorial_key = sanitize_key( $tutorial_key );
+			$this->tutorial_name = empty($tutorial_name) ? __('Tutorial', $this->textdomain) : trim($tutorial_name);
+			$this->redirect_first_load = $redirect_first_load;
+			$this->force_completion = $force_completion;
+		}
+		
+		/*
+		 * function add_step
+		 *
+		 *	Register your individual steps using this method. 
+		 * 
+		 *	@param string $url Required: The admin url of the step. Can be just index.php, but better to pass a full url from admin_url() or network_admin_url() functions.
+		 *	@param string $hook Required: This is the wordpress hook suffix for the page. This is returned by add_menu_page() or can be nabbed from the $hook_suffix global
+		 *	@param string $selector Required: The jQuery selector to attach the pointer to. It should only select one DOM element.
+		 *	@param string $title Optional: The title of the pointer. Leave empty to add no title/icon. No HTML allowed.
+		 *	@param array|string $args Required: The javascript arguments for the pointer jQuery plugin. content, position, pointerClass, pointerWidth, etc.
+		 */
+		public function add_step( $url, $hook, $selector, $title, $args ) {
+			
+			//add title if given
+			if ( !empty($title) )
+				$args['content'] = '<h3>' . esc_js($title) . '</h3>' . $args['content'];
+			
+			//if urls are incomplete calculate them
+			if ( strpos( $url, '://' ) === false ) {
+				$url = is_network_admin() ? network_admin_url($url) : admin_url($url);
+			}
 
+			//register the pointer	
+			$this->registered_pointers[] = array( 'url' => $url, 'hook' => $hook, 'selector' => $selector, 'title' => $title, 'args' => $args );
+		}
+		
+		/*
+		 * function set_capability
+		 *
+		 *	Customizes the capability the user requires to view this tutorial.
+		 * 
+		 *	@param string $capability the wordpress capability. Defaults to manage_options
+		 */
+		public function set_capability( $capability ) {
+			$this->capability = trim( $capability );
+		}
+		
+		/*
+		 * function set_textdomain
+		 *
+		 *	Customizes the textdomain for translating buttons and such.
+		 * 
+		 *	@param string $domain the textdomain for i18n
+		 */
 		public function set_textdomain( $domain ) {
 			$this->textdomain = trim( $domain );
 		}
-
-		// Existing code...
-	}
-}
-
-if (method_exists($tutorial, 'set_textdomain')) {
-	$tutorial->set_textdomain('appointments');
-} else {
-	// Optional: Log or debug that the method does not exist
-	error_log('The method set_textdomain() does not exist in Pointer_Tutorial.');
-}
+		
+		/*
+		 * function add_style
+		 *
+		 *	A shortcut to customize the css for the entire tutorial. Use this to change colors, fonts, etc.
+		 * 
+		 *	@param string $css the css selectors and attributes that will be printed inside <style> tags
+		 */
+		public function add_style( $css ) {
+			$this->admin_css .= "\n" . trim($css);
+		}
+		
+		/*
+		 * function add_icon
+		 *
+		 *	A shortcut to override the title with a custom icon of your choosing for the entire tutorial.
+		 *	If you need to customize the icons for individual steps use add_style.
+		 * 
+		 *	@param string $url Url to the icon image file. Should be 32x32 normally
+		 */
+		public function add_icon( $url ) {
+			$this->add_style( '.wpmudev_dashboard-pointer .wp-pointer-content h3:before { background-image: url("' . $url . '"); }' );
+		}
+		
+		/*
+		 * function initialize
+		 *
+		 *	Call after setting up the tutorial to initialize it and make it active
+		 */
+		public function initialize() {
+			
+			if ( !current_user_can($this->capability) )
+				return false;
+			
+			$this->catch_tutorial_start(); //load start listener
+			
+			$current_step = get_user_meta( get_current_user_id(), "current-{$this->tutorial_key}-step", true );
+			
+			// entire tutorial has been dismissed
+			if ( intval($current_step) >= count($this->registered_pointers) )
+				return;
+			
+			if ( is_admin() && !defined('DOING_AJAX') ) {
+				//if first load redirect is true and on first step force us there
+				if ( $this->redirect_first_load && $current_step == '' && strpos( $this->registered_pointers[0]['url'], $_SERVER['REQUEST_URI'] ) === false ) {
+					update_user_meta( get_current_user_id(), "current-{$this->tutorial_key}-step", 0 ); //set to 0 so that it won't redirect again
+					wp_redirect( $this->registered_pointers[0]['url'] );
+					exit;
+				}
+				
+				//if force_completion is true and on first step force us there
+				$current_step = intval($current_step);
+				if ( $this->force_completion && strpos( $this->registered_pointers[$current_step]['url'], $_SERVER['REQUEST_URI'] ) === false ) {
+					wp_redirect( $this->registered_pointers[$current_step]['url'] );
+					exit;
+				}
+			}
+			
+			add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
+			add_action( "wp_ajax_dismiss-{$this->tutorial_key}-pointer", array( &$this, 'ajax_dismiss' ) );
+		}
+		
+		/*
+		 * function start_link
+		 *
+		 *	Returns a url that can be linked to that when clicked starts the tutorial at a given step.
+		 *	Must be called after steps are registered.
+		 * 
+		 *	@param int $step What step to link to start at. Defaults to first step.
+		 *	@return string|bool Url to put in a link or false if they don't have that capability.
+		 */
+		public function start_link($step = 0) {
+			if ( !current_user_can($this->capability) )
+				return false;
+			
+			return add_query_arg( array($this->tutorial_key.'-start' => $step), $this->registered_pointers[$step]['url'] );
+		}
+		
+		/*
+		 * function restart	
+		 *
+		 * Restarts the tutorial at the given step with a redirect if neccessary.
+		 * Must be called before headers are sent and after steps are registered.
+		 *
+		 * 	@param int $step What step to link to start at. Defaults to first step.
+		 */
+		public function restart($step = 0) {
+			update_user_meta( get_current_user_id(), "current-{$this->tutorial_key}-step", $step );
+			$this->force_completion = true; //set temporarily so it will redirect if necessary
+		}
+		
+		
+		
+		
+		/* ---------------- Private Internal Methods ---------------- */
+		/* ---------------------------------------------------------- */
+		
+		/**
+		 * Initializes the new feature pointers.
+		 *
+		 */
+		function enqueue_scripts( $hook_suffix ) {
+                        global $post;
+                        
+			// Get current step
+			$current_step = (int) get_user_meta( get_current_user_id(), "current-{$this->tutorial_key}-step", true );
+			
+			//get first step for the current page
+			$first_step = $current_step;
+			$i = $current_step;
+			while ($i >= 0) {
+				if ( $this->registered_pointers[$i]['hook'] != $hook_suffix ) {
+					break; //drop out
+				} else {
+					$first_step = $i;
+				}
+				$i--;
+			}
+			
+			//get last step for the current page
+			$last_step = $current_step;
+			$i = $current_step;
+			while ($i < count($this->registered_pointers)) {
+				if ( $this->registered_pointers[$i]['hook'] != $hook_suffix ) {
+					break; //drop out
+				} else {
+					$last_step = $i;
+				}
+				$i++;
+			}
+			
+			//get the slice of current page pointers
+			$this->page_pointers = array_slice( $this->registered_pointers, $first_step, ($last_step - $first_step) + 1, true );
+                        
+                        foreach ($this->page_pointers as $k => $pointer) {
+                            if ( isset($post) && $post && isset($post->post_type) && isset($pointer['args']) &&
+                                 isset($pointer['args']['post_type']) && $pointer['args']['post_type'] != $post->post_type ) {
+                                unset($this->page_pointers[$k]);
+                            }
+                        }
+                        
+			//skip if no page pointers for this page
+			if ( !count($this->page_pointers) )
+				return;
+			
+                        $current_page = array_slice($this->page_pointers, 0);
+                        
+			//add any custom css
+			add_action( 'admin_print_styles-'.$current_page[0]['hook'], array(&$this, 'admin_styles') );
+			
+			// Bind pointer print function
+			add_action( 'admin_footer-'.$current_page[0]['hook'], array( &$this, 'print_footer_list' ) );
+	
+			// Add pointers script and style to queue
+			wp_enqueue_style( 'wp-pointer' );
+			wp_enqueue_script( 'wp-pointer' );
+		}
+		
+		/**
+		 * Prints the admin css.
+		 *
+		 */
+		function admin_styles() {
+			if ( !empty( $this->admin_css ) ) {
+				echo '<style type="text/css">
 .wp-pointer-buttons a.prev { float: left; }
 .wp-pointer-buttons a.dismiss {	color: #FFFFFF; font-size: 10px; position: absolute; right: 3px; top: 1px; }
 .wp-pointer-buttons span.tut-step {	font-size: 9px; font-size: 9px; left: 0; bottom: -3px; position: absolute; text-align: center; width: 100%; }';
@@ -176,7 +415,7 @@ if (method_exists($tutorial, 'set_textdomain')) {
 				//get next link thats on a different page
 				$next_link = '';
 				$next_pointer = '';
-				$next_name = __('Weiter &raquo;', $this->textdomain);
+				$next_name = __('Next &raquo;', $this->textdomain);
 				$last_step = false;
 				if ( $count >= count($this->page_pointers) && isset($this->registered_pointers[$pointer_id+1]) ) {
 					$next_url = $this->registered_pointers[$pointer_id+1]['url'];
@@ -192,14 +431,14 @@ if (method_exists($tutorial, 'set_textdomain')) {
 					$next_pointer = "$('$next_pointer').pointer( options$next_pointer_id ).pointer('open').focus();";
 					$next_title = $this->page_pointers[$pointer_id+1]['title'];
 				} else {
-					$next_name = __('Verwerfen', $this->textdomain);
-					$next_title = sprintf(__('Verwirf %s', $this->textdomain), $this->tutorial_name);
+					$next_name = __('Dismiss', $this->textdomain);
+					$next_title = sprintf(__('Dismiss %s', $this->textdomain), $this->tutorial_name);
 					$last_step = true;
 				}
 				
 				$prev_link = '';
 				$prev_pointer = '';
-				$prev_name = __('&laquo; Zurück', $this->textdomain);
+				$prev_name = __('&laquo; Previous', $this->textdomain);
 				if ( $count == 1 && isset($this->registered_pointers[$pointer_id-1]) ) { //if first step for the page and theres a previous page
 					$prev_url = $this->registered_pointers[$pointer_id-1]['url'];
 					$prev_link = ", function() { window.location = '$prev_url'; }";
@@ -215,8 +454,8 @@ if (method_exists($tutorial, 'set_textdomain')) {
 					}
 				}
 				
-				$close_name = __('Verwerfen', $this->textdomain);
-				$close_title = sprintf(__('Verwirf %s', $this->textdomain), $this->tutorial_name);
+				$close_name = __('Dismiss', $this->textdomain);
+				$close_title = sprintf(__('Dismiss %s', $this->textdomain), $this->tutorial_name);
 				?>
 				/*step <?php echo $pointer_id; ?> pointer<?php if ($pointer_id == $current_step) { ?> (Current)<?php } ?>*/
 				var options<?php echo $pointer_id; ?> = <?php echo json_encode( $args ); ?>;
@@ -255,25 +494,25 @@ if (method_exists($tutorial, 'set_textdomain')) {
 							'<a class="dismiss" href="#" title="<?php echo esc_attr($close_title); ?>"><?php echo $close_name; ?></a> ' +
 							<?php } ?>
 							<?php if (!$this->hide_step) { ?>
-							'<span class="tut-step"><?php printf( __('%s: Tipp %d von %d', $this->textdomain), $this->tutorial_name, $pointer_id+1, count($this->registered_pointers) ); ?></span>' +
+							'<span class="tut-step"><?php printf( __('%s: Step %d of %d', $this->textdomain), $this->tutorial_name, $pointer_id+1, count($this->registered_pointers) ); ?></span>' +
 							<?php } ?>
 							'<a class="next button" href="#" title="<?php echo esc_attr($next_title); ?>"><?php echo $next_name; ?></a>' +
 							'</div>'
 						);
-						$buttons.find('.next').on( 'click.pointer', function() {
+						$buttons.find('.next').bind( 'click.pointer', function() {
 							t.element.pointer('destroy');
 							options<?php echo $pointer_id; ?>.next();
 							return false;
 						});
 						<?php if (!$this->hide_dismiss) { ?>
-						$buttons.find('.dismiss').on( 'click.pointer', function() {
+						$buttons.find('.dismiss').bind( 'click.pointer', function() {
 							t.element.pointer('destroy');
 							options<?php echo $pointer_id; ?>.close();
 							return false;
 						});
 						<?php } ?>
 						<?php if ($pointer_id > 0) { ?>
-						$buttons.find('.prev').on( 'click.pointer', function() {
+						$buttons.find('.prev').bind( 'click.pointer', function() {
 							t.element.pointer('destroy');
 							options<?php echo $pointer_id; ?>.prev();
 							return false;
