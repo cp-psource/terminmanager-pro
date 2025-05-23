@@ -30,7 +30,7 @@ jQuery(document).ready( function( $ ) {
         if ( ! hash ) {
             hash = Object.keys(sections)[0];
         } else {
-            hash = hash.substr( 1 );
+            hash = hash.slice( 1 );
         }
         activateSection( hash );
     }
@@ -72,12 +72,15 @@ jQuery(document).ready( function( $ ) {
                 /**
                  * PRO: service_padding
                  */
-                if ( 'undefined' !== typeof response.data.service_padding ) {
-                    if ( 'undefined' !== typeof response.data.service_padding.before ) {
-                        $('#service_padding_before', section ).val( response.data.service_padding.before );
+                if (
+                    typeof response.data.service_padding !== 'undefined' &&
+                    response.data.service_padding !== null
+                ) {
+                    if (typeof response.data.service_padding.before !== 'undefined') {
+                        $('#service_padding_before', section).val(response.data.service_padding.before);
                     }
-                    if ( 'undefined' !== typeof response.data.service_padding.after ) {
-                        $('#service_padding_after', section ).val( response.data.service_padding.after );
+                    if (typeof response.data.service_padding.after !== 'undefined') {
+                        $('#service_padding_after', section).val(response.data.service_padding.after);
                     }
                 }
                 /**

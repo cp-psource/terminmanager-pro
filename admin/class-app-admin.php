@@ -513,20 +513,31 @@ class Appointments_Admin {
 	 *
 	 * @since 2.3.0
 	 */
-	public function get_service() {
-		$data = array(
-			'message' => __( 'Etwas ist schief gelaufen!', 'appointments' ),
-		);
-		if (
-			isset( $_POST['_wpnonce'] )
-			&& isset( $_POST['id'] )
-			&& wp_verify_nonce( $_POST['_wpnonce'], 'service-'.$_POST['id'] )
-		) {
-			$service = appointments_get_service( $_POST['id'] );
-			wp_send_json_success( $service );
-		}
-		wp_send_json_error( $data );
-	}
+public function get_service() {
+    $data = array(
+        'message' => __( 'Etwas ist schief gelaufen!', 'appointments' ),
+    );
+    if (
+        isset( $_POST['_wpnonce'] )
+        && isset( $_POST['id'] )
+        && wp_verify_nonce( $_POST['_wpnonce'], 'service-'.$_POST['id'] )
+    ) {
+        $service = appointments_get_service( $_POST['id'] );
+        // --- Anpassung: auch null abfangen ---
+        if (
+            !isset($service->service_padding)
+            || is_null($service->service_padding)
+            || (!is_array($service->service_padding) && !is_object($service->service_padding))
+        ) {
+            $service->service_padding = (object)[
+                'before' => '',
+                'after' => ''
+            ];
+        }
+        wp_send_json_success( $service );
+    }
+    wp_send_json_error( $data );
+}
 
 	/**
 	 * get worker
