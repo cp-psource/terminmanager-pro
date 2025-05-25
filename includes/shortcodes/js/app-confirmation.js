@@ -115,7 +115,7 @@ jQuery( document).ready( function( $ ) {
                         $(".appointments-gcal-field").show();
                     }
 
-                    $(".appointments-confirmation-button").focus();
+                    $(".appointments-confirmation-button").trigger("focus");
                     var offset = $(".appointments-confirmation-wrapper").offset();
                     if (offset && "top" in offset && offset.top) {
                         $(window).scrollTop(offset.top);

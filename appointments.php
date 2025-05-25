@@ -50,6 +50,7 @@ if (!class_exists('Appointments')) {
 		public $timetables = array();
 	
 		public $local_time;
+		/** @var bool|App_Appointments_Google_Calendar */
 		public $gcal_api;
 		public $locale_error;
 		public $time_format;
@@ -246,7 +247,7 @@ if (!class_exists('Appointments')) {
         {
             if (false === $this->gcal_api && !defined('APP_GCAL_DISABLE')) {
                 require_once(appointments_plugin_dir() . 'includes/class-app-gcal.php');
-                $this->gcal_api = new Appointments_Appointments_Google_Calendar();
+                $this->gcal_api = new App_Appointments_Google_Calendar();
             }
             return $this->gcal_api;
         }
@@ -268,7 +269,7 @@ if (!class_exists('Appointments')) {
 ***************************************************************************************************************
 */
 
-		/**
+	/**
 	 * Get location, service, worker
 	 */
 		function get_lsw() {

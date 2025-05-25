@@ -1,12 +1,11 @@
 <?php
-
 /**
  * Manages all related to Google Calendar integration,
  * import, export and sync appointments
  *
- * Class Appointments_Appointments_Google_Calendar
+ * Class App_Appointments_Google_Calendar
  */
-class Appointments_Appointments_Google_Calendar {
+class App_Appointments_Google_Calendar {
 
 	public $errors = array();
 
@@ -33,7 +32,7 @@ class Appointments_Appointments_Google_Calendar {
 		}
 
 		include_once( 'gcal/class-app-gcal-admin.php' );
-		$this->admin = new Appointments_Appointments_Google_Calendar_Admin( $this );
+		$this->admin = new App_Appointments_Google_Calendar_Admin( $this );
 
 		add_action( 'wp_ajax_app_gcal_export', array( $this, 'export_batch' ) );
 		add_action( 'wp_ajax_app_gcal_import', array( $this, 'import' ) );
@@ -69,7 +68,7 @@ class Appointments_Appointments_Google_Calendar {
 	public function load_api() {
 		$options = appointments_get_options();
 		include_once( 'gcal/class-app-gcal-api-manager.php' );
-		$this->api_manager = new Appointments_Appointments_Google_Calendar_API_Manager();
+		$this->api_manager = new App_Appointments_Google_Calendar_API_Manager();
 
 
 		$default_creds = array();
@@ -293,7 +292,7 @@ class Appointments_Appointments_Google_Calendar {
 		$events_ids = array_map( array( $this, '_get_event_id' ), $events );
 
 		// Import or sync Google Calendar Events
-		/** @var Google_Service_Calendar_Event $event */
+		/** @var Appointments_Google_Service_Calendar_Event $event */
 		foreach ( $events as $event ) {
 			if ( $event_id = $this->sync_event( $event ) ) {
 				$processed_event_ids[] = $event_id;
@@ -366,7 +365,7 @@ class Appointments_Appointments_Google_Calendar {
 			return false;
 		}
 
-		$importer = new Appointments_Appointments_Google_Calendar_Importer( $this );
+		$importer = new App_Appointments_Google_Calendar_Importer( $this );
 
 		$this->remove_appointments_hooks();
 		$importer->import_event( $event, $worker_id );
@@ -536,7 +535,7 @@ class Appointments_Appointments_Google_Calendar {
 
 	public function export_batch() {
 		include_once( 'gcal/class-app-gcal-importer.php' );
-		$importer = new Appointments_Appointments_Google_Calendar_Importer( $this );
+		$importer = new App_Appointments_Google_Calendar_Importer( $this );
 		$offset = absint( $_POST['offset'] );
 		$offset = $importer->export( $offset );
 
@@ -556,7 +555,7 @@ class Appointments_Appointments_Google_Calendar {
 		}
 
 		include_once( 'gcal/class-app-gcal-importer.php' );
-		$importer = new Appointments_Appointments_Google_Calendar_Importer( $this );
+		$importer = new App_Appointments_Google_Calendar_Importer( $this );
 		$this->remove_appointments_hooks();
 		$results = $importer->import();
 		$this->add_appointments_hooks();
