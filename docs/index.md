@@ -73,9 +73,9 @@ Erstelle Terminorte, integriere Google Maps und binde Dienste und Anbieter an be
 
 ![aplus-cart](https://premium.wpmudev.org/wp-content/uploads/2012/09/aplus-cart.png)
 
-**PSeCommerce-Integration**
+**MarketPress-Integration**
 
-Verwende eines der PSeCommerce-Zahlungsgateways, um Zahlungen für Dienstleistungen zu akzeptieren.
+Verwende eines der MarketPress-Zahlungsgateways, um Zahlungen für Dienstleistungen zu akzeptieren.
 
 ![aplus-tetris](https://premium.wpmudev.org/wp-content/uploads/2012/09/aplus-tetris.png)
 

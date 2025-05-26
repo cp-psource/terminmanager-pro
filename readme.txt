@@ -60,9 +60,9 @@ Verwende standardmäßige Nur-Text-E-Mails oder ein Standardlayout und sende E-M
 
 Erstelle Terminorte, integriere Google Maps und binde Dienste und Anbieter an bestimmte Standorte.
 
-**PSeCommerce-Integration**
+**MarketPress-Integration**
 
-Verwende eines der PSeCommerce-Zahlungsgateways, um Zahlungen für Dienstleistungen zu akzeptieren.
+Verwende eines der MarketPress-Zahlungsgateways, um Zahlungen für Dienstleistungen zu akzeptieren.
 
 **Dynamische Zeitfensteranpassungen**
 
@@ -138,10 +138,10 @@ Konfiguriere Terminmanager ganz einfach, um Änderungen an Terminen automatisch 
 = 1.0.4 =
 
 * Fixed: CSS Anpassung Kalender 100%Width.
-* Fixed PSeCommerce prüft auf vorhandene Seite
+* Fixed MarketPress prüft auf vorhandene Seite
 * Übersetzungsstatus: Deutsch 90%
 * Erste Öffentliche Version, BASIC / PRO Verfügbar
-* PSeCommerce Integration hinzugefügt
+* MarketPress Integration hinzugefügt
 * PS Mitgliedschaften Integration hinzugefügt
 
 = 1.0.3 =

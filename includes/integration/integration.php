@@ -13,7 +13,7 @@ function appointments_load_integrations() {
 	$integrations = array(
 		'buddypress',
 		'membership2',
-		'psecommerce',
+		'marketpress',
         'divi'
 	);
 	foreach ( $integrations as $integration ) {

@@ -29,7 +29,7 @@ $questions = array(
 	26 => __( "Ich habe gerade PS Terminmanager installiert und nichts passiert, wenn ich auf der Seite Termin vereinbaren auf ein freies Zeitfenster klicke. Was kann das Problem sein?", 'appointments' ),
 	27 => '',
 	28 => __( "Wie soll das Plugin übrigens funktionieren?", 'appointments' ),
-	29 => __( "Wie funktioniert die Integration mit PSeCommerce? Gibt es spezielle Überlegungen?", 'appointments' ),
+	29 => __( "Wie funktioniert die Integration mit MarketPress? Gibt es spezielle Überlegungen?", 'appointments' ),
 	30 => __( "Was bedeutet DUMMY-Dienstleister? Wie kann ich davon Gebrauch machen?", 'appointments' ),
 	31 => __( "Wie kann ich meinen Planer als Dienstleister in der Kalenderansicht anzeigen?", 'appointments' ),
 	32 => __( "Meine Arbeitszeit umfasst die Mitternacht und reicht bis zum anderen Tag. Zum Beispiel von Montag 20 Uhr bis Dienstag 2 Uhr. Ist es möglich dies einzustellen?", 'appointments' ),
@@ -189,21 +189,21 @@ jQuery(document).ready(function($){
 	</li>
 
 	<li class="faq-answer" id='q29'>
-		<p> <?php _e('Wenn Du <i>In PSeCommerce integrieren</i> auswählst, das angezeigt wird, nachdem <i>Zahlung erforderlich</i> auf Ja gesetzt wurde, wird jede PSeCommerce-Produktseite mit PS Terminmanager Shortcodes als "Terminproduktseite" betrachtet. Diese Seiten werden automatisch geändert und Du solltest nichts Besonderes tun. Zu Deiner Information, hier ist, wie die Integration funktioniert:', 'appointments');?> </p>
+		<p> <?php _e('Wenn Du <i>In MarketPress integrieren</i> auswählst, das angezeigt wird, nachdem <i>Zahlung erforderlich</i> auf Ja gesetzt wurde, wird jede MarketPress-Produktseite mit PS Terminmanager Shortcodes als "Terminproduktseite" betrachtet. Diese Seiten werden automatisch geändert und Du solltest nichts Besonderes tun. Zu Deiner Information, hier ist, wie die Integration funktioniert:', 'appointments');?> </p>
 		<p> <?php _e('Ein Termin wird als digitales Produkt angesehen, daher werden Versandinformationen nicht abgefragt, wenn sie alleine bestellt werden.', 'appointments');?> </p>
 		<p> <?php _e('Wie bei jedem anderen digitalen Produkt ist die Anzahl eines Termins immer auf 1 festgelegt. Der Kunde kann jedoch beliebig viele Termine mit unterschiedlichen Variationen, d.h. mit unterschiedlichem Datum und Uhrzeit, hinzufügen.', 'appointments');?> </p>
 		<p> <?php _e('Der Download-Link, der normalerweise zur Bestätigungs-E-Mail für digitale Produktbestellungen hinzugefügt wird, wird entfernt.', 'appointments');?> </p>
 		<p> <?php _e('Termine im Warenkorb werden als "Titel der Terminproduktseite: Termin-ID (Datum und Uhrzeit des Termins)" angezeigt.', 'appointments');?> </p>
 		<p> <?php _e('Die Schaltflächen "In den Warenkorb" und "Jetzt kaufen" auf der Seite "Terminprodukt" werden erst angezeigt, wenn der Kunde den Termin bestätigt.', 'appointments');?> </p>
 		<p> <?php _e('Die Schaltflächen "In den Warenkorb" und "Jetzt kaufen" sind nur für eine vollständige Terminproduktseite möglich. Daher verfügt ein PS Terminmanager Produkt auf der Produktlistenseite immer über die Schaltfläche "Option auswählen". Es wird kein Preis angezeigt. Verwende aus dem gleichen Grund den Einzelprodukt-Shortcode nur mit der Einstellung content="full".', 'appointments');?> </p>
-		<p> <?php _e('Die Paypal-Schaltfläche von PS Terminmanager ist unsichtbar und daher ist die eigene Paypal-Standardzahlungsoption deaktiviert. Der Kunde verwendet die von PSeCommerce bereitgestellten Zahlungsgateways. Du kannst alle PSeCommerce-Zahlungsgateways verwenden.', 'appointments');?> </p>
+		<p> <?php _e('Die Paypal-Schaltfläche von PS Terminmanager ist unsichtbar und daher ist die eigene Paypal-Standardzahlungsoption deaktiviert. Der Kunde verwendet die von MarketPress bereitgestellten Zahlungsgateways. Du kannst alle MarketPress-Zahlungsgateways verwenden.', 'appointments');?> </p>
 		<p> <?php _e('Mengen- und Variationsfelder auf der Produktseite sind immer unsichtbar.', 'appointments');?> </p>
 		<p> <?php _e('Der Preis des Termins im Warenkorb ist der Einzahlungspreis, wenn ein Einzahlungsfeld festgelegt ist. Ansonsten ist es der volle Preis.', 'appointments');?> </p>
 		<p> <?php _e('Wenn ein Terminprodukt vom Kunden manuell aus dem Warenkorb entfernt wird, wird sein Datensatz auch aus der Termintabelle entfernt.', 'appointments');?> </p>
 		<p> <?php _e('Ein Terminprodukt kann automatisch aus dem Warenkorb entfernt werden, wenn die Einstellung "Ausstehende Termine deaktivieren nach" festgelegt ist und der Kunde den Kauf während dieser Zeit nicht abschließt. Daher kannst Du einen Warnhinweis hinzufügen, dass die Transaktion innerhalb der ausgewählten Zeit abgeschlossen sein sollten.', 'appointments');?> </p>
 		<p> <?php _e('Wenn dies geschieht, während der Kunde zahlt und der Kunde zahlt, wird dieser Termin jedoch aus dem Status "Entfernt" entfernt und als bezahlt markiert.', 'appointments');?> </p>
 		<p> <?php _e('Auf der Admin-Produktverwaltungsseite werden, wenn es sich um ein PS Terminmanager Produkt handelt, Variationen, SKU und Preisspaltenfelder mit "-" angezeigt.', 'appointments');?> </p>
-		<p> <?php _e('Transaktionen werden in PSeCommerce angezeigt, der zugehörige Termindatensatz wird jedoch aktualisiert, d.h. der Status wird in "bezahlt" geändert.', 'appointments');?> </p>
+		<p> <?php _e('Transaktionen werden in MarketPress angezeigt, der zugehörige Termindatensatz wird jedoch aktualisiert, d.h. der Status wird in "bezahlt" geändert.', 'appointments');?> </p>
 		<p> <?php _e('Wenn das Gateway für manuelle Zahlungen aktiviert ist und der Kunde diese Methode verwendet, befindet sich der Termin im Status "Ausstehend", bis Du ihn manuell bestätigst.', 'appointments');?> </p>
 	</li>
 

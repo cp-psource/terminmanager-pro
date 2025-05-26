@@ -5,7 +5,7 @@ Description: Steuere, wie Deine Termine im Produktkorb angezeigt werden.
 Plugin URI: https://cp-psource.github.io/terminmanager-pro/
 Version: 1.0
 AddonType: Integration
-Requires: <a href="https://https://github.com/cp-psource/psecommerce/releases">PSeCommerce</a>
+Requires: <a href="https://https://github.com/cp-psource/marketpress/releases">MarketPress</a>
 Author: PSOURCE
 */
 
@@ -14,7 +14,7 @@ class App_Mp_ProductCartDisplay {
 	/** @var  Appointments */
 	private $_core;
 	private $_data = array();
-	private $_has_psecommerce = false;
+	private $_has_marketpress = false;
 
 	private function __construct() {}
 
@@ -26,7 +26,7 @@ class App_Mp_ProductCartDisplay {
 	private function _add_hooks() {
 		add_action( 'plugins_loaded', array( $this, 'initialize' ) );
 		add_filter( 'app_mp_product_name_in_cart', array( $this, 'apply_changes' ), 10, 5 );
-		add_action( 'app-settings-payment_settings-psecommerce', array( $this, 'show_settings' ) );
+		add_action( 'app-settings-payment_settings-marketpress', array( $this, 'show_settings' ) );
 		add_filter( 'app-options-before_save', array( $this, 'save_settings' ) );
 		add_action( 'wp_ajax_mp_update_cart', array( $this, 'update_apps_on_cart_change' ) );
 		add_action( 'wp_ajax_nopriv_mp_update_cart', array( $this, 'update_apps_on_cart_change' ) );
@@ -64,8 +64,8 @@ class App_Mp_ProductCartDisplay {
 		global $appointments;
 		$this->_core = $appointments;
 		$this->_data = $appointments->options;
-		$this->_has_psecommerce = class_exists( 'PSeCommerce' );
-		if ( $this->_has_psecommerce && ! empty( $this->_data['auto_add_to_cart'] ) ) {
+		$this->_has_marketpress = class_exists( 'MarketPress' );
+		if ( $this->_has_marketpress && ! empty( $this->_data['auto_add_to_cart'] ) ) {
 			if ( defined( 'MP_VERSION' ) && version_compare( MP_VERSION, '3.0', '<' ) ) { add_action( 'wp_footer', array( $this, 'auto_add_to_cart' ) ); }
 		}
 	}
@@ -77,7 +77,7 @@ class App_Mp_ProductCartDisplay {
 	}
 
 	public function show_settings() {
-		if ( $this->_has_psecommerce ) {
+		if ( $this->_has_marketpress ) {
 			$codec = new App_Macro_Codec;
 			$macros = join( '</code>, <code>', $codec->get_macros() );
 			$cart_name_format = isset( $this->_data['cart_name_format'] ) ? $this->_data['cart_name_format'] : '';

@@ -65,7 +65,7 @@ if ( ! (defined( 'APP_USE_LEGACY_MP_INTEGRATION' ) && APP_USE_LEGACY_MP_INTEGRAT
 		}		$order_id = (int) $query->posts[0];
 
 		global $mp;
-		if ( ! method_exists( $mp, 'get_order' ) ) { return false; // Erm... no PSeCommerce
+		if ( ! method_exists( $mp, 'get_order' ) ) { return false; // Erm... no MarketPress
 		}
 		return $mp->get_order( $order_id );
 	}

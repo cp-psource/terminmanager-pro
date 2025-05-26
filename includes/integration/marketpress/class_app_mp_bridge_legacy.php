@@ -49,7 +49,7 @@ class App_MP_Bridge_Legacy {
 
 	/**
 	 * Remove duplicate buttons on Product List page and modify button text, also replace form with a link
-	 * @param $button, $product_id, $context: See PSeCommerce
+	 * @param $button, $product_id, $context: See MarketPress
 	 * @return string
 	 * @Since 1.2.5
 	 */
@@ -160,7 +160,7 @@ class App_MP_Bridge_Legacy {
 	}
 
 	/**
-	 * Handle after a successful PSeCommerce payment
+	 * Handle after a successful MarketPress payment
 	 * @Since 1.0.1
 	 */
 	function handle_mp_payment( $order ) {

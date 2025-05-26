@@ -1,6 +1,6 @@
 <?php
 
-class Appointments_Integrations_PSeCommerce {
+class Appointments_Integrations_MarketPress {
 
 	public function __construct() {
 		if ( ! $this->is_mp_active() ) {
@@ -11,24 +11,27 @@ class Appointments_Integrations_PSeCommerce {
 		// Add settings section
 		add_action( 'appointments_settings_tab-main-section-payments', array( $this, 'show_settings' ) );
 		add_filter( 'app-options-before_save', array( $this, 'save_settings' ) );
+
+		// AJAX-Handler IMMER registrieren!
+		add_action( 'wp_ajax_make_an_appointment_mp_page', array( $this, 'create_page' ) );
+
 		if ( ! $this->is_integration_active() ) {
 			return;
 		}
 		if ( defined( 'MP_VERSION' ) && version_compare( MP_VERSION, '3.0', '>=' ) ) {
-			require_once( 'psecommerce/class_app_mp_bridge.php' );
+			require_once( 'marketpress/class_app_mp_bridge.php' );
 			App_MP_Bridge::serve();
 		} else {
-			require_once( 'psecommerce/class_app_mp_bridge_legacy.php' );
+			require_once( 'marketpress/class_app_mp_bridge_legacy.php' );
 			App_MP_Bridge_Legacy::serve();
 		}
-		add_action( 'wp_ajax_make_an_appointment_mp_page', array( $this, 'create_page' ) );
 	}
 
 	private function is_mp_active() {
 		// class_app_mp_bridge (for MP>3.0)
 		// class_app_mp_bridge_legacy (for MP < 3.0)
 		global $mp;
-		return class_exists( 'PSeCommerce' ) && is_object( $mp );
+		return class_exists( 'MarketPress' ) && is_object( $mp );
 	}
 
 	private function is_integration_active() {
@@ -63,7 +66,7 @@ class Appointments_Integrations_PSeCommerce {
 		wp_reset_postdata(); // Zurücksetzen der globalen $post Variable
 		?>
 		<div class="payment_row">
-			<h3 class="mp-integration"><?php _e( 'PSeCommerce aktivieren', 'appointments' ); ?></h3>
+			<h3 class="mp-integration"><?php _e( 'MarketPress aktivieren', 'appointments' ); ?></h3>
 			<table class="form-table mp-integration">
 				<tr>
 					<th scope="row"><label for="use_mp"><?php _e( 'Integration aktivieren', 'appointments' ); ?></label></th>
@@ -72,7 +75,7 @@ class Appointments_Integrations_PSeCommerce {
 						<p class="description"><?php _e( 'Termine können als Produkte festgelegt werden. Jeder einer Produktseite hinzugefügte Termin-Shortcode macht diese Seite zu einer "Termin-Produktseite". Einzelheiten findest Du in den FAQ.', 'appointments' ) ?></p>
 					</td>
 				</tr>
-				<?php do_action( 'app-settings-payment_settings-psecommerce' ); ?>
+				<?php do_action( 'app-settings-payment_settings-marketpress' ); ?>
 				<tr class="payment_use_mp">
 					<th scope="row"><label for="make_an_appointment_product"><?php _e( 'Produktseite erstellen', 'appointments' ); ?></label></th>
 					<td class="appointment-create-page">
@@ -124,11 +127,12 @@ class Appointments_Integrations_PSeCommerce {
 	}
 
 	/**
-	 * Allow to create Appointment product in PSeCommerce.
+	 * Allow to create Appointment product in MarketPress.
 	 *
 	 * @since 2.3.0
 	 */
 	public function create_page() {
+		error_log('AJAX-Request angekommen: ' . print_r($_POST, true)); // <--- Debug-Log
 		$data = array(
 			'message' => __( 'Etwas ist schief gelaufen!', 'appointments' ),
 		);
@@ -142,7 +146,7 @@ class Appointments_Integrations_PSeCommerce {
 		$tpl = ! empty( $_POST['app_page_type'] ) ? $_POST['app_page_type'] : false;
 		$page_id = wp_insert_post(
 			array(
-				'post_title'   => _x( 'Terminbuchung', 'Standard-Seitenname für die PSeCommerce-Integration.', 'appointments' ),
+				'post_title'   => _x( 'Terminbuchung', 'Standard-Seitenname für die MarketPress-Integration.', 'appointments' ),
 				'post_status'  => 'publish',
 				'post_type'    => 'product',
 				'post_content' => App_Template::get_default_page_template( $tpl ),
@@ -172,4 +176,4 @@ class Appointments_Integrations_PSeCommerce {
 	}
 }
 
-new Appointments_Integrations_PSeCommerce();
+new Appointments_Integrations_MarketPress();
