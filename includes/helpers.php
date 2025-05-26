@@ -902,20 +902,22 @@ function _appointments_get_table_meta_row_monthly( $which, $long ) {
  * @param $service_id
  * @param $worker_id
  *
- * @return mixed
+ * @return float
  */
 function appointments_get_price( $service_id, $worker_id ) {
-	$service = appointments_get_service( $service_id );
-	$worker = appointments_get_worker( $worker_id );
+    $service = appointments_get_service( $service_id );
+    $worker = appointments_get_worker( $worker_id );
 
-	if ( ! $service ) {
-		return 0;
-	}
+    if ( ! $service ) {
+        return 0;
+    }
 
-	$worker_price = ( $worker && $worker->price ) ? $worker->price : 0;
-	return $service->price + $worker_price;
+    // Stelle sicher, dass beide Werte Zahlen sind
+    $service_price = isset($service->price) ? (float)$service->price : 0;
+    $worker_price = ($worker && isset($worker->price)) ? (float)$worker->price : 0;
+
+    return $service_price + $worker_price;
 }
-
 
 /**
  * Enqueue SweetAlert styles/scripts

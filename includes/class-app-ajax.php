@@ -977,6 +977,9 @@ class Appointments_AJAX {
 		}
 
         $service_obj = appointments_get_service($service);
+		if ( ! $service_obj ) {
+			die(json_encode(array('error' => __('Dienst nicht gefunden.', 'appointments'))));
+		}
 		$service = '<label><span>' . __('Dienstname: ', 'appointments') .  '</span>'. apply_filters('app_confirmation_service', stripslashes($service_obj->name), $service_obj->name) . '</label>';
 		$start = '<label><span>' . __('Datum und Uhrzeit: ', 'appointments') . '</span>'. apply_filters('app_confirmation_start', date_i18n($appointments->datetime_format, $start), $start) . '</label>';
 		$end = '<label><span>' . __('Dauert (ungefähr): ', 'appointments') . '</span>'. apply_filters('app_confirmation_lasts', $service_obj->duration . " " . __('Minuten', 'appointments'), $service_obj->duration) . '</label>';
